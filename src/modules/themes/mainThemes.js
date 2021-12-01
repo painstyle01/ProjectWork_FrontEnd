@@ -1,13 +1,17 @@
 import {createMuiTheme} from '@mui/material/styles'
 
+const palette = {
+  mainColor: '#ef7f16',
+  TextColor: '#ffffff',
+}
 
 const MainTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#ef7f16'
+      main: palette.mainColor
     },
     secondary:{
-      main:'#ffffff'
+      main: palette.TextColor
     }
   },
 
@@ -46,22 +50,22 @@ const MainTheme = createMuiTheme({
             textalign: 'center',
             textdecoration: 'none',
             background: 'transparent',
-            border: '2px solid #ef7f16',
+            border: '2px solid',
+            borderColor: palette.mainColor,
             transition: 'background-color 0.2s ease',
             borderRadius: '0px',
             '&:hover': {
-              background: '#ef7f16',
-              color: 'white'
+              background: palette.mainColor,
+              color: palette.TextColor
             }
           },
-          
         },
 
       },
       MuiTypography: {
         styleOverrides:{
           root:{
-            color: '#ffffff',
+            color: palette.TextColor,
           }
         }
       }
