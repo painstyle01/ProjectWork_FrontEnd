@@ -7,8 +7,8 @@ import { Box } from '@mui/system';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import logo from './logo.png'
-import logo2 from './logo3.png'
+import logo from '../../images/logo.png'
+import logo2 from '../../images/logo3.png'
 import Grid from '@mui/material/Grid'
 import Stack from '@mui/material/Stack';
 

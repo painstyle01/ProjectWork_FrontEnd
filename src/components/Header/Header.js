@@ -3,8 +3,8 @@ import './Header.css';
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import logo from './logo.png'
-import logo2 from './logo2.png'
+import logo from '../../images/logo.png'
+import logo2 from '../../images/logo2.png'
 import { Box } from '@mui/system';
 import { Drawer } from '@mui/material';
 import List from '@mui/material/List';

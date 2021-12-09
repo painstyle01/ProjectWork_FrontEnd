@@ -1,5 +1,5 @@
 .background{
-  background-image: url(franko.jpg);
+  background-image: url(../../images/franko.jpg);
   background-size: cover;
   background-attachment: fixed;
 }
