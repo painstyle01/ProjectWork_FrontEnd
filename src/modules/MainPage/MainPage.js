@@ -1,13 +1,10 @@
 import React from 'react';
 import './MainPage.css';
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
 
 
 function MainPage() {
         return (
             <div>
-                <Header/>
                 <p>Some content</p>
                 <p>Some content</p>
                 <p>Some content</p>
@@ -28,7 +25,6 @@ function MainPage() {
                 <p>Some content</p>
                 <p>Some content</p>
                 <p>Some content</p>
-                <Footer/>
             </div>
         )
 }
