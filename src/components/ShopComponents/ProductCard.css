@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200&display=swap');
+
+.Card{
+    font-size: 12px;
+    font-family: 'Century Gothic',Helvetica,Arial,sans-serif;
+    line-height: 1.6em;
+    list-style: disc inside;
+    list-style-type: none;
+    text-align: center;
+    box-shadow: none !important;
+}
+.Card p{
+    font-size: 14x;
+    font-style: italic;
+}
+
+img{
+    width: 100% !important;
+}
