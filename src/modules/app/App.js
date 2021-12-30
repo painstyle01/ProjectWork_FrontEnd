@@ -29,7 +29,7 @@ function App() {
             <Route path={"/video"+path} element={<VideoCategory/>} />
         )}
         <Route exact path="/audio" element={<AudioPage />}/>
-        {["/franko-vdoma", "/miy-izmaragd", "/intelektualna-biografiya", '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
+        {["/dim-poeta", "/miy-izmaragd", "/intelektualna-biografiya", '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
         '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
             <Route path={"/audio"+path} element={<AudioCategory/>} />
         )}
