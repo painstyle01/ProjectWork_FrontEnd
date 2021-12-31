@@ -2,7 +2,7 @@ import React from 'react';
 import './AudioCategory.css';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container'
-import VAmenu from '../../VAmenu/VAmenu'
+import VAmenu from '../../../components/VAmenu/VAmenu'
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';

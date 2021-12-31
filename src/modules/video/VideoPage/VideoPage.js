@@ -16,7 +16,7 @@ import Grid from '@mui/material/Grid'
 import Container from '@mui/material/Container'
 import { CardActionArea } from '@mui/material'
 import { NavLink } from 'react-router-dom';
-import VAmenu from '../../VAmenu/VAmenu'
+import VAmenu from '../../../components/VAmenu/VAmenu'
 
 class VideoPage extends React.Component {
 
