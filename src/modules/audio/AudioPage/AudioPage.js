@@ -11,7 +11,7 @@ import { NavLink } from 'react-router-dom';
 import VAmenu from '../../../components/VAmenu/VAmenu'
 import axios from 'axios'
 
-let links = ["/franko-vdoma", "/miy-izmaragd", "/intelektualna-biografiya", '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
+let links = ['/miy-franko', '/filosofski-snidanky', '/semper-tiro', '/intelektualna-biografiya', '/miy-izmaragd', '/dim-poeta',
 '/frankustyka', '/podiyi-poza-seriyamy']
 
 class AudioPage extends React.Component {

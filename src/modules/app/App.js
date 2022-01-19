@@ -24,12 +24,12 @@ function App() {
       <Routes>
         <Route exact path="/" element={<MainPage />}/>
         <Route exact path="/video" element={<VideoPage />}/>
-        {["/franko-vdoma", "/miy-izmaragd", "/intelektualna-biografiya", '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
+        {['/franko-vdoma', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
         '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
             <Route path={"/video"+path} element={<VideoCategory/>} />
         )}
         <Route exact path="/audio" element={<AudioPage />}/>
-        {["/dim-poeta", "/miy-izmaragd", "/intelektualna-biografiya", '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
+        {['/dim-poeta', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
         '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
             <Route path={"/audio"+path} element={<AudioCategory/>} />
         )}

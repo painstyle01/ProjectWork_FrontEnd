@@ -5,7 +5,7 @@ import ReactPlayer from 'react-player'
 import VAmenu from '../../../components/VAmenu/VAmenu'
 import axios from 'axios'
 
-let links = ["franko-vdoma", "miy-izmaragd", "intelektualna-biografiya", 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
+let links = ['franko-vdoma', 'miy-izmaragd', 'intelektualna-biografiya', 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
 'frankustyka', 'podiyi-poza-seriyamy']
 
 let fullUrl = window.location.pathname
