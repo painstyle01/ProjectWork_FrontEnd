@@ -16,7 +16,7 @@ const MainTheme = createMuiTheme({
   },
 
   typography:{
-    fontFamily: ['Lato', 'sans-serif'],
+    fontFamily: ['Montserrat'],
     h2:{
       fontFamily: ['Crimson Pro', 'serif'],
       lineHeight: '1.2',

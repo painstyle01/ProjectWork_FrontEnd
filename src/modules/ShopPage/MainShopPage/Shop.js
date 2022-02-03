@@ -1,57 +1,101 @@
 import React from 'react';
 import './Shop.css';
-import ProductCard from '../../../components/ShopComponents/ProductCard'
-import Slider from '../MainShopPage/Slider'
-import { Box } from '@mui/material';
+import Grid from '@mui/material/Grid'
 
-let Temporarydata = [
+
+let Temporarydata = 
     {
-        photo: 'https://cdn.shopify.com/s/files/1/1331/9421/products/5_copy_grande.jpg?v=1586086912',
-        title: 'Freud Museum Shop Gift Card',
-        price: '5.00',
-    },
-    {
-        photo: 'https://cdn.shopify.com/s/files/1/1331/9421/products/CodeNameCover_grande.jpg?v=1636443318',
-        title: 'Code name \'Mary\'',
-        price: '15.00',
-    },
-    {
-        photo: 'https://cdn.shopify.com/s/files/1/1331/9421/products/FREUDMUSEUMCHRISTMASHAMPER_grande.jpg?v=1636440587',
-        title: 'Hamper',
-        price: '35.00',
-    },
-    {
-        photo: 'https://cdn.shopify.com/s/files/1/1331/9421/products/FreudMuseumMerryChristamsCard_grande.jpg?v=1636441811',
-        title: 'Mery Christmas',
-        price: '5.00',
-    },
-    {
-        photo: 'https://cdn.shopify.com/s/files/1/1331/9421/products/TheWolfMan_sDreamJigsawPuzzle_grande.jpg?v=1636441259',
-        title: 'The Wolf Man\'s Dream Jigsaw Puzzle',
-        price: '22.00',
-    },
-]
+        products: [
+        {
+            id: 1,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'Freud Museum Shop Gift Card',
+            price: '5.00',
+        },
+        {
+            id: 2,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'Code name \'Mary\'',
+            price: '15.00',
+        },
+        {
+            id: 3,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'Hamper',
+            price: '35.00',
+        },
+        {
+            id: 4,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'Mery Christmas',
+            price: '5.00',
+        },
+        {
+            id: 5,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'The Wolf Man\'s Dream Jigsaw Puzzle',
+            price: '22.00',
+        },
+        {
+            id: 6,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'Freud Museum Shop Gift Card',
+            price: '5.00',
+        },
+        {
+            id: 7,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'Freud Museum Shop Gift Card',
+            price: '5.00',
+        }],
+
+        categories: ['Література', 'Чашки', 'Футболки']
+    }
+
+
 
 class Shop extends React.Component {
-    render() {
+    constructor(props) {
+        super(props);
+        this.state={selectedFilter: 0};
+    }
+
+    render(){
         return(
-            <div>
+            <div style={{marginLeft: '140px', marginRight: '140px'}}>
+                <div style={{padding: '50px', textAlign: 'center'}}>Header</div>
+                <h2 className="m">Магазин</h2>
 
-                <div style={{marginBottom: '100px', textAlign: 'center'}}>HEADER</div>
-
-                <Slider/>
-
-                <h2><span>Featured Products</span></h2>
-
-                <Box sx={{display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 2}}>
-                   {Temporarydata.map(function(element){
-                        return <ProductCard data={element}/>
+                <Grid container spacing={1} className="menuLine">
+                    {Temporarydata.categories.map((object, index)=>{
+                        return(
+                            <Grid item className="filterItem" key={index}>
+                                {object}
+                            </Grid>
+                        )
                     })}
-                </Box>
+                </Grid>
 
-                <div style={{marginTop: '100px', textAlign: 'center'}}>FOOTER</div>
+                <Grid container spacing={6}>
+                  {Temporarydata.products.map((object) => {
+                      return(
+                        <Grid item xs={2} className="productCard">
+                            <img src={object.photo} alt="not found"></img>
+                            <span className="productTitle">{object.title}</span>
+                            <p className="productPrice">{object.price}</p>
+                        </Grid>
+                      )
+                  })}   
+                </Grid>
 
-            </div>
+                <div className="sponsorLine">
+                    <img src="https://i.yapx.ru/QaRXg.png" alt="not found"/>
+                </div>
+
+                <div style={{padding: '50px', textAlign: 'center'}}>FOOTER</div>
+
+
+            </div>  
         )
     }
 }
