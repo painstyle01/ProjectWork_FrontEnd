@@ -1,11 +1,9 @@
 import React from 'react';
 import './MainPage.css';
-import AppBar from '@mui/material/AppBar'
 import Button from '@mui/material/Button'
 import logo from '../../images/logo.png'
 import Typography from '@mui/material/Typography'
 import NotesIcon from '@mui/icons-material/Notes';
-import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Box } from '@mui/system';
@@ -16,7 +14,7 @@ import { Box } from '@mui/system';
 function MainPage() {
         return (
             <div className="main">
-                <video id="background-video" autoplay='true' loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                <video id="background-video" autoPlay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
                     <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"></source>
                     Your browser does not support the video tag.
                 </video>
