@@ -1,0 +1,50 @@
+/* .menu{
+    background-color: rgba(0, 0, 0, 0.8)!important;
+    padding-block: 20px;
+}
+
+.menuButton{
+    text-align: center;
+	cursor: pointer;
+}
+.menuButton div{
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+    }
+.menuButton:hover div{
+    border-bottom: 2px solid #ef7f16;
+    }
+
+a, a:visited {
+    color: #aaa;
+    text-decoration: none;
+}
+
+a:hover, a:active {
+    color: #ef7f16;
+}
+
+a .icon, a:visited .icon{
+    color: white;
+}
+
+a:hover .icon, a:active .icon {
+    color: #ef7f16;
+}
+
+@media (max-width: 900px){
+    #mainMenu {display: none;}
+    #sideMenu {display: auto;}
+}
+
+@media (min-width: 901px){
+    #mainMenu {display: auto;}
+    #sideMenu {display: none;}
+}
+
+.MuiDrawer-paper{
+    background-color: #ef7f16!important;
+}
+
+.sideButton:hover{
+    background-color: black!important;
+} */
