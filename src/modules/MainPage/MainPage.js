@@ -34,14 +34,15 @@ function MainPage() {
                         <div><a href="https://www.youtube.com/channel/UC6UeOsivTNCowjVt3Hg5G0g"><YouTubeIcon className="icon"/></a></div>
                     </Box>
                     <div className="leftBlock">
-                    <div className='content'>
-                        <Typography variant="body2" color="secondary" className='description' style={{marginBlock: '30px'}}>Це не просто Музей. Це також Дім Муз, де вирує багатогранне мистецьке життя; Дім Науки, що є осередком...</Typography>
-                        <Button variant="text" color="secondary" id='but'>
-                            Дізнатися більше
-                        </Button>
-                        <Button variant="text" color="secondary" className='b2' id='but'>
-                            Спланувати візит
-                        </Button></div>
+                        <div className='content'>
+                            <Typography variant="body2" color="secondary" style={{marginBlock: '30px'}}>Це не просто Музей. Це також Дім Муз, де вирує багатогранне мистецьке життя; Дім Науки, що є осередком...</Typography>
+                            <Button variant="text" color="secondary" id='but'>
+                                Дізнатися більше
+                            </Button>
+                            <Button variant="text" color="secondary" className='b2' id='but'>
+                                Спланувати візит
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>
