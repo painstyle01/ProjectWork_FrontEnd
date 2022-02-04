@@ -23,7 +23,8 @@ class AudioPage extends React.Component {
     }
   }
   getCategories = async () => {
-      const { data } = await axios.get("/audio/");
+      // const { data } = await axios.get("/audio/");
+      const { data } = await axios.get("https://frankosmuseum.herokuapp.com/audio/");
       this.setState({ categories: data })
   }
   componentDidMount() {

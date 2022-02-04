@@ -23,7 +23,8 @@ class VideoPage extends React.Component {
     }
   }
   getCategories = async () => {
-      const { data } = await axios.get("/video/");
+      // const { data } = await axios.get("/video/");
+      const { data } = await axios.get("https://frankosmuseum.herokuapp.com/video/");
       this.setState({ categories: data })
   }
   componentDidMount() {

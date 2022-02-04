@@ -21,7 +21,8 @@ class VideoCategory extends React.Component {
     }
   }
   getVideos = async () => {
-      const { data } = await axios.get("/video/1");
+      // const { data } = await axios.get("/video/1");
+      const { data } = await axios.get("https://frankosmuseum.herokuapp.com/video/1");
       this.setState({ videos: data })
   }
   componentDidMount() {

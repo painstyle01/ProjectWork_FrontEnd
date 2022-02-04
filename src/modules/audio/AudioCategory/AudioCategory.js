@@ -21,7 +21,8 @@ class AudioCategory extends React.Component {
     }
   }
   getAudios = async () => {
-      const { data } = await axios.get("/audio/1");
+      // const { data } = await axios.get("/audio/1");
+      const { data } = await axios.get("https://frankosmuseum.herokuapp.com/audio/1");
       this.setState({ audios: data })
   }
   componentDidMount() {
