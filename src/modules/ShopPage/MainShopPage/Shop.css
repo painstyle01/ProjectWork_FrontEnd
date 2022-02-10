@@ -4,6 +4,11 @@ body{
     font-family: Montserrat;
 }
 
+.container {
+    margin-left: '140px';
+    margin-right: '140px';
+}
+
 h2{
     font-weight: 600;
     font-size: 80px;
@@ -57,7 +62,3 @@ h2{
     line-height: 32px;
 }
 
-.sponsorLine{
-    border-bottom: 2px solid #000000;
-    border-top: 2px solid #000000;
-}

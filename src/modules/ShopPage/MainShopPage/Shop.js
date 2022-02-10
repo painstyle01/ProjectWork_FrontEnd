@@ -62,40 +62,32 @@ class Shop extends React.Component {
 
     render(){
         return(
-            <div style={{marginLeft: '140px', marginRight: '140px'}}>
-                <div style={{padding: '50px', textAlign: 'center'}}>Header</div>
-                <h2 className="m">Магазин</h2>
+                <div className="container">
+                    <div style={{padding: '50px', textAlign: 'center'}}>Header</div>
+                    <h2 className="m">Магазин</h2>
 
-                <Grid container spacing={1} className="menuLine">
-                    {Temporarydata.categories.map((object, index)=>{
+                    <Grid container spacing={1} className="menuLine">
+                        {Temporarydata.categories.map((object, index)=>{
+                            return(
+                                <Grid item className="filterItem" key={index}>
+                                    {object}
+                                </Grid>
+                            )
+                        })}
+                    </Grid>
+
+                    <Grid container spacing={6}>
+                    {Temporarydata.products.map((object) => {
                         return(
-                            <Grid item className="filterItem" key={index}>
-                                {object}
+                            <Grid item xs={2} className="productCard">
+                                <img src={object.photo} alt="not found"></img>
+                                <span className="productTitle">{object.title}</span>
+                                <p className="productPrice">{object.price}</p>
                             </Grid>
                         )
-                    })}
-                </Grid>
-
-                <Grid container spacing={6}>
-                  {Temporarydata.products.map((object) => {
-                      return(
-                        <Grid item xs={2} className="productCard">
-                            <img src={object.photo} alt="not found"></img>
-                            <span className="productTitle">{object.title}</span>
-                            <p className="productPrice">{object.price}</p>
-                        </Grid>
-                      )
-                  })}   
-                </Grid>
-
-                <div className="sponsorLine">
-                    <img src="https://i.yapx.ru/QaRXg.png" alt="not found"/>
+                    })}   
+                    </Grid>
                 </div>
-
-                <div style={{padding: '50px', textAlign: 'center'}}>FOOTER</div>
-
-
-            </div>  
         )
     }
 }
