@@ -17,7 +17,7 @@ import AudioCategory from '../audio/AudioCategory/AudioCategory';
 
 function App() {
   return (
-    <div className="background">
+    <div>
     <ThemeProvider theme={MainTheme}>
     <BrowserRouter>
       <Header/>
@@ -34,7 +34,7 @@ function App() {
             <Route path={"/audio"+path} element={<AudioCategory/>} />
         )}
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </BrowserRouter>
     </ThemeProvider>
     </div>
