@@ -1,6 +1,7 @@
 import './App.css';
 import {ThemeProvider} from '@mui/material/styles'
 import MainTheme from '../themes/mainThemes'
+import ShopPage from '../ShopPage/MainShopPage/Shop'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import MainPage from '../MainPage/MainPage'
@@ -14,13 +15,12 @@ import {
 import VideoCategory from '../video/VideoCategory/VideoCategory';
 import AudioCategory from '../audio/AudioCategory/AudioCategory';
 
-
 function App() {
   return (
     <div>
     <ThemeProvider theme={MainTheme}>
     <BrowserRouter>
-      <Header/>
+      {/* <Header/> */}
       <Routes>
         <Route exact path="/" element={<MainPage />}/>
         <Route exact path="/video" element={<VideoPage />}/>

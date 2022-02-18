@@ -1,97 +1,72 @@
 import React from 'react';
-import './Footer.css';
-import AppBar from '@mui/material/AppBar'
-import Typography from '@mui/material/Typography'
-import Container from '@mui/material/Container'
-import { Box } from '@mui/system';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import logo from '../../images/logo.png'
-import logo2 from '../../images/logo3.png'
+import './Footer.css'
 import Grid from '@mui/material/Grid'
-import Stack from '@mui/material/Stack';
 
+class Footer extends React.Component {
+    render(){
+        return(
+            <Grid container spacing={3} className="footer">
+                    <Grid item xs={3}>
+                        <div className="DimFranka">
+                            ДІМ<p>ФРА<p>НКА</p></p>
+                        </div>
+                    </Grid>
 
+                    <Grid item xs={4} className="footerItem">
+                        <Grid container spacing={2} className="info">
+                            <Grid item xs={6}>
+                                <ul>
+                                    <li>Події</li>
+                                    <li>Програми</li>
+                                    <li>Колекція</li>
+                                    <li>Експозиція</li>
+                                    <li>Експонати</li>
+                                </ul>
+                            </Grid>
 
+                            <Grid item xs={6} className="info">
+                                <ul>
+                                    <li>Магазини</li>
+                                    <li>Про музей</li>
+                                    <li>Про Франка</li>
+                                    <li>Мультимедія</li>
+                                    <li>3Д Тур</li>
+                                </ul>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid item xs={5} className="footerItem">
+                        <Grid container spacing={1}>
+                            <Grid item xs={12}>
+                                <div className="socials">
+                                    <div>
+                                        <img className="icons" src="https://i.yapx.ru/Qjn1P.png"/>
+                                        <img className="icons" src="https://i.yapx.ru/Qjn3q.png"/>
+                                        <img className="icons" src="https://i.yapx.ru/QjoBR.png"/>
+                                    </div>
+                                </div>
+                            </Grid>
+                            
+                            <Grid item xs={12}>
+                                <Grid container spacing={2}>
+                                    <Grid item xs={6}>
+                                        <b>Час відкриття</b>
+                                        <p>Всі дні окрім вівторка
+                                            <p>з 10:00 до 17:00</p></p> 
+                                    </Grid>
 
-function Footer() {
-        return (
-        <AppBar position="static" color="primary" className="footer" >
-        <Container maxWidth="lg" sx={{marginY: '50px'}}>
-        <Grid container spacing={2}>
-          <Grid item xs={12} sm={6} md={3} sx={{marginBottom: '50px'}}>
-            <Box>
-            <Typography variant="h6" component="div">
-              <p>Блог</p>
-              <p>Про музей</p>
-              <p>Контакти</p>
-              <p>Новини</p>
-              <a href='#'>Медіа</a>
-            </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} sx={{marginBottom: '50px'}}>
-            <Box>
-            <Typography variant="h6" component="div">
-              <p>Твій візит</p>
-            </Typography>
-            <Typography variant="h3" component="div">
-              <p>Середа &#8212; Понеділок</p>
-              <p>з 10.00 до 17.00</p>
-              <p>купити квитки</p>
-            </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} sx={{marginBottom: '50px'}}>
-            <Box>
-            <Typography variant="h6" component="div">
-              <p>Зв'язатися з нами</p>
-            </Typography>
-            <Typography variant="h3" component="div">
-              <p>+38 096 15 84 606</p>
-              <a href='#'>lviv_franko@ukr.net</a>
-            </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={12} sm={6} md={3} sx={{marginBottom: '50px'}}>
-            <Box>
-            <Typography variant="h6" component="div">
-              <p>Наша локація</p>
-            </Typography>
-            <Typography variant="h3" component="div">
-              <p>вул. Івана Франка, 150-152,</p>
-              <p>м. Львів, 79011, Україна</p>
-              <a href='#'>Переглянути мапу</a>
-            </Typography>
-            </Box>
-          </Grid>
-          
-                  
-          <Grid item xs={12} sm={6}>
-            <Box>
-              <Stack direction="row" spacing={2}>
-              <img src={logo} height='80px'></img>
-              <img src={logo2} height='80px'></img>
-              </Stack>
-              <Typography variant="h6" component="div">
-              <p>Дім Франка &#8212; Franko House 2020</p>
-              </Typography>
-            </Box>
-          </Grid>
-          <Grid item xs={12} sm={6}>
-            <Box id='icons'>
-              <Typography variant="h6" component="div">
-                <a href="https://www.facebook.com/dimfranka/"><FacebookIcon sx={{ fontSize: '50px' }} className="icon" /></a>
-                <a href="https://www.instagram.com/dim_franka/"><InstagramIcon sx={{ fontSize: '50px' }} className="icon" /></a>
-                <a href="https://www.youtube.com/channel/UC6UeOsivTNCowjVt3Hg5G0g"><YouTubeIcon sx={{ fontSize: '50px' }} className="icon" /></a>
-              </Typography>
-            </Box>
-          </Grid>
-        </Grid>
-        </Container>
-        </AppBar>
+                                    <Grid item xs={6}>
+                                        <b>Локація</b>
+                                        <p>вул. Івана Франка, 150-152б
+                                            <p>м. Львів 79011, Україна</p></p> 
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
         )
+    }
 }
 
 export default Footer;
