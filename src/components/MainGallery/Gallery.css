@@ -1,0 +1,29 @@
+*{
+    margin: 0px;
+}.namePage{
+    font-size: 24px;
+    font-weight: 700;
+}
+.nameMenu{
+    font-size: 14px;
+    font-weight: 300;
+}
+.GManu{
+    background-color: cyan;
+}
+.GContent h3{
+    font-size: 36px;
+    text-align: center;
+    margin: 40px;
+    font-weight: 300;
+}
+.CText{
+    font-size: 19px;
+}
+#foto1 img{
+    height: 670px;
+   
+}
+#logo1 img{
+    height: 100px;
+}
