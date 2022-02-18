@@ -1,0 +1,28 @@
+a, a:visited {
+  color: #aaa;
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: #ef7f16;
+}
+
+a .icon, a:visited .icon{
+  color: white;
+}
+
+a:hover .icon, a:active .icon {
+  color: #ef7f16;
+}
+
+.footer{
+  background-color: rgba(0, 0, 0, 0.8)!important;
+}
+
+@media (max-width: 599px){
+    #icons {float: left;}
+}
+
+@media (min-width: 600px){
+  #icons {float: right;}
+}
