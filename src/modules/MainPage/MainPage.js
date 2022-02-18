@@ -9,8 +9,6 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import { Box } from '@mui/system';
 
 
-
-
 function MainPage() {
         return (
             <div className="main">
