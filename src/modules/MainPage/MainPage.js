@@ -1,46 +1,71 @@
 import React from 'react';
 import './MainPage.css';
 import Button from '@mui/material/Button'
-import logo from '../../images/logo.png'
 import Typography from '@mui/material/Typography'
-import NotesIcon from '@mui/icons-material/Notes';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import { Box } from '@mui/system';
-
-
+import { Stack } from '@mui/material';
+import Divider from '@mui/material/Divider';
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
+import newsImage from '../../images/news.png'
+import Grid from '@mui/material/Grid'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 
 function MainPage() {
+    let news = [
+        {'title': 'Легенда про вічне життя', 'text': 'У рамках реалізації проєкту Франко. Re:volution Львівського національного літературно-меморіального музею...'},
+        {'title': 'Легенда про вічне життя', 'text': 'У рамках реалізації проєкту Франко. Re:volution Львівського національного літературно-меморіального музею...'},
+        {'title': 'Легенда про вічне життя', 'text': 'У рамках реалізації проєкту Франко. Re:volution Львівського національного літературно-меморіального музею...'},
+    ]
         return (
             <div className="main">
-                <video id="background-video" autoPlay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
-                    <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"></source>
-                    Your browser does not support the video tag.
-                </video>
-                <div className="blackout">
-                    <div className='menu2'>
-                        <img src={logo} height="50"></img>
-                        <Button variant="text" color="secondary" style={{float: 'right'}}>
-                            <NotesIcon className="icon"/>
-                        </Button>
-                    </div>
-                    <div className="title1">ДІМ</div>
-                    <div className="title2">ФРАНКА</div>
-                    <Box className='icons'>
-                        <div><a href="https://www.instagram.com/dim_franka/"><InstagramIcon className="icon"/></a></div>
-                        <div><a href="https://www.youtube.com/channel/UC6UeOsivTNCowjVt3Hg5G0g"><YouTubeIcon className="icon"/></a></div>
-                    </Box>
-                    <div className="leftBlock">
-                        <div className='content'>
-                            <Typography variant="body2" color="secondary" style={{marginBlock: '30px'}}>Це не просто Музей. Це також Дім Муз, де вирує багатогранне мистецьке життя; Дім Науки, що є осередком...</Typography>
-                            <Button variant="text" color="secondary" id='but'>
-                                Дізнатися більше
-                            </Button>
-                            <Button variant="text" color="secondary" className='b2' id='but'>
+                <div className="top">
+                    {/* <video id="background-video" autoPlay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+                        <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"></source>
+                        Your browser does not support the video tag.
+                    </video> */}
+                    <div className="top_content">
+                        <div className="mainTitle">Дім Франка</div>
+                        {/* <Typography variant="test" color="secondary">Дім Франка</Typography> */}
+                        <Stack direction="row" justifyContent='space-between' marginBlock={'1vw'} spacing={2}>
+                        <Typography variant="body2" color="secondary" width="110px">Музей Франка і не тільки...</Typography>
+                            <Stack direction="row" spacing={2}>
+                            <Button variant="text" color="secondary" id='but' className='b2'>
                                 Спланувати візит
                             </Button>
-                        </div>
+                            <Button variant="text" color="secondary" id='but'>
+                                Підтримати нас
+                            </Button>
+                            </Stack>
+                        </Stack>
+                        <Divider color='white' sx={{borderBottomWidth: 4, marginBottom: '1vw'}} />
+                        <Stack direction="row">
+                        <WatchLaterIcon sx={{color: 'white', marginRight: '10px'}}/>
+                        <Typography variant="body2" color="secondary" fontWeight="bold">Чекаємо на Вас щодня, крім вівторка, з 10:00 до 17:00</Typography>
+                        </Stack>
+                    </div>
+                </div>
+                <div className="bottom">
+                    <div className="bottom_content">
+                        <div style={{fontSize: '71px', lineHeight: '50px'}}>Останні новини</div>
+                        <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '30px'}} />
+                        <Grid container spacing={3}>
+                            {news.map(function(item) {
+                                return (
+                                    <Grid item xs={12} sm={6} md={4}>
+                                        <div>
+                                            <img src={newsImage} width="100%"></img>
+                                            <Stack direction="row">
+                                                <Typography variant="body2" color="primary" style={{fontSize: '28px'}}>{item.title}</Typography>
+                                                <ArrowForwardIcon style={{fontSize: '45px'}}/>
+                                            </Stack>
+                                            <Typography variant="body2" color="primary">12/12/2021</Typography>
+                                            <Typography variant="body2" color="primary" sx={{marginTop: '15px'}}>{item.text}</Typography>
+                                            <Divider color='black' sx={{borderBottomWidth: 4, marginTop: '10px'}} />
+                                        </div>
+                                    </Grid>
+                                )})}
+                        </Grid>
                     </div>
                 </div>
             </div>

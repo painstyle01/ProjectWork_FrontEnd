@@ -39,6 +39,12 @@ const MainTheme = createTheme({
       lineHeight: 1.6,
       fontSize: '16px'
     },
+    test:{
+      fontFamily: ['Igra Sans'],
+      fontWeight: 'normal',
+      lineHeight: 1.6,
+      fontSize: '50px'
+    },
   },
   
     components: {
