@@ -1,62 +1,137 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
-import Container from '@mui/material/Container'
-import Typography from '@mui/material/Typography'
-import Button from '@mui/material/Button'
 import './ProductPage.css'
+import { Button } from '@mui/material';
 
 const Temporarydata = 
     {
-        photos: ['https://cdn.shopify.com/s/files/1/1331/9421/products/Art_Prints_Freud_Museum_London_9.jpg?v=1487865063', 
-                  'https://cdn.shopify.com/s/files/1/1331/9421/products/Art_Prints_Freud_Museum_London_13_compact.jpg?v=1487864587',
+        photos: ['https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg', 
+                  'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
                   'https://cdn.shopify.com/s/files/1/1331/9421/products/patrick_caulfield_d.e.a.d._compact.jpg?v=1556019690',
-                  'https://cdn.shopify.com/s/files/1/1331/9421/products/patrick_caulfield_d.e.a.d._compact.jpg?v=1556019690'],
-        title: 'Paul Wunderlich - Untitled, 1996',
+                  'https://cdn.shopify.com/s/files/1/1331/9421/products/patrick_caulfield_d.e.a.d._compact.jpg?v=1556019690',
+                ],
+        title: 'Іван Франко - дітям',
         price: '£400.00',
-        text: 'Sigmund Freud has exerted a remarkable influence over several generations of artists through both his writing and his singular collection of antiquities. The Freud Museum Prints have been printed to celebrate his impact on the visual arts and to mark the 10th anniversary of The Museum in 1996, All the printing has been undertaken by Gresham Studio (Cambridge, England) who is devoted to collaborative printmaking of the highest standard. They work with artists from many countries, specialising in screen printing and etching.',
+        description: 'До збірки увійшли вірші, казки та оповідання, доступні для сприймання дітьми молодшого шкільного віку. Книга адресована дітям, батькам та вчителям.',
     }
 
-class ProductPage extends React.Component {
+let Temporarydata2 = 
+    {
+        products: [
+        {
+            id: 1,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'Freud Museum Shop Gift Card',
+            price: '5.00',
+        },
+        {
+            id: 2,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'Code name \'Mary\'',
+            price: '15.00',
+        },
+        {
+            id: 3,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'Hamper',
+            price: '35.00',
+        },
+        {
+            id: 4,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'Mery Christmas',
+            price: '5.00',
+        },
+        {
+            id: 5,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'Dream Jigsaw Puzzle',
+            price: '22.00',
+        },
+        {
+            id: 6,
+            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
+            title: 'Freud Museum Shop Gift Card',
+            price: '5.00',
+        }],
 
-    ChangePhoto = (e) => {
-        document.getElementById("mainPhoto").src = e.target.src
+        categories: ['Література', 'Чашки', 'Футболки']
     }
 
-    render() {
-        return(
-            <Container fixed>
-              <div style={{marginBottom: '100px', textAlign: 'center'}}>HEADER</div>
-              <Grid container spacing={3}>
-                <Grid item md={5}>
-                    <Grid container spacing={2}>
-                        <Grid item md={9}>
-                            <img src={Temporarydata.photos[0]} alt="not found" id="mainPhoto"></img>
+function ProductPage(Product){
+
+    Product = Temporarydata;
+    const [currentPhoto, setPhoto] = React.useState(1);
+
+    let PhotoChange = (e) => {
+        setPhoto(e.target.id)
+    }
+
+    return(
+        <Grid container spacing={1}>
+
+            <Grid item xs={12}>
+                <Grid container spacing={2}>
+                    <Grid item xs={6}>
+                        <Grid container spacing={2}>
+                            <Grid item xs={2}>
+                                <Grid container spacing={1}>
+                                    {Product.photos.map((photos, index) =>{
+                                        return(
+                                            <Grid item xs={12} key={index}>
+                                                <img src={photos}
+                                                    className='photos' 
+                                                    alt="not found"
+                                                    id={index}
+                                                    onClick={PhotoChange}/>
+                                            </Grid>
+                                        )
+                                    })}
+                                </Grid>
+                            </Grid>
+
+                            <Grid item xs={10} >
+                                <img src={Product.photos[currentPhoto]} id='mainImage'/>
+                            </Grid>
+
                         </Grid>
-                        <Grid item md={3}>
-                            {Temporarydata.photos.map((e)=>{return(
-                                <img src={e} alt="not found" style={{width: "70%"}} onClick={this.ChangePhoto}/>
-                            )})}
-                        </Grid>
+                    
+
+                    </Grid>
+
+                    <Grid item xs={6} className="productInfo">
+                        <div className="productTitle">{Product.title}</div>
+
+                        <br/><div className="productPrice">{Product.price}</div>
+                        <span className="descriptionHader">Опис</span>
+                        <div className="productDescription">{Product.description}</div>
+
+                        <Button variant="fef" color="default" className="makeOrderButton">
+                          Зробити замовлення
+                        </Button>
                     </Grid>
                 </Grid>
-                <Grid item md={6}>
-                    <Typography variant="h2" className="txt">{Temporarydata.title}</Typography>
-                    <p>{Temporarydata.price}</p>
-                    <Button className="AddButton">Add to cart</Button>
-                    <p className="text">{Temporarydata.text}</p>
+            </Grid>
+
+
+
+            <Grid item xs={12} className="otherProductsTitle">
+                <span>Вам також може сподобатись:</span>
+                <Grid className="otherProducts" container spacing={6}>
+                    {Temporarydata2.products.map((object) => {
+                            return(
+                                <Grid item xs={2} className="productCard">
+                                    <img src={object.photo} alt="not found"></img>
+                                    <span className="otherProductTitle">{object.title}</span>
+                                    <p className="otherProductPrice">{object.price}</p>
+                                </Grid>
+                            )
+                    })} 
                 </Grid>
-                <Grid item md={1}>
-                    <p className="text">More in collection</p>
-                    {Temporarydata.photos.map((e)=>{return(
-                                <img style={{margin: "10px", width: "120%"}} src={e} alt="not found"/>
-                            )})}
-                </Grid>
-              </Grid>
-              <div style={{marginTop: '100px', textAlign: 'center'}}>FOOTER</div>
-            </Container>
+            </Grid>
             
-        )
-    }
+        </Grid>
+    )
 }
 
 export default ProductPage;

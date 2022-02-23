@@ -1,19 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&family=Montserrat&display=swap');
 
-.Card{
-    font-size: 12px;
-    font-family: 'Century Gothic',Helvetica,Arial,sans-serif;
-    line-height: 1.6em;
-    list-style: disc inside;
-    list-style-type: none;
-    text-align: center;
-    box-shadow: none !important;
-}
-.Card p{
-    font-size: 14x;
-    font-style: italic;
+.productCard{
+    margin: 30px;
 }
 
-img{
-    width: 100% !important;
+.productCard img{
+    max-width: 170px;
+}
+
+.productTitle{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.productPrice{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 32px;
 }

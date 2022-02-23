@@ -1,7 +1,7 @@
 import './App.css';
 import {ThemeProvider} from '@mui/material/styles'
 import MainTheme from '../themes/mainThemes'
-import ShopPage from '../ShopPage/MainShopPage/Shop'
+import ShopPage from '../ShopPage/ProductPage/ProductPage'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import MainPage from '../MainPage/MainPage'
@@ -37,7 +37,7 @@ function App() {
       {/* <Footer/> */}
     </BrowserRouter>
     </ThemeProvider>
-    </div>
+    </div>  
   )
 }
 
