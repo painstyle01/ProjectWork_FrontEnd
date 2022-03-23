@@ -20,7 +20,7 @@ function Footer() {
           <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={4} lg={2} sx={{color: 'black'}}>
-              <Typography variant="h5" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '5px'}}>
+              <Typography variant="h5" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '10px'}}>
                 Локація
               </Typography>
               <Typography variant="body2" component="div" color='primary'>
@@ -28,7 +28,7 @@ function Footer() {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={4} lg={2}>
-              <Typography variant="h5" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '5px'}}>
+              <Typography variant="h5" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '10px'}}>
                 Зв'язок з нами
               </Typography>
               <Typography variant="body2" component="div" color='primary'>
@@ -36,7 +36,7 @@ function Footer() {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={4} lg={2}>
-              <Typography variant="h5" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '5px'}}>
+              <Typography variant="h5" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '10px'}}>
                 Час роботи
               </Typography>
               <Typography variant="body2" component="div" color='primary'>
@@ -44,7 +44,7 @@ function Footer() {
               </Typography>
             </Grid>
             <Grid item xs={12} sm={4} lg={2}>
-              <Typography variant="h5" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '5px'}}>
+              <Typography variant="h5" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '10px'}}>
                 Соцмережі
               </Typography>
               <Stack direction="row" spacing={2}>
