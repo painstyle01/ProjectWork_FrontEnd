@@ -1,28 +1,17 @@
-/* a, a:visited {
-  color: #aaa;
-  text-decoration: none;
-}
-
-a:hover, a:active {
-  color: #ef7f16;
-}
-
-a .icon, a:visited .icon{
-  color: white;
-}
-
-a:hover .icon, a:active .icon {
-  color: #ef7f16;
-}
-
 .footer{
-  background-color: rgba(0, 0, 0, 0.8)!important;
+  background-color: #f6f6f6;
+  padding: 5% 7% 9% 7%;
+  color: #000!important;
 }
 
-@media (max-width: 599px){
-    #icons {float: left;}
+.linkIcon, .linkIcon::after{
+  color: #000;
 }
 
-@media (min-width: 600px){
-  #icons {float: right;}
-} */
+.linkIcon:hover{
+  color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 600px){
+  #pdtrm {float: left;}
+}

@@ -1,11 +1,3 @@
-.main{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-}
-
 .top{
     background-image: url(../../images/16_Дім\ Франка_DJI_0694\ 1.png);
     background-size: cover;
@@ -21,7 +13,7 @@
     font-style: normal;
     font-size: 18px;
     line-height: 28px;
-    padding: 7.5% 7.5% 4% 7.5%;
+    padding: 7.5%;
 }
 
 /* @import url(https://fonts.googleapis.com/css?family=Igra+Sans); */
@@ -32,13 +24,34 @@
     /* src: local('Igra Sans'), local('IgraSans'), url('../fonts/fonts/Igrasans.woff2') format('woff2'), url('../fonts/fonts/Igrasans.woff') format('woff'), url('../fonts/fonts/Igrasans.ttf') format('truetype'); */
     font-weight: 400;
     font-style: normal;
-    height: 19vw;
-    width: 45%;
     font-family: 'Igra Sans';
     font-style: normal;
     font-weight: normal;
-    font-size: 9vw;
-    line-height: 9vw;
+    font-size: 13vw;
+    line-height: 13vw;
+    text-align: center;
+}
+
+.middle{
+    background-color: #212121;
+}
+
+.middle_content{
+    height: 51vw;
+    width: 85%;
+    color: white;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 7.5%;
+}
+
+.white_link, .white_link::after{
+    text-decoration: none;
+}
+
+.white_link:hover{
+  opacity: 0.5;
 }
 
 .bottom{
@@ -52,25 +65,22 @@
     font-style: normal;
     font-size: 18px;
     line-height: 28px;
-    padding: 6.5% 7.5% 7.5% 7.5%;
+    padding: 5% 7.5% 6% 7.5%;
+}
+
+.bottom_grey_content{
+    width: 85%;
+    color: black;
+    background-color: #f6f6f6;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 0 7.5%;
 }
 
 .b2{
     background-color: white!important;
     color: black!important;
-}
-
-.icon{
-    color: white;
-    font-size: 40px!important;
-
-}
-
-.icons{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 100px;
 }
 
 #background-video{
