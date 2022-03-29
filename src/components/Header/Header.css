@@ -1,50 +1,31 @@
-/* .menu{
-    background-color: rgba(0, 0, 0, 0.8)!important;
-    padding-block: 20px;
+.Gmenu{
+    height: 113px;
+    position: fixed; 
+    top: 0px; 
+    width: 100%;
+  
 }
-
-.menuButton{
+#foto img{
+    width: 136.75px
+}
+#foto1 img{
+    width: 35px;
+    height: 37px;
+}
+.nameMenu{
     text-align: center;
-	cursor: pointer;
+    font-family: 'Gotham Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
 }
-.menuButton div{
-    border-bottom: 2px solid rgba(0, 0, 0, 0);
-    }
-.menuButton:hover div{
-    border-bottom: 2px solid #ef7f16;
-    }
-
-a, a:visited {
-    color: #aaa;
-    text-decoration: none;
-}
-
-a:hover, a:active {
-    color: #ef7f16;
+.lng{
+    padding-top: 3px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
 }
 
-a .icon, a:visited .icon{
-    color: white;
-}
-
-a:hover .icon, a:active .icon {
-    color: #ef7f16;
-}
-
-@media (max-width: 900px){
-    #mainMenu {display: none;}
-    #sideMenu {display: auto;}
-}
-
-@media (min-width: 901px){
-    #mainMenu {display: auto;}
-    #sideMenu {display: none;}
-}
-
-.MuiDrawer-paper{
-    background-color: #ef7f16!important;
-}
-
-.sideButton:hover{
-    background-color: black!important;
-} */

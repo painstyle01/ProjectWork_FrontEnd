@@ -20,7 +20,7 @@ function App() {
     <div>
     <ThemeProvider theme={MainTheme}>
     <BrowserRouter>
-      {/* <Header/> */}
+      <Header/>
       <Routes>
         <Route exact path="/" element={<MainPage/>}/>
         <Route exact path="/shop" element={<ShopPage/>}/>

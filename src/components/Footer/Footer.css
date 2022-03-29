@@ -1,40 +1,17 @@
 .footer{
-    margin-top: 50px !important;
-    border-top: 2px solid;
+  background-color: #f6f6f6;
+  padding: 5% 7% 9% 7%;
+  color: #000!important;
 }
 
-.footerItem{
-    border-left: 2px solid;
+.linkIcon, .linkIcon::after{
+  color: #000;
 }
 
-.DimFranka{
-    font-family: Playfair Display;
-    font-size: 60px;
-    line-height: 56px;
-
-    margin-left: 100px !important;
+.linkIcon:hover{
+  color: rgba(0, 0, 0, 0.5);
 }
 
-ul{
-    list-style-type: none;
-    padding: 0; 
-    margin: 0; 
-}
-
-.footer .info{
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 24px;
-    padding-left: 80px;
-    line-height: 30px;
-}
-
-.socials{
-    margin-left: 200px;
-    width: 50em;
-}
-
-.icons{
-    width: 5%;
-    margin: 10px;
+@media (max-width: 600px){
+  #pdtrm {float: left;}
 }
