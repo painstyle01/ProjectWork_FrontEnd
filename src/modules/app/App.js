@@ -35,7 +35,7 @@ function App() {
             <Route path={"/audio"+path} element={<AudioCategory/>} />
         )}
       </Routes>
-      <Footer/>
+      {/* <Footer/> */}
     </BrowserRouter>
     </ThemeProvider>
     </div>
