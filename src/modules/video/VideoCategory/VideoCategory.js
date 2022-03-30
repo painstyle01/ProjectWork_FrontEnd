@@ -76,7 +76,7 @@ class VideoCategory extends React.Component {
     let fullUrl = window.location.pathname
     let split = fullUrl.split('/')
     let thisPage = split[split.length-1]
-    let page = this.categories.filter(category => category.link == thisPage)[0]
+    let page = this.categories.filter(category => category.link === thisPage)[0]
     return (
       <div style={{marginBlock: '100px'}}>
         <VAmenu/>

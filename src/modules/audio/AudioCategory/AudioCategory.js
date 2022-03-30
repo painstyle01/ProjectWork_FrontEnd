@@ -79,7 +79,7 @@ class AudioCategory extends React.Component {
     let fullUrl = window.location.pathname
     let split = fullUrl.split('/')
     let thisPage = split[split.length-1]
-    let page = this.categories.filter(category => category.link == thisPage)[0]
+    let page = this.categories.filter(category => category.link === thisPage)[0]
     return (
       <div style={{marginBlock: '100px'}}>
       <script src="http://widget.mixcloud.com/media/js/widgetApi.js" type="text/javascript"></script>
@@ -90,7 +90,7 @@ class AudioCategory extends React.Component {
         {page.podcasts.reverse().map(function(podcast) {
           return (
             <div style={{marginBlock: '50px'}}>
-              <iframe id="mixcloudPlayer" width="100%" height="120" frameborder="0" src={podcast.url}></iframe>
+              <iframe title="" id="mixcloudPlayer" width="100%" height="120" frameborder="0" src={podcast.url}></iframe>
               <Accordion style={{marginTop: '10px', border: '1px solid black'}}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
