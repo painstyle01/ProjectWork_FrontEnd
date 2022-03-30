@@ -18,7 +18,7 @@ function MainPage() {
                 </video>
                 <div className="blackout">
                     <div className='menu2'>
-                        <img src={logo} height="50"></img>
+                        <img src={logo} alt="" height="50"></img>
                         <Button variant="text" color="secondary" style={{float: 'right'}}>
                             <NotesIcon className="icon"/>
                         </Button>

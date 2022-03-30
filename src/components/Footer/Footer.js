@@ -40,9 +40,9 @@ class Footer extends React.Component {
                             <Grid item xs={12}>
                                 <div className="socials">
                                     <div>
-                                        <img className="icons" src="https://i.yapx.ru/Qjn1P.png"/>
-                                        <img className="icons" src="https://i.yapx.ru/Qjn3q.png"/>
-                                        <img className="icons" src="https://i.yapx.ru/QjoBR.png"/>
+                                        <img className="icons" src="https://i.yapx.ru/Qjn1P.png" alt=""/>
+                                        <img className="icons" src="https://i.yapx.ru/Qjn3q.png" alt=""/>
+                                        <img className="icons" src="https://i.yapx.ru/QjoBR.png" alt=""/>
                                     </div>
                                 </div>
                             </Grid>

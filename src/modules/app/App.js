@@ -2,8 +2,6 @@ import './App.css';
 import {ThemeProvider} from '@mui/material/styles'
 import MainTheme from '../themes/mainThemes'
 import ShopPage from '../ShopPage/MainShopPage/Shop'
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
 import MainPage from '../MainPage/MainPage'
 import AudioPage from '../audio/AudioPage/AudioPage'
 import VideoPage from '../video/VideoPage/VideoPage'
