@@ -90,7 +90,7 @@ class AudioCategory extends React.Component {
         {page.podcasts.reverse().map(function(podcast) {
           return (
             <div style={{marginBlock: '50px'}}>
-              <iframe title="" id="mixcloudPlayer" width="100%" height="120" frameborder="0" src={podcast.url}></iframe>
+              <iframe title={page.title} id="mixcloudPlayer" width="100%" height="120" frameborder="0" src={podcast.url}></iframe>
               <Accordion style={{marginTop: '10px', border: '1px solid black'}}>
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
