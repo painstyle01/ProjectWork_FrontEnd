@@ -20,17 +20,17 @@ function App() {
     <BrowserRouter>
       {/* <Header/> */}
       <Routes>
-        <Route exact path="/" element={<MainPage/>}/>
-        <Route exact path="/shop" element={<ShopPage/>}/>
-        <Route exact path="/video" element={<VideoPage/>}/>
+        <Route key={1} exact path="/" element={<MainPage/>}/>
+        <Route key={2} exact path="/shop" element={<ShopPage/>}/>
+        <Route key={3} exact path="/video" element={<VideoPage/>}/>
         {['/franko-vdoma', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
         '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
-            <Route path={"/video"+path} element={<VideoCategory/>} />
+            <Route key={4} path={"/video"+path} element={<VideoCategory/>} />
         )}
-        <Route exact path="/audio" element={<AudioPage/>}/>
+        <Route key={5} exact path="/audio" element={<AudioPage/>}/>
         {['/dim-poeta', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
         '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
-            <Route path={"/audio"+path} element={<AudioCategory/>} />
+            <Route key={6} path={"/audio"+path} element={<AudioCategory/>} />
         )}
       </Routes>
       {/* <Footer/> */}
