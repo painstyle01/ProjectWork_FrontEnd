@@ -1,7 +1,10 @@
 import React from 'react';
 import './Shop.css';
 import Grid from '@mui/material/Grid'
-
+// import {BrowserRouter as
+//     Route, Routes, Link, Router
+//   } from 'react-router-dom';
+//import productPage from '../ProductPage/ProductPage'
 
 let Temporarydata = 
     {
@@ -12,58 +15,30 @@ let Temporarydata =
             title: 'Freud Museum Shop Gift Card',
             price: '5.00',
         },
-        {
-            id: 2,
-            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
-            title: 'Code name \'Mary\'',
-            price: '15.00',
-        },
-        {
-            id: 3,
-            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
-            title: 'Hamper',
-            price: '35.00',
-        },
-        {
-            id: 4,
-            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
-            title: 'Mery Christmas',
-            price: '5.00',
-        },
-        {
-            id: 5,
-            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
-            title: 'The Wolf Man\'s Dream Jigsaw Puzzle',
-            price: '22.00',
-        },
-        {
-            id: 6,
-            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
-            title: 'Freud Museum Shop Gift Card',
-            price: '5.00',
-        },
-        {
-            id: 7,
-            photo: 'https://img.yakaboo.ua/media/catalog/product/cache/1/image/398x565/31b681157c4c1a5551b0db4896e7972f/i/m/img708_39.jpg',
-            title: 'Freud Museum Shop Gift Card',
-            price: '5.00',
-        }],
+       ],
 
         categories: ['Література', 'Чашки', 'Футболки']
     }
 
+    fetch('http://frankos-museum-backend.azurewebsites.net/api/products/')
+        .then(response => response.json())
+        .then(data =>(localStorage.setItem('products', JSON.stringify(data))));
 
 
 class Shop extends React.Component {
     constructor(props) {
         super(props);
-        this.state={selectedFilter: 0};
+        this.state={selectedFilter: 0, products: JSON.parse(localStorage.getItem('products'))};
+    }
+
+    GetOneProduct = (element) => {
+
     }
 
     render(){
         return(
                 <div className="container">
-                    <h2 className="m">Магазин</h2>
+                    <h2>Магазин</h2>
 
                     <Grid container spacing={1} className="menuLine">
                         {Temporarydata.categories.map((object, index)=>{
@@ -76,16 +51,23 @@ class Shop extends React.Component {
                     </Grid>
 
                     <Grid container spacing={6}>
-                    {Temporarydata.products.map((object) => {
-                        return(
-                            <Grid item xs={2} className="productCard">
-                                <img src={object.photo} alt="not found"></img>
-                                <span className="productTitle">{object.title}</span>
-                                <p className="productPrice">{object.price}</p>
-                            </Grid>
+                    {this.state.products.map((object) => {
+                        return( 
+                                <Grid item xs={2} 
+                                    className="productCard"
+                                    onClick = {() => this.GetOneProduct(object)}
+                                    key = {object.id}
+                                    >
+                                    <div className="productimage"><img src={object.url_to_photo} alt="not found"></img></div>
+                                    <span className="productTitle">{object.name}</span>
+                                    <p className="productPrice">{object.price}</p>
+                                </Grid>
                         )
-                    })}   
+                    })}  
                     </Grid>
+                    {/* <Routes>
+                        <Route path="/products" element={<productPage/>}/>
+                    </Routes> */}
                 </div>
         )
     }

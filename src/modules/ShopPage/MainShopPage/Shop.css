@@ -48,6 +48,10 @@ h2{
     max-width: 170px;
 }
 
+.productimage{
+    min-height: 250px;
+}
+
 .productTitle{
     font-style: normal;
     font-weight: 600;
@@ -61,4 +65,3 @@ h2{
     font-size: 15px;
     line-height: 32px;
 }
-

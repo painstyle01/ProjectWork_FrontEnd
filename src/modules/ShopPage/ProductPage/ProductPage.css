@@ -7,6 +7,13 @@ body{
     max-width: 80%;
 }
 
+.productContainer{
+    margin-top: 100px !important;
+    margin-left: 150px !important;
+    margin-right: 150px !important;
+}
+
+
 .photos{
     max-width: 100%;
     float: right;  
@@ -56,15 +63,26 @@ body{
     line-height: 24px;
 }
 
-.otherProductsTitle{
+.otherProducts{
     margin-top: 100px !important;
+    margin-left: 150px !important;
+    margin-right: 150px !important;
     font-weight: 600;
     font-size: 25px;
     line-height: 32px;
 }
 
-.otherProducts{
+.otherProductsTitle{
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 76px;
+    color: #1C1C1C;
+}
+
+.otherProductsCards{
     margin-top: 5px !important;
+    border-top: 4px solid #1C1C1C;
+    /* border-top-width: 1636.01px; */
 }
 
 

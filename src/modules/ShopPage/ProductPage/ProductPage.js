@@ -70,7 +70,7 @@ function ProductPage(Product){
     return(
         <Grid container spacing={1}>
 
-            <Grid item xs={12}>
+            <Grid item xs={12} className="productContainer">
                 <Grid container spacing={2}>
                     <Grid item xs={6}>
                         <Grid container spacing={2}>
@@ -91,7 +91,7 @@ function ProductPage(Product){
                             </Grid>
 
                             <Grid item xs={10} >
-                                <img src={Product.photos[currentPhoto]} id='mainImage'/>
+                                <img src={Product.photos[currentPhoto]} id='mainImage' alt="not found"/>
                             </Grid>
 
                         </Grid>
@@ -107,7 +107,7 @@ function ProductPage(Product){
                         <div className="productDescription">{Product.description}</div>
 
                         <Button variant="fef" color="default" className="makeOrderButton">
-                          Зробити замовлення
+                          Додати у кошик
                         </Button>
                     </Grid>
                 </Grid>
@@ -115,9 +115,9 @@ function ProductPage(Product){
 
 
 
-            <Grid item xs={12} className="otherProductsTitle">
-                <span>Вам також може сподобатись:</span>
-                <Grid className="otherProducts" container spacing={6}>
+            <Grid item xs={12} className="otherProducts">   
+                <span className="otherProductsTitle">Наші рекомендації</span>
+                <Grid className="otherProductsCards" container spacing={6}>
                     {Temporarydata2.products.map((object) => {
                             return(
                                 <Grid item xs={2} className="productCard">
