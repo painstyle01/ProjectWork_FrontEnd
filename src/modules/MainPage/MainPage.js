@@ -25,7 +25,6 @@ function MainPage() {
                 <div className="mainBackground">
                     <div className="mainBackground2"></div>
                 </div>
-            {/* < img  src = 'http://frankos-museum-backend.azurewebsites.net/media/backgrounds/nature.gifнн'  /> */}
                 <div>
                     {/* <video id="background-video" autoPlay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
                         <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"></source>
