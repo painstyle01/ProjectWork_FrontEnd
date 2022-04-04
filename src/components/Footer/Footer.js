@@ -1,72 +1,70 @@
 import React from 'react';
-import './Footer.css'
+import './Footer.css';
+import Typography from '@mui/material/Typography'
+import { Stack } from '@mui/material';
+import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid'
+import InstagramIcon from '@mui/icons-material/Instagram';
+import YouTubeIcon from '@mui/icons-material/YouTube';
+import az from '../../images/logo2.png'
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 
-class Footer extends React.Component {
-    render(){
-        return(
-            <Grid container spacing={3} className="footer">
-                    <Grid item xs={3}>
-                        <div className="DimFranka">
-                            ДІМ<p>ФРА<p>НКА</p></p>
-                        </div>
-                    </Grid>
 
-                    <Grid item xs={4} className="footerItem">
-                        <Grid container spacing={2} className="info">
-                            <Grid item xs={6}>
-                                <ul>
-                                    <li>Події</li>
-                                    <li>Програми</li>
-                                    <li>Колекція</li>
-                                    <li>Експозиція</li>
-                                    <li>Експонати</li>
-                                </ul>
-                            </Grid>
-
-                            <Grid item xs={6} className="info">
-                                <ul>
-                                    <li>Магазини</li>
-                                    <li>Про музей</li>
-                                    <li>Про Франка</li>
-                                    <li>Мультимедія</li>
-                                    <li>3Д Тур</li>
-                                </ul>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid item xs={5} className="footerItem">
-                        <Grid container spacing={1}>
-                            <Grid item xs={12}>
-                                <div className="socials">
-                                    <div>
-                                        <img className="icons" src="https://i.yapx.ru/Qjn1P.png" alt=""/>
-                                        <img className="icons" src="https://i.yapx.ru/Qjn3q.png" alt=""/>
-                                        <img className="icons" src="https://i.yapx.ru/QjoBR.png" alt=""/>
-                                    </div>
-                                </div>
-                            </Grid>
-                            
-                            <Grid item xs={12}>
-                                <Grid container spacing={2}>
-                                    <Grid item xs={6}>
-                                        <b>Час відкриття</b>
-                                        <p>Всі дні окрім вівторка
-                                            <p>з 10:00 до 17:00</p></p> 
-                                    </Grid>
-
-                                    <Grid item xs={6}>
-                                        <b>Локація</b>
-                                        <p>вул. Івана Франка, 150-152б
-                                            <p>м. Львів 79011, Україна</p></p> 
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Grid>
+function Footer() {
+        return (
+          <div className="footer">
+            <Stack direction="row" spacing={2}>
+              <div style={{fontSize: '71px', lineHeight: '50px'}}>Спланувати візит</div>
+              <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
+            </Stack>
+            <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
+            <Grid container spacing={3}>
+              <Grid item xs={12} sm={4} lg={2} sx={{color: 'black'}}>
+                <Typography variant="h5" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '10px'}}>
+                  Локація
+                </Typography>
+                <Typography variant="body2" component="div" color='primary'>
+                  вул. Івана Франка, 150-152, м. Львів 79011, Україна
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sm={4} lg={2}>
+                <Typography variant="h5" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '10px'}}>
+                  Зв'язок з нами
+                </Typography>
+                <Typography variant="body2" component="div" color='primary'>
+                  +38 096 15 84 606<br/>lviv_franko@ukr.net
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sm={4} lg={2}>
+                <Typography variant="h5" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '10px'}}>
+                  Час роботи
+                </Typography>
+                <Typography variant="body2" component="div" color='primary'>
+                  Чекаємо на Вас щодня, крім вівторка, з 10:00 до 17:00
+                </Typography>
+              </Grid>
+              <Grid item xs={12} sm={4} lg={2}>
+                <Typography variant="h5" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '10px'}}>
+                  Соцмережі
+                </Typography>
+                <Stack direction="row" spacing={2}>
+                  <a className="linkIcon" href="https://www.instagram.com/dim_franka/"><InstagramIcon sx={{fontSize: '50px'}}/></a>
+                  <a className="linkIcon" href="https://www.youtube.com/channel/UC6UeOsivTNCowjVt3Hg5G0g"><YouTubeIcon sx={{fontSize: '50px'}}/></a>
+                </Stack>
+              </Grid>
+              <Grid item xs={12} sm={8} lg={4} sx={{alignSelf: 'center'}}>
+                <Stack direction="row" spacing={2} sx={{float: 'right'}} id='pdtrm'>
+                <Typography variant="h4" component="div" color='primary' style={{fontWeight: 'bold'}}>
+                  Підтримай нас
+                </Typography>
+                <ArrowCircleUpIcon sx={{fontSize: '45px', transform: 'rotate(45deg)'}}/>
+                </Stack>
+              </Grid>
+            </Grid>
+            <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
+            <img src={az}></img>
+          </div>
         )
-    }
 }
 
 export default Footer;
