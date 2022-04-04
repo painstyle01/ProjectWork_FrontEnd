@@ -1,8 +1,6 @@
 import './News.css';
 import {ThemeProvider} from '@mui/material/styles'
 import MainTheme from '../../modules/themes/mainThemes'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
 import { Grid } from '@mui/material';
 
 

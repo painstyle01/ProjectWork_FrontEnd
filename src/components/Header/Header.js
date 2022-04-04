@@ -32,10 +32,10 @@ function Header() {
                   
                   <Stack direction="row" spacing={2}>
                     <Typography variant="h6" component="div">
-                      <a href='#'><img src={logo}></img></a>                    
+                      <a href='#/'><img src={logo} alt=""></img></a>                    
                     </Typography>
                     <Typography variant="h6" component="div">
-                      <a href='http://fromatoz.dimfranka.lviv.ua/'><img src={logo2}></img></a>
+                      <a href='http://fromatoz.dimfranka.lviv.ua/'><img src={logo2} alt=""></img></a>
                     </Typography>
                   </Stack>
                   
