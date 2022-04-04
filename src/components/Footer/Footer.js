@@ -62,7 +62,7 @@ function Footer() {
             </Grid>
           </Grid>
           <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
-          <img src={az}></img>
+          <img src={az} alt=""></img>
         </div>
         )
 }
