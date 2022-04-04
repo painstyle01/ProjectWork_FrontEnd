@@ -65,18 +65,19 @@ function Footer() {
                     </Typography>
                     <Stack direction="row" spacing={2}>
                         {socialMedias.map(function(item) {
-                            if (item.name_partners=='facebook'){
+                            if (item.name_partners==='facebook'){
                                 return (
                                     <a className="linkIcon" href={item.link_partners}><FacebookIcon sx={{fontSize: '50px'}}/></a>
                                 )}
-                            if (item.name_partners=='instagram'){
+                            if (item.name_partners==='instagram'){
                                 return (
                                     <a className="linkIcon" href={item.link_partners}><InstagramIcon sx={{fontSize: '50px'}}/></a>
                             )}
-                            if (item.name_partners=='instagram'){
+                            if (item.name_partners==='instagram'){
                                 return (
                                     <a className="linkIcon" href={item.link_partners}><YouTubeIcon sx={{fontSize: '50px'}}/></a>
                             )}
+                            return(null)
                         })}
                     </Stack>
                 </Grid>
@@ -90,7 +91,7 @@ function Footer() {
                 </Grid>
             </Grid>
             <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
-            <img src={az}></img>
+            <img src={az} alt=""></img>
         </div>
     )
 }
