@@ -1,5 +1,5 @@
 .Gmenu{
-    height: 113px;
+    height: 140px;
     position: fixed; 
     top: 0px; 
     width: 100%;
@@ -14,7 +14,7 @@
 }
 .nameMenu{
     text-align: center;
-    font-family: 'Gotham Pro';
+    font-family: 'Montserrat';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -28,4 +28,3 @@
     font-size: 20px;
     line-height: 32px;
 }
-
