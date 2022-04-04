@@ -1,6 +1,8 @@
 import './App.css';
 import {ThemeProvider} from '@mui/material/styles'
 import MainTheme from '../themes/mainThemes'
+import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 import ShopPage from '../ShopPage/MainShopPage/Shop'
 import MainPage from '../MainPage/MainPage'
 import AudioPage from '../audio/AudioPage/AudioPage'
@@ -33,7 +35,7 @@ function App() {
             <Route key={6} path={"/audio"+path} element={<AudioCategory/>} />
         )}
       </Routes>
-      {/* <Footer/> */}
+      {<Footer/>}
     </BrowserRouter>
     </ThemeProvider>
     </div>
