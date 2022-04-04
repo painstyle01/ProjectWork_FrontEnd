@@ -15,13 +15,13 @@ import { useState, useEffect } from 'react';
 
 function Footer() {
 
-    const [socialMedias, setSocialMedias] = useState([]);
+    const [socialMedias, getSocialMedias] = useState([]);
   
     useEffect(() => {
         (async () => {
             try {
                 const response = await fetch('http://frankos-museum-backend.azurewebsites.net/footer');
-                setSocialMedias(await response.json());
+                getSocialMedias(await response.json());
             } catch (e) {
             }
         })();
