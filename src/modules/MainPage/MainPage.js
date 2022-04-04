@@ -14,7 +14,7 @@ import franko from '../../images/image 12.png'
 
 
 
-function MainPage() {    
+function MainPage() {
     let news = [
         {'title': 'Легенда про вічне життя', 'date': '12 Червня 2021'},
         {'title': 'Легенда про вічне життя', 'date': '12 Червня 2021'},
