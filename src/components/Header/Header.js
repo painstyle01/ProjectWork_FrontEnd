@@ -4,8 +4,8 @@ import MainTheme from '../../modules/themes/mainThemes'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import { Grid } from '@mui/material';
-import Group from '../../images/Group.jpg'
-import Vector from '../../images/Vector.jpg'
+import Group from '../../images/Group.png'
+import Vector from '../../images/Vector.png'
 
 
 
