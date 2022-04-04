@@ -73,7 +73,7 @@ function Footer() {
                                 return (
                                     <a className="linkIcon" href={item.link_partners}><InstagramIcon sx={{fontSize: '50px'}}/></a>
                             )}
-                            if (item.name_partners==='instagram'){
+                            if (item.name_partners==='youtube'){
                                 return (
                                     <a className="linkIcon" href={item.link_partners}><YouTubeIcon sx={{fontSize: '50px'}}/></a>
                             )}
