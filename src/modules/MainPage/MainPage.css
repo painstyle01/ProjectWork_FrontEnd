@@ -1,19 +1,32 @@
-.top{
-    background-image: url(../../images/16_Дім\ Франка_DJI_0694\ 1.png);
-    background-size: cover;
-    background-attachment: fixed;
-    z-index: -1;
-}
-
 .top_content{
     min-height: 25vw;
     width: 85%;
     color: white;
-    background-color: rgba(0, 0, 0, 0.6);
     font-style: normal;
     font-size: 18px;
     line-height: 28px;
     padding: 7.5%;
+}
+
+.mainBackground{
+    background-image: url(../../images/16_Дім\ Франка_DJI_0694\ 1.png);
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+    top: 8px;
+    left: 0.5%;
+    width: 99%;
+    position: absolute;
+    height: 1000px;
+}
+
+.mainBackground2{
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    top: 120px;
+    width: 100%;
+    position: absolute;
+    height: 1000px;
 }
 
 /* @import url(https://fonts.googleapis.com/css?family=Igra+Sans); */
