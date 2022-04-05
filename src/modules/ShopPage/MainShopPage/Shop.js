@@ -63,7 +63,6 @@ class Shop extends React.Component {
     render(){
         return(
                 <div className="container">
-                    <div style={{padding: '50px', textAlign: 'center'}}>Header</div>
                     <h2 className="m">Магазин</h2>
 
                     <Grid container spacing={1} className="menuLine">
