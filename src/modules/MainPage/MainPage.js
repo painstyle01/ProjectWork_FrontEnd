@@ -11,7 +11,7 @@ import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import family from '../../images/image 14.png'
 import room from '../../images/image 9.png'
 import franko from '../../images/image 12.png'
-import { useState, useEffect } from 'react';
+// import { useState, useEffect } from 'react';
 
 
 
