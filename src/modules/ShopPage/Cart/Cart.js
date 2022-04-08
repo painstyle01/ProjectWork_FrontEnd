@@ -53,7 +53,6 @@ function Cart(props){
                         )
                     })
                 }
-                
             </Grid>
             <div className="orderContainer">
                 <div className="totalPrice">

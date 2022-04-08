@@ -1,0 +1,57 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+.title{
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 61px;
+}
+
+.mainContainer{
+    margin-top: 50px;
+    margin-left: 450px;
+    margin-right: 450px;
+    text-align: center;
+}
+
+.inputs{
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+}
+
+.inputField{
+    font-family: 'Montserrat' !important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    line-height: 22px !important;
+    color: white !important;
+    width: 100% !important;
+    margin-top: 20px;
+    border-bottom: 2px solid grey;
+}
+
+.shippingTitle{
+    margin-top: 20px;
+    text-align: left !important;
+}
+
+.radio-buttons{
+    font-family: 'Montserrat' !important;
+    font-style: normal;
+    font-weight: 500 !important;
+    font-size: 20px !important;
+    line-height: 24px !important;
+}
+
+.sumbitButton{
+    margin-top: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 35px;
+    color: black !important;
+}

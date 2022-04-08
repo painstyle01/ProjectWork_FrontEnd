@@ -12,7 +12,6 @@ import {
 import VideoCategory from '../video/VideoCategory/VideoCategory';
 import AudioCategory from '../audio/AudioCategory/AudioCategory';
 
-
 function App() {
   return (
     <div>
