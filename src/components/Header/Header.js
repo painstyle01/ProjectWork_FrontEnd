@@ -9,7 +9,7 @@ import Vector2 from '../../images/Vector2.png'
 
 
 function Header() {
-    if (window.location.pathname=='/') {
+    if (window.location.pathname==='/') {
         return (
             <div className='GMenu'>
                 <Grid container spacing={0} backgroundColor='rgba(0,0,0,0.6)' height='120px'>

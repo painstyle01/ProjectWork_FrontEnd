@@ -84,7 +84,7 @@ function MainPage() {
                             return (
                                 <Grid item xs={12} sm={6} md={4}>
                                     <div>
-                                        <img src={newsImage} width="100%"></img>
+                                        <img src={newsImage} alt="" width="100%"></img>
                                         <Stack direction="row" spacing={1}>
                                             <Typography variant="body2" color="primary" style={{fontSize: '25px'}}>{item.title}</Typography>
                                             <ArrowForwardIcon style={{fontSize: '25px', marginTop: '10px', transform: 'rotate(-45deg)'}}/>
@@ -98,7 +98,7 @@ function MainPage() {
                     <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '25px 30px'}} />
                     <Grid container spacing={3}>
                         <Grid item sm={12} md={8}>
-                            <img src={family} width="100%" style={{minWidth: '397px'}}></img>
+                            <img src={family} alt="" width="100%" style={{minWidth: '397px'}}></img>
                         </Grid>
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
                             <Stack direction="row" spacing={2}>
@@ -118,7 +118,7 @@ function MainPage() {
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
                         </Grid>
                         <Grid item sm={12} md={8}>
-                            <img src={room} width="100%" style={{minWidth: '397px'}}></img>
+                            <img src={room} alt="" width="100%" style={{minWidth: '397px'}}></img>
                         </Grid>
                     </Grid>
                 </div>
@@ -139,7 +139,7 @@ function MainPage() {
                 <div className="bottom_content" style={{paddingTop: '30px'}}>
                     <Grid container spacing={3}>
                         <Grid item sm={12} md={8}>
-                            <img src={franko} width="100%" style={{minWidth: '397px'}}></img>
+                            <img src={franko} alt="" width="100%" style={{minWidth: '397px'}}></img>
                         </Grid>
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
                             <Stack direction="row" spacing={2}>
