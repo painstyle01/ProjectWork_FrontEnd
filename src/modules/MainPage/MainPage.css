@@ -8,6 +8,7 @@
 }
 
 .mainBackground{
+    background-image: url(../../images/16_Дім\ Франка_DJI_0694\ 1.png);
     background-size: cover;
     background-attachment: fixed;
     z-index: -1;
