@@ -23,22 +23,22 @@ function MainPage() {
         {'title': 'Легенда про вічне життя', 'date': '12 Червня 2021'}
     ]
 
-//     const [background, getBackground] = useState('https://www.google.com.ua/search?q=%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9%20%D1%84%D0%BE%D0%BD&tbm=isch&hl=ru&tbs=ic:gray%2Cisz:l&sa=X&ved=0CAIQpwVqFwoTCLDQqbGehfcCFQAAAAAdAAAAABAC&biw=1519&bih=754#imgrc=7ZwuXk2xgzwMTM');
+    // const [background, getBackground] = useState('https://www.google.com.ua/search?q=%D0%B1%D0%B5%D0%BB%D1%8B%D0%B9%20%D1%84%D0%BE%D0%BD&tbm=isch&hl=ru&tbs=ic:gray%2Cisz:l&sa=X&ved=0CAIQpwVqFwoTCLDQqbGehfcCFQAAAAAdAAAAABAC&biw=1519&bih=754#imgrc=7ZwuXk2xgzwMTM');
   
-//     useEffect(() => {
-//         (async () => {
-//             try {
-//                 const response = await fetch('http://frankos-museum-backend.azurewebsites.net');
-//                 getBackground('http://frankos-museum-backend.azurewebsites.net'+(await response.json())[0].backgrounds);
-//                 console.log(background)
-//             } catch (e) {
-//             }
-//         })();
-//     }, []);
+    // useEffect(() => {
+    //     (async () => {
+    //         try {
+    //             const response = await fetch('http://frankos-museum-backend.azurewebsites.net');
+    //             getBackground('http://frankos-museum-backend.azurewebsites.net'+(await response.json())[0].backgrounds);
+    //             console.log(background)
+    //         } catch (e) {
+    //         }
+    //     })();
+    // }, []);
 
     return (
         <div>
-//             <div className="mainBackground" style={{backgroundImage: "url("+background+")"}}>
+            {/* <div className="mainBackground" style={{backgroundImage: "url("+background+")"}}> */}
             <div className="mainBackground" style={{backgroundImage: "url(../../images/16_Дім\ Франка_DJI_0694\ 1.png)"}}>
                 {/* <video id="background-video" autoPlay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
                     <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"></source>
