@@ -39,7 +39,7 @@ function MainPage() {
     return (
         <div>
             {/* <div className="mainBackground" style={{backgroundImage: "url("+background+")"}}> */}
-            <div className="mainBackground" style={{backgroundImage: "url(../../images/16_Дім\ Франка_DJI_0694\ 1.png)"}}>
+            <div className="mainBackground">
                 {/* <video id="background-video" autoPlay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
                     <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"></source>
                     Your browser does not support the video tag.
