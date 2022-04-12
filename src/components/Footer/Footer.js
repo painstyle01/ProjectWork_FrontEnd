@@ -77,7 +77,7 @@ function Footer() {
             </Grid>
             <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
             {socialMedias.map(function(item) {
-                return(<a href={item.link_partners}><img src={'http://frankos-museum-backend.azurewebsites.net'+item.logotype} alt=""></img></a>)
+                return(<a href={item.link_partners} className="linkLogo"><img src={'http://frankos-museum-backend.azurewebsites.net'+item.logotype} alt=""></img></a>)
             })}
         </div>
     )

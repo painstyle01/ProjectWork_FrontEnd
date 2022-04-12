@@ -12,6 +12,10 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
+.linkLogo:hover{
+  opacity: 0.5;
+}
+
 @media (max-width: 600px){
   #pdtrm {float: left;}
 }
