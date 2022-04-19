@@ -13,13 +13,13 @@ import { useState, useEffect } from 'react';
 
 function Footer() {
 
-    const [socialMedias, getSocialMedias] = useState([]);
+    const [logos, getLogos] = useState([]);
   
     useEffect(() => {
         (async () => {
             try {
                 const response = await fetch('http://frankos-museum-backend.azurewebsites.net/footer');
-                getSocialMedias(await response.json());
+                getLogos(await response.json());
             } catch (e) {
             }
         })();
@@ -77,7 +77,7 @@ function Footer() {
             </Grid>
             <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
             <Stack direction="row" spacing={5}>
-                {socialMedias.map(function(item) {
+                {logos.map(function(item) {
                     return(<a href={item.link_partners} className="linkLogo"><img src={'http://frankos-museum-backend.azurewebsites.net'+item.logotype} alt=""></img></a>)
                 })}
             </Stack>
