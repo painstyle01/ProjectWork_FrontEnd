@@ -11,26 +11,40 @@ import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import family from '../../images/image 14.png'
 import room from '../../images/image 9.png'
 import franko from '../../images/image 12.png'
+import { useState, useEffect } from 'react';
 
 
 
 function MainPage() {
+    
     let news = [
         {'title': 'Легенда про вічне життя', 'date': '12 Червня 2021'},
         {'title': 'Легенда про вічне життя', 'date': '12 Червня 2021'},
         {'title': 'Легенда про вічне життя', 'date': '12 Червня 2021'}
     ]
-    
+
+    const [background, getBackground] = useState();
+  
+    useEffect(() => {
+        (async () => {
+            try {
+                const response = await fetch('http://frankos-museum-backend.azurewebsites.net');
+                getBackground('http://frankos-museum-backend.azurewebsites.net'+(await response.json())[0].backgrounds);
+            } catch (e) {
+            }
+        })();
+    }, []);
+
     return (
         <div>
-            <div className="mainBackground">
-                <div className="mainBackground2"></div>
-            </div>
-            <div>
+            <div className="mainBackground" style={{backgroundImage: "url("+background+")"}}>
                 {/* <video id="background-video" autoPlay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
                     <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"></source>
                     Your browser does not support the video tag.
                 </video> */}
+                <div className="mainBackground2"></div>
+            </div>            
+            <div>
                 <div className="top_content">
                     <div className="mainTitle">ДІМ ФРАНКА</div>
                     {/* <Typography variant="test" color="secondary">Дім Франка</Typography> */}
@@ -77,7 +91,8 @@ function MainPage() {
                                         <Typography variant="body2" color="primary" fontWeight={'bold'}>{item.date}</Typography>
                                     </div>
                                 </Grid>
-                            )})}
+                            )
+                        })}
                     </Grid>
                     <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '25px 30px'}} />
                     <Grid container spacing={3}>

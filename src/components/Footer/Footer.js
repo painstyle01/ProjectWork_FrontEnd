@@ -6,8 +6,6 @@ import Divider from '@mui/material/Divider';
 import Grid from '@mui/material/Grid'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import FacebookIcon from '@mui/icons-material/Facebook'
-import az from '../../images/logo2.png'
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import { useState, useEffect } from 'react';
 
@@ -15,13 +13,13 @@ import { useState, useEffect } from 'react';
 
 function Footer() {
 
-    const [socialMedias, getSocialMedias] = useState([]);
+    const [logos, getLogos] = useState([]);
   
     useEffect(() => {
         (async () => {
             try {
                 const response = await fetch('http://frankos-museum-backend.azurewebsites.net/footer');
-                getSocialMedias(await response.json());
+                getLogos(await response.json());
             } catch (e) {
             }
         })();
@@ -64,21 +62,8 @@ function Footer() {
                         Соцмережі
                     </Typography>
                     <Stack direction="row" spacing={2}>
-                        {socialMedias.map(function(item) {
-                            if (item.name_partners==='facebook'){
-                                return (
-                                    <a className="linkIcon" href={item.link_partners}><FacebookIcon sx={{fontSize: '50px'}}/></a>
-                                )}
-                            if (item.name_partners==='instagram'){
-                                return (
-                                    <a className="linkIcon" href={item.link_partners}><InstagramIcon sx={{fontSize: '50px'}}/></a>
-                            )}
-                            if (item.name_partners==='youtube'){
-                                return (
-                                    <a className="linkIcon" href={item.link_partners}><YouTubeIcon sx={{fontSize: '50px'}}/></a>
-                            )}
-                            return(null)
-                        })}
+                        <a className="linkIcon" href="https://www.instagram.com/dim_franka/"><InstagramIcon sx={{fontSize: '50px'}}/></a>
+                        <a className="linkIcon" href="https://www.youtube.com/channel/UC6UeOsivTNCowjVt3Hg5G0g"><YouTubeIcon sx={{fontSize: '50px'}}/></a>
                     </Stack>
                 </Grid>
                 <Grid item xs={12} sm={8} lg={4} sx={{alignSelf: 'center'}}>
@@ -91,7 +76,11 @@ function Footer() {
                 </Grid>
             </Grid>
             <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
-            <img src={az} alt=""></img>
+            <Stack direction="row" spacing={5}>
+                {logos.map(function(item) {
+                    return(<a href={item.link_partners} className="linkLogo"><img src={'http://frankos-museum-backend.azurewebsites.net'+item.logotype} alt=""></img></a>)
+                })}
+            </Stack>
         </div>
     )
 }
