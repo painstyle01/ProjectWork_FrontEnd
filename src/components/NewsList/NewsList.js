@@ -31,7 +31,7 @@ function NewsList(props) {
         (async () => {
             try {
                 const response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/news/');
-                console.log(await response.json());
+                getNews(await response.json());
             } catch (e) {
             }
         })();
