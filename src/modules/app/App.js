@@ -3,6 +3,7 @@ import {ThemeProvider} from '@mui/material/styles'
 import MainTheme from '../themes/mainThemes'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
+import ShopPage from '../ShopPage/MainShopPage/Shop'
 import MainPage from '../MainPage/MainPage'
 import AudioPage from '../audio/AudioPage/AudioPage'
 import VideoPage from '../video/VideoPage/VideoPage'
@@ -13,28 +14,38 @@ import {
 } from "react-router-dom";
 import VideoCategory from '../video/VideoCategory/VideoCategory';
 import AudioCategory from '../audio/AudioCategory/AudioCategory';
-
+import WatchVideo from '../video/WatchVideo/WatchVideo';
+import ListenAudio from '../audio/ListenAudio/ListenAudio'
 
 function App() {
   return (
-    <div className="background">
+    <div>
     <ThemeProvider theme={MainTheme}>
     <BrowserRouter>
       <Header/>
       <Routes>
-        <Route exact path="/" element={<MainPage />}/>
-        <Route exact path="/video" element={<VideoPage />}/>
+        <Route key={1} exact path="/" element={<MainPage/>}/>
+        <Route key={2} exact path="/shop" element={<ShopPage/>}/>
+        <Route key={3} exact path="/video" element={<VideoPage/>}/>
         {['/franko-vdoma', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
-        '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
-            <Route path={"/video"+path} element={<VideoCategory/>} />
+        '/frankustyka', '/podiyi-poza-seriyamy'].map((path) =>
+          <Route key={4} path={"/video"+path} element={<VideoCategory/>} />
         )}
-        <Route exact path="/audio" element={<AudioPage />}/>
+        {['/franko-vdoma', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
+        '/frankustyka', '/podiyi-poza-seriyamy'].map((path) =>
+          <Route key={5} path={"/video"+path+'/watch'} element={<WatchVideo/>} />
+        )}
+        <Route key={6} exact path="/audio" element={<AudioPage/>}/>
         {['/dim-poeta', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
-        '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
-            <Route path={"/audio"+path} element={<AudioCategory/>} />
+        '/frankustyka', '/podiyi-poza-seriyamy'].map((path) =>
+          <Route key={7} path={"/audio"+path} element={<AudioCategory/>} />
+        )}
+        {['/dim-poeta', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
+        '/frankustyka', '/podiyi-poza-seriyamy'].map((path) =>
+          <Route key={8} path={"/audio"+path+'/listen'} element={<ListenAudio/>} />
         )}
       </Routes>
-      <Footer/>
+      {<Footer/>}
     </BrowserRouter>
     </ThemeProvider>
     </div>

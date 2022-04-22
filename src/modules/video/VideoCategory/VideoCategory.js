@@ -1,58 +1,69 @@
 import React from 'react';
 import './VideoCategory.css';
-import Container from '@mui/material/Container'
-import ReactPlayer from 'react-player'
-import VAmenu from '../../../components/VAmenu/VAmenu'
-import axios from 'axios'
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid'
+import { useState, useEffect} from 'react';
+import Button from '@mui/material/Button';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Stack } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
-let links = ['franko-vdoma', 'miy-izmaragd', 'intelektualna-biografiya', 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
+function VideoCategory({}) {
+
+  let links = ['franko-vdoma', 'miy-izmaragd', 'intelektualna-biografiya', 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
 'frankustyka', 'podiyi-poza-seriyamy']
 
-let fullUrl = window.location.pathname
-let split = fullUrl.split('/')
-let thisPage = split[split.length-1]
-
-class VideoCategory extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      videos: []
-    }
-  }
-  getVideos = async () => {
-      // const { data } = await axios.get("/video/1");
-      const { data } = await axios.get("https://frankosmuseum.herokuapp.com/video/1");
-      this.setState({ videos: data })
-  }
-  componentDidMount() {
-      this.getVideos();
-  }
-
-  render() {
-    let page = this.videos.filter(video => video.link_video == links.indexOf(thisPage)+1)[0]
-    return (
-      <div style={{marginBlock: '100px'}}>
-        <VAmenu/>
-        <Container maxWidth="lg" style={{backgroundColor: 'white', padding: '50px'}}>
-        {page.videos.reverse().map(function(video) {
-          return (
-              <ReactPlayer
-              url={video.video_file}
-              controls>
-              </ReactPlayer>
-          )
-        })}
-        </Container>
-      </div>
-    )
+  const [category, getCategory] = useState([]);
     
-  }
-}
-
-
-VideoCategory.propTypes = {};
+  useEffect(() => {
+    (async () => {
+      try {
+        var response = await fetch('http://frankos-museum-backend.azurewebsites.net/video');
+        var categories = await response.json()
+        var fullUrl = window.location.pathname
+        var split = fullUrl.split('/')
+        var thisPage = split[split.length-1]
+        var category = categories.filter(category => category.id == links.indexOf(thisPage)+1)[0]
+        getCategory(category)
+      } catch (e) {
+      }
+    })();
+  }, []);
   
-VideoCategory.defaultProps = {};
+    return (
+      <div>
+        <div className="videoTopImage" style={{backgroundImage: "url("+'http://frankos-museum-backend.azurewebsites.net'+category.picture+")"}}>
+        </div>
+          <div className="videoTopImage2">
+            <Typography variant="h2" color="white" fontSize="80px" alignSelf='flex-end'>{category.title}</Typography>
+          </div>
+        <div style={{backgroundColor: 'white', padding: '7%'}}>
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <Typography variant="h4" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '20px'}}>
+                Опис
+              </Typography>
+              <Typography variant="body2" component="div" color='primary'>
+                {category.description}
+              </Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <img src={'http://frankos-museum-backend.azurewebsites.net'+category.picture} alt='' width='100%'></img>
+            </Grid>
+          </Grid>
+        </div>
+        <div style={{margin:'auto', width: '274px'}}>
+          <NavLink to={window.location.pathname+'/watch'}>
+            <Button className='openVideoListButton' variant="outlined">
+              <Stack direction="row" spacing={1} padding='10px 50px'>
+                <MenuIcon/>
+                <div style={{fontWeight: 'bold'}}>Список відео</div>
+              </Stack>
+            </Button>
+          </NavLink>
+        </div>
+      </div>
+    )    
+  }
 
 export default VideoCategory;

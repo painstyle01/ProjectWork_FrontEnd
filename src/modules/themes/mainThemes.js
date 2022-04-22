@@ -1,11 +1,11 @@
-import {createMuiTheme} from '@mui/material/styles'
+import {createTheme} from '@mui/material/styles'
 
 const palette = {
-  mainColor: '#ef7f16',
-  TextColor: '#ffffff',
+  mainColor: '#000',
+  TextColor: '#fff',
 }
 
-const MainTheme = createMuiTheme({
+const MainTheme = createTheme({
   palette: {
     primary: {
       main: palette.mainColor
@@ -16,7 +16,7 @@ const MainTheme = createMuiTheme({
   },
 
   typography:{
-    fontFamily: ['Lato', 'sans-serif'],
+    fontFamily: ['Montserrat'],
     h2:{
       fontFamily: ['Crimson Pro', 'serif'],
       lineHeight: '1.2',
@@ -32,7 +32,13 @@ const MainTheme = createMuiTheme({
     body1:{
       fontWeight: 'normal',
       lineHeight: 1.6
-    }
+    },
+    body2:{
+      fontFamily: ['Montserrat',"Helvetica Neue",'Helvetica','Arial'],
+      fontWeight: 'normal',
+      lineHeight: 1.6,
+      fontSize: '16px'
+    },
   },
   
     components: {
@@ -40,24 +46,16 @@ const MainTheme = createMuiTheme({
         styleOverrides: {
           root: {
             boxSizing: 'border-box',
-            letterSpacing: '3px',
-            textTransform: 'uppercase',
-            fontWeight: 1000,
+            textTransform: 'none',
             fontSize: '1rem',
             display: 'inline-block',
-            padding: '1rem 2.9rem',
             lineheight: 1,
             textalign: 'center',
             textdecoration: 'none',
             background: 'transparent',
             border: '2px solid',
-            borderColor: palette.mainColor,
             transition: 'background-color 0.2s ease',
-            borderRadius: '0px',
-            '&:hover': {
-              background: palette.mainColor,
-              color: palette.TextColor
-            }
+            borderRadius: '35px'
           },
         },
 

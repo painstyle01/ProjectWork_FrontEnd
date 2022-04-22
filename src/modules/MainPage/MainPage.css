@@ -1,0 +1,101 @@
+.top_content{
+    min-height: 25vw;
+    color: white;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 7.5%;
+}
+
+.mainBackground{
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    height: 1000px;
+}
+
+.mainBackground2{
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    top: 120px;
+    width: 100%;
+    position: absolute;
+    height: 1000px;
+}
+
+/* @import url(https://fonts.googleapis.com/css?family=Igra+Sans); */
+
+.mainTitle{
+    /* src: local(''),
+    url('../fonts/fonts/Igrasans.ttf') format('ttf');    font-family: 'Igra Sans'; */
+    /* src: local('Igra Sans'), local('IgraSans'), url('../fonts/fonts/Igrasans.woff2') format('woff2'), url('../fonts/fonts/Igrasans.woff') format('woff'), url('../fonts/fonts/Igrasans.ttf') format('truetype'); */
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Igra Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13vw;
+    line-height: 13vw;
+    text-align: center;
+}
+
+.middle{
+    background-color: #212121;
+}
+
+.middle_content{
+    height: 65vw;
+    color: white;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 7.5%;
+}
+
+.white_link, .white_link::after{
+    text-decoration: none;
+}
+
+.white_link:hover{
+  opacity: 0.5;
+}
+
+.bottom{
+    background-color: white;
+}
+
+.bottom_content{
+    min-height: 25vw;
+    color: black;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 5% 7.5% 6% 7.5%;
+}
+
+.bottom_grey_content{
+    color: black;
+    background-color: #f6f6f6;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 0 7.5%;
+}
+
+.b2{
+    background-color: white!important;
+    color: black!important;
+}
+
+#background-video{
+    width: 100%;
+    position: fixed;
+    z-index: -1;
+}
+
+#but{
+    padding: 0 20px;
+}

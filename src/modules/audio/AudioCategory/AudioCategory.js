@@ -1,61 +1,69 @@
 import React from 'react';
 import './AudioCategory.css';
-import Container from '@mui/material/Container'
-import VAmenu from '../../../components/VAmenu/VAmenu'
-import ReactAudioPlayer from 'react-audio-player';
-import axios from 'axios'
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid'
+import { useState, useEffect} from 'react';
+import Button from '@mui/material/Button';
+import MenuIcon from '@mui/icons-material/Menu';
+import { Stack } from '@mui/material';
+import { NavLink } from 'react-router-dom';
 
-let links = ['miy-franko', 'filosofski-snidanky', 'semper-tiro', 'intelektualna-biografiya', 'miy-izmaragd', 'dim-poeta',
-'frankustyka', 'podiyi-poza-seriyamy']
+function AudioCategory() {
 
-let fullUrl = window.location.pathname
-let split = fullUrl.split('/')
-let thisPage = split[split.length-1]
+  let links = ['miy-franko', 'filosofski-snidanky', 'semper-tiro', 'intelektualna-biografiya', 'miy-izmaragd', 'dim-poeta',
+  'frankustyka', 'podiyi-poza-seriyamy']
 
-class AudioCategory extends React.Component {
+  const [category, getCategory] = useState([]);
+    
+  useEffect(() => {
+    (async () => {
+      try {
+        var response = await fetch('http://frankos-museum-backend.azurewebsites.net/audio');
+        var categories = await response.json()
+        var fullUrl = window.location.pathname
+        var split = fullUrl.split('/')
+        var thisPage = split[split.length-1]
+        var category = categories.filter(category => category.id == links.indexOf(thisPage)+1)[0]
+        getCategory(category)
+      } catch (e) {
+      }
+    })();
+  }, []);
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      audios: []
-    }
-  }
-  getAudios = async () => {
-      // const { data } = await axios.get("/audio/1");
-      const { data } = await axios.get("https://frankosmuseum.herokuapp.com/audio/1");
-      this.setState({ audios: data })
-  }
-  componentDidMount() {
-      this.getAudios();
-  }
-
-  render() {
-    let page = this.audios.filter(audio => audio.link_audio == links.indexOf(thisPage)+1)[0]
     return (
-      <div style={{marginBlock: '100px'}}>
-        <VAmenu/>
-        <Container maxWidth="lg" style={{backgroundColor: 'white', padding: '50px'}}>
-        {page.audios.reverse().map(function(podcast) {
-          return (
-            <div style={{marginBlock: '50px'}}>
-              <h5>{podcast.title}</h5>
-              <h6>{podcast.subtitle}</h6>
-              <ReactAudioPlayer
-                src={podcast.audio_file}
-                controls
-              />
-            </div>
-          )
-        })}
-        </Container>
+      <div>
+        <div className="audioTopImage" style={{backgroundImage: "url("+'http://frankos-museum-backend.azurewebsites.net'+category.picture+")"}}>
+        </div>
+          <div className="audioTopImage2">
+            <Typography variant="h2" color="white" fontSize="80px" alignSelf='flex-end'>{category.title}</Typography>
+          </div>
+        <div style={{backgroundColor: 'white', padding: '7%'}}>
+          <Grid container spacing={2}>
+            <Grid item xs={6}>
+              <Typography variant="h4" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '20px'}}>
+                Опис
+              </Typography>
+              <Typography variant="body2" component="div" color='primary'>
+                {category.description}
+              </Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <img src={'http://frankos-museum-backend.azurewebsites.net'+category.picture} alt='' width='100%'></img>
+            </Grid>
+          </Grid>
+        </div>
+        <div style={{margin:'auto', width: '274px'}}>
+          <NavLink to={window.location.pathname+'/listen'}>
+            <Button className='openAudioListButton' variant="outlined">
+              <Stack direction="row" spacing={1} padding='10px 50px'>
+                <MenuIcon/>
+                <div style={{fontWeight: 'bold'}}>Список аудіо</div>
+              </Stack>
+            </Button>
+          </NavLink>
+        </div>
       </div>
     )
   }
-}
-
-
-AudioCategory.propTypes = {};
-  
-AudioCategory.defaultProps = {};
 
 export default AudioCategory;
