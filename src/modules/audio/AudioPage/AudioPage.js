@@ -31,7 +31,7 @@ function AudioPage() {
 
     return (
       <div style={{padding: '7%'}}>
-        <div style={{fontSize: '71px', lineHeight: '50px'}}>Аудіо</div>
+        <div style={{fontSize: '71px', lineHeight: '50px', fontWeight: 'bold'}}>Аудіо</div>
         <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '30px'}} />
         <Grid container spacing={3}>
           {categories.map(function(category) {
