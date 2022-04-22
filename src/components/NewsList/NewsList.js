@@ -2,6 +2,7 @@ import { React } from 'react'
 import './NewsList.css'
 import { Stack } from '@mui/material';
 import { useState, useEffect } from 'react';
+import DateObject from "react-date-object";
 
 function NewsList(props) {
 
@@ -40,9 +41,10 @@ function NewsList(props) {
     return (
         <Stack spacing={2} style={{border: '2px solid #c5c5c5', padding: '3vw 5vw', alignItems: 'center'}}>
             {filteredData.map(function(item) {
+                var date = new DateObject(item.date).format("DD.MM.YY");
                 return (
                     <a href={item.url} className='mauLinks'>
-                        <div>{item.id}. {item.source_name} ({item.date})</div>
+                        <div>{item.id}. {item.source_name} ({date})</div>
                     </a>
                 )
             })}
