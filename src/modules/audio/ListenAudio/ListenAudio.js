@@ -17,7 +17,7 @@ import ReactAudioPlayer from 'react-audio-player';
 
 function ListenAudio() {
 
-  let links = ['franko-vdoma', 'miy-izmaragd', 'intelektualna-biografiya', 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
+  let links = ['miy-franko', 'filosofski-snidanky', 'semper-tiro', 'intelektualna-biografiya', 'miy-izmaragd', 'dim-poeta',
   'frankustyka', 'podiyi-poza-seriyamy']
 
   const [category, getCategory] = useState([]);
@@ -41,10 +41,8 @@ function ListenAudio() {
         getCategory(cat)
         var response = await fetch('http://frankos-museum-backend.azurewebsites.net/audio/1');
         var allAudios = await (response.json())
-        console.log(allAudios)
         var currentAudios = allAudios.filter(audio => audio.link_audio == cat.id)
         getAudios(currentAudios)
-        console.log(allAudios)
       } catch (e) {
       }
     })();
@@ -61,8 +59,7 @@ function ListenAudio() {
         <div style={{fontSize: '60px', lineHeight: '60px', fontWeight: 'bold'}}>{selectedAudio.title}</div>
         <div style={{fontSize: '40px', lineHeight: '40px'}}>{selectedAudio.subtitle}</div>
           <ReactAudioPlayer
-            src={'http://streaming.tdiradio.com:8000/house.mp3'}
-            // src={'http://frankos-museum-backend.azurewebsites.net'+selectedAudio.audio_file}
+            src={'http://frankos-museum-backend.azurewebsites.net'+selectedAudio.audio_file}
             controls
             style={{width: '100%', alignSelf: 'center', marginTop: '30px'}}
           />
@@ -109,8 +106,7 @@ function ListenAudio() {
                         <div style={{fontSize: '20px', lineHeight: '20px', fontWeight: 'bold'}}>{audio.title}</div>
                         <p>{audio.subtitle}</p>
                         <ReactAudioPlayer
-                          src={'http://streaming.tdiradio.com:8000/house.mp3'}
-                          // src={'http://frankos-museum-backend.azurewebsites.net'+audio.audio_file}
+                          src={'http://frankos-museum-backend.azurewebsites.net'+audio.audio_file}
                           controls
                           style={{width: '100%', alignSelf: 'center'}}
                         />
