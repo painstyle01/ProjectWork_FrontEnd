@@ -25,24 +25,6 @@ function Footer() {
         })();
     }, []);
 
-    // const [something, getSomething] = useState([]);
-    
-    // useEffect(() => {
-    //     (async () => {
-    //         try {
-    //             var response = await fetch('http://frankos-museum-backend.azurewebsites.net/video');
-    //             console.log(await response.json());
-    //             var response = await fetch('http://frankos-museum-backend.azurewebsites.net/video/1');
-    //             console.log(await response.json());
-    //             var response = await fetch('http://frankos-museum-backend.azurewebsites.net/audio');
-    //             console.log(await response.json());
-    //             var response = await fetch('http://frankos-museum-backend.azurewebsites.net/audio/1');
-    //             console.log(await response.json());
-    //         } catch (e) {
-    //         }
-    //     })();
-    // }, []);
-
     return (
         <div className="footer">
             <Stack direction="row" spacing={2}>
