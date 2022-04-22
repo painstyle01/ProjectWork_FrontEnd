@@ -16,7 +16,7 @@ function NewsList(props) {
         }
     ]
 
-    const [news, getNews] = useState(myNews);
+    const [news, getNews] = useState([]);
 
     const filteredData = news.filter((el) => {
         if (props.input === '') {
@@ -26,13 +26,23 @@ function NewsList(props) {
             return el.title.toLowerCase().includes(props.input)
         }
     })
+  
+    useEffect(() => {
+        (async () => {
+            try {
+                const response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/news/');
+                console.log(await response.json());
+            } catch (e) {
+            }
+        })();
+    }, []);
 
     return (
         <Stack spacing={2} style={{border: '2px solid #c5c5c5', padding: '3vw 5vw', alignItems: 'center'}}>
             {filteredData.map(function(item) {
                 return (
-                    <a href={item.link} className='mauLinks'>
-                        <div>{item.id}. <b>{item.title}</b> {'\u2013'} {item.source} {item.date}</div>
+                    <a href={item.url} className='mauLinks'>
+                        <div>{item.id}. {item.source_name} ({item.date})</div>
                     </a>
                 )
             })}
