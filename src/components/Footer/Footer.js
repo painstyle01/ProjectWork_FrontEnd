@@ -28,7 +28,7 @@ function Footer() {
     return (
         <div className="footer">
             <Stack direction="row" spacing={2}>
-                <div style={{fontSize: '71px', lineHeight: '50px'}}>Спланувати візит</div>
+                <div style={{fontSize: '71px', lineHeight: '50px', fontWeight: 'bold'}}>Спланувати візит</div>
                 <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
             </Stack>
             <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
