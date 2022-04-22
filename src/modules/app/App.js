@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 import VideoCategory from '../video/VideoCategory/VideoCategory';
 import AudioCategory from '../audio/AudioCategory/AudioCategory';
+import MediaAboutUs from '../MediaAboutUs/MediaAboutUs'
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
         '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
             <Route key={6} path={"/audio"+path} element={<AudioCategory/>} />
         )}
+        <Route key={9} exact path="/media-about-us" element={<MediaAboutUs/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>
