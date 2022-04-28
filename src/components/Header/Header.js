@@ -43,7 +43,7 @@ function Header() {
                 }
             }
         })();
-      }, [pathname]);
+    }, [pathname]);
 
     return (
         <div className='GMenu'>
