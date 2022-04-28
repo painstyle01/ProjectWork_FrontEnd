@@ -1,6 +1,8 @@
 import './App.css';
 import {ThemeProvider} from '@mui/material/styles'
 import MainTheme from '../themes/mainThemes'
+import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
 import ShopPage from '../ShopPage/MainShopPage/Shop'
 import MainPage from '../MainPage/MainPage'
 import AudioPage from '../audio/AudioPage/AudioPage'
@@ -12,13 +14,14 @@ import {
 } from "react-router-dom";
 import VideoCategory from '../video/VideoCategory/VideoCategory';
 import AudioCategory from '../audio/AudioCategory/AudioCategory';
+import MediaAboutUs from '../MediaAboutUs/MediaAboutUs'
 
 function App() {
   return (
     <div>
     <ThemeProvider theme={MainTheme}>
     <BrowserRouter>
-      <Header/>
+      {<Header/>}
       <Routes>
         <Route key={1} exact path="/" element={<MainPage/>}/>
         <Route key={2} exact path="/shop" element={<ShopPage/>}/>
@@ -32,8 +35,9 @@ function App() {
         '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
             <Route key={6} path={"/audio"+path} element={<AudioCategory/>} />
         )}
+        <Route key={9} exact path="/media-about-us" element={<MediaAboutUs/>}/>
       </Routes>
-      {/* <Footer/> */}
+      {<Footer/>}
     </BrowserRouter>
     </ThemeProvider>
     </div>

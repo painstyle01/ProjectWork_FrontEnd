@@ -25,7 +25,6 @@ class ProductPage extends React.Component {
     render() {
         return(
             <Container fixed>
-              <div style={{marginBottom: '100px', textAlign: 'center'}}>HEADER</div>
               <Grid container spacing={3}>
                 <Grid item md={5}>
                     <Grid container spacing={2}>

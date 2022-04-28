@@ -1,0 +1,39 @@
+import React from 'react';
+import './MediaAboutUs.css';
+import Grid from '@mui/material/Grid'
+import { useState, useEffect } from 'react';
+import TextField from "@mui/material/TextField";
+import NewsList from "../../components/NewsList/NewsList";
+
+function MediaAboutUs() {
+    
+    const [inputText, setInputText] = useState("");
+    let inputHandler = (e) => {
+        var lowerCase = e.target.value.toLowerCase();
+        setInputText(lowerCase);
+    };
+
+    return (
+        <div style={{padding: '0 7% 7% 7%'}}>
+            <Grid container>
+                <Grid item xs={0} sm={2}></Grid>
+                    <Grid item xs={12} sm={8}>
+                        <div style={{fontSize: '71px', lineHeight: '50px', margin: 'auto', width: '450px',
+                        paddingBottom: '50px', fontWeight: 'bold'}}>ЗМІ про нас</div>
+                        <TextField
+                        id="outlined-basic"
+                        onChange={inputHandler}
+                        variant="standard"
+                        fullWidth
+                        label="Пошук"
+                        style={{marginBottom: '30px'}}
+                        />
+                        <NewsList input={inputText} />
+                    </Grid>
+                <Grid item xs={0} sm={2}></Grid>
+            </Grid>
+        </div>
+    )
+}
+
+export default MediaAboutUs;
