@@ -21,7 +21,7 @@ function Header() {
 
     useEffect(() => {
         (async () => {
-            if (window.location.pathname=='/') {
+            if (pathname=='/') {
                 setBackgroundColor('rgba(0,0,0,0.6)')
                 setImage1(Group2)
                 setImage2(Vector2)
@@ -29,7 +29,7 @@ function Header() {
                 setTextColor('secondary')
             }
             else{
-                if (window.location.pathname.match(/video\/[^\/]+$/)!=null) {
+                if (pathname.match(/video\/[^\/]+$/)!=null || pathname.match(/audio\/[^\/]+$/)!=null ) {
                     setBackgroundColor('rgba(28,28,28,0.5)')
                     setImage1(Group2)
                     setImage2(Vector2)
