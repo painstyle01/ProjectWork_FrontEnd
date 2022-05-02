@@ -2,13 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Grid from '@mui/material/Grid'
 import './Cart.css'
 import DeleteIcon from '@mui/icons-material/Delete';
-
-fetch('http://frankos-museum-backend.azurewebsites.net/api/products/')
-        .then(response => response.json())
-        .then(data =>(localStorage.setItem('myCart', JSON.stringify(data))));
+import {Link} from 'react-router-dom'
 
 function Cart(props){
-    const [myCart, setMyCart] = useState(JSON.parse(localStorage.getItem('myCart')))
+    const [myCart, setMyCart] = useState(JSON.parse(localStorage.getItem('Cart')))
     let [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(() => {
@@ -28,8 +25,8 @@ function Cart(props){
                   newCart.push(myCart[i]);
               }
           }
-          localStorage.setItem('myCart', JSON.stringify(newCart))
-          setMyCart(JSON.parse(localStorage.getItem('myCart')))
+          localStorage.setItem('Cart', JSON.stringify(newCart))
+          setMyCart(JSON.parse(localStorage.getItem('Cart')))
       }
 
     return(
@@ -39,7 +36,7 @@ function Cart(props){
                 {
                     myCart.map((element) => {
                         return(
-                            <Grid container spacing={4} className="productCard">
+                            <Grid container spacing={4} className="CartproductCard">
                                 <Grid item xs={2}>
                                     <img className="productImage" src={element.url_to_photo} alt="not found"/>
                                 </Grid>
@@ -58,10 +55,11 @@ function Cart(props){
                 <div className="totalPrice">
                     До оплати: {totalPrice} грн
                 </div>  
-
-                <div className="orderButton">
-                    Оформити замовлення
-                </div>
+                <Link to = "/order">
+                    <div className="orderButton">
+                            Оформити замовлення
+                    </div>
+                </Link>
             </div>
                 
         </div>

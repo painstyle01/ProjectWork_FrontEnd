@@ -1,10 +1,8 @@
 import React from 'react';
 import './Shop.css';
 import Grid from '@mui/material/Grid'
-// import {BrowserRouter as
-//     Route, Routes, Link, Router
-//   } from 'react-router-dom';
-//import productPage from '../ProductPage/ProductPage'
+import {Link} from 'react-router-dom'
+
 
 let Temporarydata = 
     {
@@ -53,21 +51,23 @@ class Shop extends React.Component {
                     <Grid container spacing={6}>
                     {this.state.products.map((object) => {
                         return( 
-                                <Grid item xs={2} 
-                                    className="productCard"
-                                    onClick = {() => this.GetOneProduct(object)}
-                                    key = {object.id}
-                                    >
-                                    <div className="productimage"><img src={object.url_to_photo} alt="not found"></img></div>
-                                    <span className="productTitle">{object.name}</span>
-                                    <p className="productPrice">{object.price}</p>
-                                </Grid>
+                                
+                                    <Grid item xs={2} 
+                                        className="productCard"
+                                        onClick = {() => this.GetOneProduct(object)}
+                                        key = {object.id}
+                                        >
+                                        <Link to={"/products/"+object.id}>
+                                        <div className="productimage"><img src={object.url_to_photo} alt="not found"></img></div>
+                                        <span className="Title">{object.name}</span>
+                                        <p className="Price">{object.price} грн</p>
+                                        </Link>
+                                    </Grid>
+                                
                         )
-                    })}  
+                    })}     
                     </Grid>
-                    {/* <Routes>
-                        <Route path="/products" element={<productPage/>}/>
-                    </Routes> */}
+                    
                 </div>
         )
     }

@@ -34,7 +34,8 @@ function Order(props){
     }
 
     return(
-        <div className="mainContainer">
+        <div className="mainOrderContainer">
+        <div className="OrderContainer">
             <h1 className="title">Оформлення замовлення:</h1>
             <div className="inputs">
                 <Input id="name" placeholder="Ваше ім'я" color="secondary" className="inputField"/>
@@ -60,6 +61,7 @@ function Order(props){
                 <Input id="adress" placeholder="Адреса доставки" color="secondary" className="inputField"/>
                 <div className="sumbitButton" onClick={sendInfo}>Підтвердити Замовлення</div>
             </div>
+        </div>
         </div>
     )
 }

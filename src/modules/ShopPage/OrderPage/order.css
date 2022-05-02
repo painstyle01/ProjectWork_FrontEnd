@@ -1,19 +1,19 @@
-body{
-    background-color: black;
-    color: white;
-}
-
 .title{
     font-weight: 600;
     font-size: 50px;
     line-height: 61px;
 }
 
-.mainContainer{
+.OrderContainer{
     margin-top: 50px;
     margin-left: 450px;
     margin-right: 450px;
     text-align: center;
+}
+
+.mainOrderContainer{
+    background-color: black;
+    color: white;
 }
 
 .inputs{

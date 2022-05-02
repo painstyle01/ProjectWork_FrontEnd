@@ -1,37 +1,31 @@
 import './App.css';
 import {ThemeProvider} from '@mui/material/styles'
 import MainTheme from '../themes/mainThemes'
-import MainPage from '../MainPage/MainPage'
-import AudioPage from '../audio/AudioPage/AudioPage'
-import VideoPage from '../video/VideoPage/VideoPage'
-import {
-  Routes,
-  Route,
-  BrowserRouter
-} from "react-router-dom";
-import VideoCategory from '../video/VideoCategory/VideoCategory';
-import AudioCategory from '../audio/AudioCategory/AudioCategory';
+import { BrowserRouter } from 'react-router-dom'
+import {Routes, Route, Link} from 'react-router-dom'
+import ProductPage from '../ShopPage/ProductPage/ProductPage'
+import Shop from '../ShopPage/MainShopPage/Shop'
+import Cart from '../ShopPage/Cart/Cart'
+import Order from '../ShopPage/OrderPage/order'
+
 
 function App() {
   return (
     <div>
-    <ThemeProvider theme={MainTheme}>
       <BrowserRouter>
+        <ThemeProvider theme={MainTheme}>
+          
+            <Link to="/shop">To Shop </Link>
+            <Link to="/cart">To Cart </Link>
+        </ThemeProvider>
+
         <Routes>
-          <Route exact path="/" element={<MainPage />}/>
-          <Route exact path="/video" element={<VideoPage />}/>
-          {['/franko-vdoma', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
-          '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
-              <Route path={"/video"+path} element={<VideoCategory/>} />
-          )}
-            <Route exact path="/audio" element={<AudioPage />}/>
-          {['/dim-poeta', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
-          '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
-              <Route path={"/audio"+path} element={<AudioCategory/>} />
-          )}
+          <Route path='/products/:id' element={<ProductPage/>} />
+          <Route path='/shop' element={<Shop/>} />
+          <Route path='/cart' element={<Cart/>} />
+          <Route path='/order' element={<Order/>} />
         </Routes>
       </BrowserRouter>
-    </ThemeProvider>
     </div>  
   )
 }
