@@ -1,7 +1,7 @@
 import React from 'react';
 import './MediaAboutUs.css';
 import Grid from '@mui/material/Grid'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import TextField from "@mui/material/TextField";
 import NewsList from "../../components/NewsList/NewsList";
 

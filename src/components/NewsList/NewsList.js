@@ -6,17 +6,6 @@ import DateObject from "react-date-object";
 
 function NewsList(props) {
 
-    let myNews = [
-        {
-            'id': 1, 'title': 'Дім Франка тісніше співпрацюватиме з УКУ', 'link': 'http://fromatoz.dimfranka.lviv.ua/',
-            'source': 'Еспресо. Захід.', 'date': '26.02'
-        },
-        {
-            'id': 2, 'title': 'Іван Франко та Агатангел Кримський: дві галактики', 'link': 'http://fromatoz.dimfranka.lviv.ua/',
-            'source': 'Збруч.', 'date': '26.02'
-        }
-    ]
-
     const [news, getNews] = useState([]);
 
     const filteredData = news.filter((el) => {
