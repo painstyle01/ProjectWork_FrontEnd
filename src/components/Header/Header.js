@@ -283,7 +283,7 @@ function Header() {
                                     TransitionComponent={Fade}
                                 >
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Команда" : "The team"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Контакти" : "Contacts"}</MenuItem>
+                                    <NavLink to={'/contact'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Контакти" : "Contacts"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Для преси" : "For press"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Допомога" : "Help"}</MenuItem>
                                 </Menu>
