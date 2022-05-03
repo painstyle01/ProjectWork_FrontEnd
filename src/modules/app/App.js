@@ -16,13 +16,16 @@ import VideoCategory from '../video/VideoCategory/VideoCategory';
 import AudioCategory from '../audio/AudioCategory/AudioCategory';
 import WatchVideo from '../video/WatchVideo/WatchVideo';
 import ListenAudio from '../audio/ListenAudio/ListenAudio'
+import MediaAboutUs from '../MediaAboutUs/MediaAboutUs'
+import Contact from '../../components/Contact/Contact'
+import Support from '../../components/Support/Support'
 
 function App() {
   return (
     <div>
     <ThemeProvider theme={MainTheme}>
     <BrowserRouter>
-      <Header/>
+      {<Header/>}
       <Routes>
         <Route key={1} exact path="/" element={<MainPage/>}/>
         <Route key={2} exact path="/shop" element={<ShopPage/>}/>
@@ -44,6 +47,9 @@ function App() {
         '/frankustyka', '/podiyi-poza-seriyamy'].map((path) =>
           <Route key={8} path={"/audio"+path+'/listen'} element={<ListenAudio/>} />
         )}
+        <Route key={9} exact path="/media-about-us" element={<MediaAboutUs/>}/>
+        <Route key={10} exact path="/contact" element={<Contact/>}/>
+        <Route key={11} exact path="/support" element={<Support/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>

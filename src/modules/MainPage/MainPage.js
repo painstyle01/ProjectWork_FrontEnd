@@ -84,7 +84,7 @@ function MainPage() {
                                 <Grid item xs={12} sm={6} md={4}>
                                     <div>
                                         <img src={newsImage} alt="" width="100%"></img>
-                                        <Stack direction="row" spacing={1}>
+                                        <Stack direction="row" spacing={1} marginTop='10px'>
                                             <Typography variant="body2" color="primary" style={{fontSize: '25px'}}>{item.title}</Typography>
                                             <ArrowForwardIcon style={{fontSize: '25px', marginTop: '10px', transform: 'rotate(-45deg)'}}/>
                                         </Stack>
