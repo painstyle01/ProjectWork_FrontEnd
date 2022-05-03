@@ -14,6 +14,8 @@ import {
 } from "react-router-dom";
 import VideoCategory from '../video/VideoCategory/VideoCategory';
 import AudioCategory from '../audio/AudioCategory/AudioCategory';
+import WatchVideo from '../video/WatchVideo/WatchVideo';
+import ListenAudio from '../audio/ListenAudio/ListenAudio'
 import MediaAboutUs from '../MediaAboutUs/MediaAboutUs'
 import Contact from '../../components/Contact/Contact'
 import Support from '../../components/Support/Support'
@@ -29,13 +31,21 @@ function App() {
         <Route key={2} exact path="/shop" element={<ShopPage/>}/>
         <Route key={3} exact path="/video" element={<VideoPage/>}/>
         {['/franko-vdoma', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
-        '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
-            <Route key={4} path={"/video"+path} element={<VideoCategory/>} />
+        '/frankustyka', '/podiyi-poza-seriyamy'].map((path) =>
+          <Route key={4} path={"/video"+path} element={<VideoCategory/>} />
         )}
-        <Route key={5} exact path="/audio" element={<AudioPage/>}/>
+        {['/franko-vdoma', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
+        '/frankustyka', '/podiyi-poza-seriyamy'].map((path) =>
+          <Route key={5} path={"/video"+path+'/watch'} element={<WatchVideo/>} />
+        )}
+        <Route key={6} exact path="/audio" element={<AudioPage/>}/>
         {['/dim-poeta', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
-        '/frankustyka', '/podiyi-poza-seriyamy'].map((path) => 
-            <Route key={6} path={"/audio"+path} element={<AudioCategory/>} />
+        '/frankustyka', '/podiyi-poza-seriyamy'].map((path) =>
+          <Route key={7} path={"/audio"+path} element={<AudioCategory/>} />
+        )}
+        {['/dim-poeta', '/miy-izmaragd', '/intelektualna-biografiya', '/filosofski-snidanky', '/semper-tiro', '/miy-franko',
+        '/frankustyka', '/podiyi-poza-seriyamy'].map((path) =>
+          <Route key={8} path={"/audio"+path+'/listen'} element={<ListenAudio/>} />
         )}
         <Route key={9} exact path="/media-about-us" element={<MediaAboutUs/>}/>
         <Route key={10} exact path="/contact" element={<Contact/>}/>
