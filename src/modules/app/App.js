@@ -15,6 +15,8 @@ import {
 import VideoCategory from '../video/VideoCategory/VideoCategory';
 import AudioCategory from '../audio/AudioCategory/AudioCategory';
 import MediaAboutUs from '../MediaAboutUs/MediaAboutUs'
+import Contact from '../../components/Contact/Contact'
+import Support from '../../components/Support/Support'
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
             <Route key={6} path={"/audio"+path} element={<AudioCategory/>} />
         )}
         <Route key={9} exact path="/media-about-us" element={<MediaAboutUs/>}/>
+        <Route key={10} exact path="/contact" element={<Contact/>}/>
+        <Route key={11} exact path="/support" element={<Support/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>

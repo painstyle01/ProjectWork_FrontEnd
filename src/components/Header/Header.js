@@ -41,17 +41,17 @@ function Header() {
     const { pathname } = useLocation();
 
     const handleClick = (event) => {
-        if (event.currentTarget.id == "button1") {
+        if (event.currentTarget.id === "button1") {
             setAnchorEl(event.currentTarget);
-        } else if (event.currentTarget.id == "button2") {
+        } else if (event.currentTarget.id === "button2") {
             setAnchorE2(event.currentTarget);
-        } else if (event.currentTarget.id == "button3") {
+        } else if (event.currentTarget.id === "button3") {
             setAnchorE3(event.currentTarget);
-        } else if (event.currentTarget.id == "button4") {
+        } else if (event.currentTarget.id === "button4") {
             setAnchorE4(event.currentTarget);
-        } else if (event.currentTarget.id == "button5") {
+        } else if (event.currentTarget.id === "button5") {
             setAnchorE5(event.currentTarget);
-        } else if (event.currentTarget.id == "button6") {
+        } else if (event.currentTarget.id === "button6") {
             setPreviousSectionId(currentSectionId)
             setCurrentSectionId(event.currentTarget.id)
         }
@@ -73,10 +73,10 @@ function Header() {
         setAnchorE4(null);
         setAnchorE5(null);
         setPreviousSectionId(currentSectionId)
-        if(event.target.parentNode.parentNode.parentNode.id!=''){
+        if(event.target.parentNode.parentNode.parentNode.id!==''){
             setCurrentSectionId(event.target.parentNode.parentNode.parentNode.id.replace('menu', 'button'))
         }
-        else if(event.target.parentNode.parentNode.parentNode.parentNode.id!=''){
+        else if(event.target.parentNode.parentNode.parentNode.parentNode.id!==''){
             setCurrentSectionId(event.target.parentNode.parentNode.parentNode.parentNode.id.replace('menu', 'button'))
         }
         else{
@@ -86,7 +86,7 @@ function Header() {
 
     useEffect(() => {
         (async () => {
-            if (pathname=='/') {
+            if (pathname==='/') {
                 setBackgroundColor('rgba(0,0,0,0.6)')
                 setImage1(Group2)
                 setImage2(Vector2)
@@ -95,7 +95,7 @@ function Header() {
                 setButtonTextColor('buttonMenu2')
             }
             else{
-                if (pathname.match(/video\/[^\/]+$/)!=null || pathname.match(/audio\/[^\/]+$/)!=null ) {
+                if (pathname.match(/video\/[^\/]+$/)!==null || pathname.match(/audio\/[^\/]+$/)!==null ) {
                     setBackgroundColor('rgba(28,28,28,0.5)')
                     setImage1(Group2)
                     setImage2(Vector2)
@@ -110,11 +110,11 @@ function Header() {
                     setButtonTextColor('buttonMenu')
                 }
             }
-            if(previousSectionId!=''){
+            if(previousSectionId!==''){
                 var previousSection = document.getElementById(previousSectionId);
                 previousSection.style.backgroundColor='rgba(0,0,0,0)'
             }
-            if(currentSectionId!=''){
+            if(currentSectionId!==''){
                 var currentSection = document.getElementById(currentSectionId);
                 currentSection.style.backgroundColor='rgba(0,0,0,0.5)'
             }
@@ -142,7 +142,7 @@ function Header() {
                                     onClick={handleClick}
                                     style={{border: 'none', borderRadius: 0, height: '100%', width: '100%'}}
                                 >
-                                {lang=="uk" ? "Музей" : "Museum"}
+                                {lang==="uk" ? "Музей" : "Museum"}
                                 </Button>
                                 <Menu
                                     id="menu1"
@@ -154,13 +154,13 @@ function Header() {
                                     onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Про музей" : "About the museum"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Актуальні новини" : "Current news"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Спланувати візит" : "Plan a visit"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Експозиція" : "Exposition"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Проекти" : "Projects"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Архів подій" : "Event archive"}</MenuItem>
-                                    <NavLink to={'/media-about-us'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang=="uk" ? "ЗМІ про нас" : "Media about us"}</MenuItem></NavLink>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Про музей" : "About the museum"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Актуальні новини" : "Current news"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Спланувати візит" : "Plan a visit"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Експозиція" : "Exposition"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Проекти" : "Projects"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Архів подій" : "Event archive"}</MenuItem>
+                                    <NavLink to={'/media-about-us'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "ЗМІ про нас" : "Media about us"}</MenuItem></NavLink>
                                 </Menu>
                             </Typography>
                         </Grid>  
@@ -175,7 +175,7 @@ function Header() {
                                     onClick={handleClick}
                                     style={{border: 'none', borderRadius: 0, height: '100%', width: '100%'}}
                                 >
-                                {lang=="uk" ? "Онлайн" : "Online"}
+                                {lang==="uk" ? "Онлайн" : "Online"}
                                 </Button>
                                 <Menu
                                     id="menu2"
@@ -187,12 +187,12 @@ function Header() {
                                     onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Віртуальний тур" : "Virtual tour"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Онлайн колекція" : "Online collection"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Каталог бібліотеки" : "Library catalogue"}</MenuItem>
-                                    <NavLink to={'/video'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang=="uk" ? "Відео" : "Video"}</MenuItem></NavLink>
-                                    <NavLink to={'/audio'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang=="uk" ? "Аудіо" : "Audio"}</MenuItem></NavLink>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Ігри" : "Games"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Віртуальний тур" : "Virtual tour"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Онлайн колекція" : "Online collection"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Каталог бібліотеки" : "Library catalogue"}</MenuItem>
+                                    <NavLink to={'/video'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Відео" : "Video"}</MenuItem></NavLink>
+                                    <NavLink to={'/audio'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Аудіо" : "Audio"}</MenuItem></NavLink>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Ігри" : "Games"}</MenuItem>
                                 </Menu>
                             </Typography>
                         </Grid>
@@ -207,7 +207,7 @@ function Header() {
                                     onClick={handleClick}
                                     style={{border: 'none', borderRadius: 0, height: '100%', width: '100%'}}
                                 >
-                                {lang=="uk" ? "Іван Франко" : "Ivan Franko"}
+                                {lang==="uk" ? "Іван Франко" : "Ivan Franko"}
                                 </Button>
                                 <Menu
                                     id="menu3"
@@ -219,12 +219,12 @@ function Header() {
                                     onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Хто такий Франко?" : "Who Franko is?"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Історія Дому" : "The house's history"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Франчата" : "Franchilds"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Франко наживо" : "Franko in person"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Франко від А до Я" : "Franko from A to Z"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "TimeLine" : "TimeLine"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Хто такий Франко?" : "Who Franko is?"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Історія Дому" : "The house's history"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франчата" : "Franchilds"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франко наживо" : "Franko in person"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франко від А до Я" : "Franko from A to Z"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "TimeLine" : "TimeLine"}</MenuItem>
                                 </Menu>
                             </Typography>
                         </Grid>
@@ -239,7 +239,7 @@ function Header() {
                                     onClick={handleClick}
                                     style={{border: 'none', borderRadius: 0, height: '100%', width: '100%'}}
                                 >
-                                {lang=="uk" ? "Освіта" : "Edu\u00ADcation"}
+                                {lang==="uk" ? "Освіта" : "Edu\u00ADcation"}
                                 </Button>
                                 <Menu
                                     id="menu4"
@@ -251,9 +251,9 @@ function Header() {
                                     onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Екскурсії" : "Excursions"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Освітні програми" : "Educational programs"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Програми" : "Programs"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Екскурсії" : "Excursions"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Освітні програми" : "Educational programs"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Програми" : "Programs"}</MenuItem>
                                 </Menu>
                             </Typography>
                         </Grid>
@@ -268,7 +268,7 @@ function Header() {
                                     onClick={handleClick}
                                     style={{border: 'none', borderRadius: 0, height: '100%', width: '100%'}}
                                 >
-                                {lang=="uk" ? "Про нас" : "About us"}
+                                {lang==="uk" ? "Про нас" : "About us"}
                                 </Button>
                                 <Menu
                                     id="menu5"
@@ -280,10 +280,10 @@ function Header() {
                                     onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Команда" : "The team"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Контакти" : "Contacts"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Для преси" : "For press"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang=="uk" ? "Допомога" : "Help"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Команда" : "The team"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Контакти" : "Contacts"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Для преси" : "For press"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Допомога" : "Help"}</MenuItem>
                                 </Menu>
                             </Typography>
                         </Grid>
@@ -296,7 +296,7 @@ function Header() {
                                     onClick={handleClick}
                                     style={{border: 'none', borderRadius: 0, height: '100%', width: '100%'}}
                                 >
-                                {lang=="uk" ? "Крам\u00ADниця" : "Shop"}
+                                {lang==="uk" ? "Крам\u00ADниця" : "Shop"}
                                 </Button>
                                 </NavLink>
                             </Typography>
