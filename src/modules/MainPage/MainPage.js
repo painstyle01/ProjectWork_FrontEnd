@@ -12,6 +12,7 @@ import family from '../../images/image 14.png'
 import room from '../../images/image 9.png'
 import franko from '../../images/image 12.png'
 import { useState, useEffect } from 'react';
+import {NavLink} from "react-router-dom";
 
 
 
@@ -38,24 +39,23 @@ function MainPage() {
     return (
         <div>
             <div className="mainBackground" style={{backgroundImage: "url("+background+")"}}>
-                {/* <video id="background-video" autoPlay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
-                    <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"></source>
-                    Your browser does not support the video tag.
-                </video> */}
                 <div className="mainBackground2"></div>
             </div>            
             <div>
                 <div className="top_content">
                     <div className="mainTitle">ДІМ ФРАНКА</div>
-                    {/* <Typography variant="test" color="secondary">Дім Франка</Typography> */}
                     <Typography variant="body2" color="secondary" marginBlock={'30px'} sx={{textAlign: 'center'}}>Ласкаво просимо до музею Франка!</Typography>
                     <Stack direction="row" spacing={2} sx={{width: '100%', justifyContent: 'center'}}>
-                    <Button variant="text" color="secondary" id='but'>
-                        Підтримай нас
-                    </Button>
-                    <Button variant="text" color="secondary" id='but' className='b2'>
-                        Спланувати візит
-                    </Button>
+                        <NavLink to={'/support'}>
+                            <Button variant="text" color="secondary" id='but'>
+                                Підтримай нас
+                            </Button>
+                        </NavLink>
+                        <NavLink to={'/contact'}>
+                            <Button variant="text" color="secondary" id='but' className='b2'>
+                                Спланувати візит
+                            </Button>
+                        </NavLink>
                     </Stack>
                 </div>
             </div>
@@ -129,7 +129,9 @@ function MainPage() {
                         <Grid item sm={12} md={6}>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
                             <Stack direction="row" spacing={2} sx={{marginBottom: '20px'}}>
-                                <Typography variant="body2" color="primary" fontWeight={'bold'} marginTop={'20px'} style={{fontSize: '20px', textDecoration: 'underline'}}>Пожертвування</Typography>
+                                <NavLink to={'/support'}>
+                                    <Typography variant="body2" color="primary" fontWeight={'bold'}marginTop={'20px'} style={{fontSize: '20px', textDecoration: 'underline'}}>Пожертвування</Typography>
+                                </NavLink>
                                 <ArrowForwardIcon style={{fontSize: '25px', marginTop: '25px', transform: 'rotate(-45deg)'}}/>
                             </Stack>
                         </Grid>
