@@ -18,16 +18,18 @@ function VideoCategory() {
   useEffect(() => {
     (async () => {
       try {
+        /*eslint no-useless-concat: "error"*/
         var response = await fetch('http://frankos-museum-backend.azurewebsites.net/video');
         var categories = await response.json()
         var fullUrl = window.location.pathname
         var split = fullUrl.split('/')
         var thisPage = split[split.length-1]
-        var category = categories.filter(category => category.id == links.indexOf(thisPage)+1)[0]
+        var category = categories.filter(category => category.id === links.indexOf(thisPage)+1)[0]
         getCategory(category)
       } catch (e) {
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
     return (

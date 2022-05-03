@@ -19,6 +19,7 @@ function ListenAudio() {
   let links = ['miy-franko', 'filosofski-snidanky', 'semper-tiro', 'intelektualna-biografiya', 'miy-izmaragd', 'dim-poeta',
   'frankustyka', 'podiyi-poza-seriyamy']
 
+  /*eslint no-unused-vars: "error"*/
   const [category, getCategory] = useState([]);
   const [audios, getAudios] = useState([]);
   const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Миколою Ільницьким', audio_file: '/media/audio/my_franko.mp3', link_audio: 1});
@@ -27,24 +28,27 @@ function ListenAudio() {
   useEffect(() => {
     (async () => {
       try {
-        var response = await fetch('http://frankos-museum-backend.azurewebsites.net/audio');
-        var categories = await response.json()
+        var response1 = await fetch('http://frankos-museum-backend.azurewebsites.net/audio');
+        var categories = await response1.json()
         var url = window.location.pathname
         var thisPage = ''
         links.map(function(link){
-          if((url.search(link))!=-1){
-            thisPage = link
+          if((url.search(link))!==-1){
+            return(
+              thisPage = link
+            )
           }
         })
-        var cat = categories.filter(c => c.id == links.indexOf(thisPage)+1)[0]
+        var cat = categories.filter(c => c.id === links.indexOf(thisPage)+1)[0]
         getCategory(cat)
-        var response = await fetch('http://frankos-museum-backend.azurewebsites.net/audio/1');
-        var allAudios = await (response.json())
-        var currentAudios = allAudios.filter(audio => audio.link_audio == cat.id)
+        var response2 = await fetch('http://frankos-museum-backend.azurewebsites.net/audio/1');
+        var allAudios = await (response2.json())
+        var currentAudios = allAudios.filter(audio => audio.link_audio === cat.id)
         getAudios(currentAudios)
       } catch (e) {
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [open, setOpen] = React.useState(true);
