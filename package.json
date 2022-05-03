@@ -19,7 +19,7 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "^4.0.3",
     "react-player": "2.10.0",
-    "react-date-object": "7.24.0",
+    "react-date-object": "2.1.5",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
