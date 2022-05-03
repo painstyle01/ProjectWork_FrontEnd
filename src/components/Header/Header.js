@@ -95,6 +95,7 @@ function Header() {
                 setButtonTextColor('buttonMenu2')
             }
             else{
+                // eslint-disable-next-line
                 if (pathname.match(/video\/[^\/]+$/)!==null || pathname.match(/audio\/[^\/]+$/)!==null ) {
                     setBackgroundColor('rgba(28,28,28,0.5)')
                     setImage1(Group2)
@@ -119,6 +120,7 @@ function Header() {
                 currentSection.style.backgroundColor='rgba(0,0,0,0.5)'
             }
         })();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [pathname, currentSectionId]);
 
     return (
