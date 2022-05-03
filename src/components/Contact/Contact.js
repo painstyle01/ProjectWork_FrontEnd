@@ -1,10 +1,10 @@
 import './Contact.css'
 import Button from '@mui/material/Button'
 import { Grid } from '@mui/material';
-import timeC from '../img/timeC.png'
-import locationC from '../img/locationC.png'
-import contactC from '../img/contactC.png'
-import arrivalC from '../img/arrivalC.png'
+import timeC from '../../img/timeC.png'
+import locationC from '../../img/locationC.png'
+import contactC from '../../img/contactC.png'
+import arrivalC from '../../img/arrivalC.png'
 
 function Contact() {
     return (
