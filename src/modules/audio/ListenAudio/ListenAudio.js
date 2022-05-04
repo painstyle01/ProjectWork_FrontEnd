@@ -36,6 +36,9 @@ function ListenAudio() {
               thisPage = link
             )
           }
+          else{
+            return(0)
+          }
         })
         var category = categories.filter(c => c.id === links.indexOf(thisPage)+1)[0]
         var response2 = await fetch('http://frankos-museum-backend.azurewebsites.net/audio/1');

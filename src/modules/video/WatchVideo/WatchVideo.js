@@ -36,6 +36,9 @@ function WatchVideo() {
               thisPage = link
             )
           }
+          else{
+            return(0)
+          }
         })
         var category = categories.filter(c => c.id === links.indexOf(thisPage)+1)[0]
         var response2 = await fetch('http://frankos-museum-backend.azurewebsites.net/video/1');
@@ -45,6 +48,7 @@ function WatchVideo() {
       } catch (e) {
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [open, setOpen] = React.useState(true);
