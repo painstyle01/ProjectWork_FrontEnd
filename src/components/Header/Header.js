@@ -223,7 +223,7 @@ function Header() {
                                 >
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Хто такий Франко?" : "Who Franko is?"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Історія Дому" : "The house's history"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франчата" : "Franchilds"}</MenuItem>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франчата" : "Franchildren"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франко наживо" : "Franko in person"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франко від А до Я" : "Franko from A to Z"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "TimeLine" : "TimeLine"}</MenuItem>
