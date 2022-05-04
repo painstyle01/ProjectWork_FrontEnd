@@ -29,9 +29,7 @@ function MainPage() {
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch('http://frankos-museum-backend.azurewebsites.net', {headers: {
-                    "Content-Security-Policy": "upgrade-insecure-requests"
-                }});
+                const response = await fetch('http://frankos-museum-backend.azurewebsites.net');
                 getBackground('http://frankos-museum-backend.azurewebsites.net'+(await response.json())[0].backgrounds);
             } catch (e) {
             }
