@@ -34,7 +34,7 @@ function VideoCategory() {
   
     return (
       <div>
-        <div className="videoTopImage" style={{backgroundImage: "url("+'http://frankos-museum-backend.azurewebsites.net'+category.picture+")"}}>
+        <div className="videoTopImage" style={{backgroundImage: `url(http://frankos-museum-backend.azurewebsites.net${category.picture})`}}>
         </div>
           <div className="videoTopImage2">
             <Typography variant="h2" color="white" fontSize="80px" alignSelf='flex-end'>{category.title}</Typography>

@@ -34,7 +34,7 @@ function AudioCategory() {
 
     return (
       <div>
-        <div className="audioTopImage" style={{backgroundImage: "url("+'http://frankos-museum-backend.azurewebsites.net'+category.picture+")"}}>
+        <div className="audioTopImage" style={{backgroundImage: `url(http://frankos-museum-backend.azurewebsites.net${category.picture})`}}>
         </div>
           <div className="audioTopImage2">
             <Typography variant="h2" color="white" fontSize="80px" alignSelf='flex-end'>{category.title}</Typography>
