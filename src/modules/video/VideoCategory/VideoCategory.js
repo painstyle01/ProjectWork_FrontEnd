@@ -18,7 +18,6 @@ function VideoCategory() {
   useEffect(() => {
     (async () => {
       try {
-        /*eslint no-useless-concat: "error"*/
         var response = await fetch('http://frankos-museum-backend.azurewebsites.net/video');
         var categories = await response.json()
         var fullUrl = window.location.pathname
