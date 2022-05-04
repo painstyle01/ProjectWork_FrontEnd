@@ -19,8 +19,6 @@ function ListenAudio() {
   let links = ['miy-franko', 'filosofski-snidanky', 'semper-tiro', 'intelektualna-biografiya', 'miy-izmaragd', 'dim-poeta',
   'frankustyka', 'podiyi-poza-seriyamy']
 
-  /*eslint no-unused-vars: "error"*/
-  const [category, getCategory] = useState([]);
   const [audios, getAudios] = useState([]);
   const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Миколою Ільницьким', audio_file: '/media/audio/my_franko.mp3', link_audio: 1});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/listen')[0]);
@@ -39,11 +37,10 @@ function ListenAudio() {
             )
           }
         })
-        var cat = categories.filter(c => c.id === links.indexOf(thisPage)+1)[0]
-        getCategory(cat)
+        var category = categories.filter(c => c.id === links.indexOf(thisPage)+1)[0]
         var response2 = await fetch('http://frankos-museum-backend.azurewebsites.net/audio/1');
         var allAudios = await (response2.json())
-        var currentAudios = allAudios.filter(audio => audio.link_audio === cat.id)
+        var currentAudios = allAudios.filter(audio => audio.link_audio === category.id)
         getAudios(currentAudios)
       } catch (e) {
       }

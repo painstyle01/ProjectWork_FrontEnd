@@ -19,8 +19,6 @@ function WatchVideo() {
   let links = ['franko-vdoma', 'miy-izmaragd', 'intelektualna-biografiya', 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
 'frankustyka', 'podiyi-poza-seriyamy']
 
-  /*eslint no-unused-vars: "error"*/
-  const [category, getCategory] = useState([]);
   const [videos, getVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState({id: 1, title: 'Яке улюблене вино Івана Франка? Франко вдома #1', video_file: null, youtube_link: 'https://www.youtube.com/watch?v=EOf0R9lj3dU&feature=emb_title', link_video: 1});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/watch')[0]);
@@ -39,11 +37,10 @@ function WatchVideo() {
             )
           }
         })
-        var cat = categories.filter(c => c.id === links.indexOf(thisPage)+1)[0]
-        getCategory(cat)
+        var category = categories.filter(c => c.id === links.indexOf(thisPage)+1)[0]
         var response2 = await fetch('http://frankos-museum-backend.azurewebsites.net/video/1');
         var allVideos = await (response2.json())
-        var currentVideos = allVideos.filter(video => video.link_video === cat.id)
+        var currentVideos = allVideos.filter(video => video.link_video === category.id)
         getVideos(currentVideos)
       } catch (e) {
       }
