@@ -19,6 +19,7 @@ import ListenAudio from '../audio/ListenAudio/ListenAudio'
 import MediaAboutUs from '../MediaAboutUs/MediaAboutUs'
 import Contact from '../../components/Contact/Contact'
 import Support from '../../components/Support/Support'
+import ThreeDTour from '../3DTour/3DTour'
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route key={9} exact path="/media-about-us" element={<MediaAboutUs/>}/>
         <Route key={10} exact path="/contact" element={<Contact/>}/>
         <Route key={11} exact path="/support" element={<Support/>}/>
+        <Route key={12} exact path="/3Dtour" element={<ThreeDTour/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>
