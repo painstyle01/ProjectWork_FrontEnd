@@ -86,10 +86,9 @@ function Header() {
 
     useEffect(() => {
         (async () => {
-            if (pathname==='/') {
+            if (pathname==='/' || pathname==='/3Dtour') {
                 setBackgroundColor('rgba(0,0,0,0.6)')
                 setImage1(Group2)
-                setImage2(Vector2)
                 setImage2(Vector2)
                 setTextColor('secondary')
                 setButtonTextColor('buttonMenu2')
@@ -189,7 +188,7 @@ function Header() {
                                     onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Віртуальний тур" : "Virtual tour"}</MenuItem>
+                                    <NavLink to={'/3Dtour'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Віртуальний тур" : "Virtual tour"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Онлайн колекція" : "Online collection"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Каталог бібліотеки" : "Library catalogue"}</MenuItem>
                                     <NavLink to={'/video'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Відео" : "Video"}</MenuItem></NavLink>

@@ -1,0 +1,75 @@
+.threeDTourСontent{
+    min-height: 25vw;
+    color: white;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    padding: 7.5%;
+    justify-content: center;
+}
+
+.threeDTourBackground{
+    background-image: url('../../images/dimfranka2.png');
+    background-size: cover;
+    background-attachment: fixed;
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    height: 1000px;
+}
+
+.threeDTourBackground2{
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+    top: 120px;
+    width: 100%;
+    position: absolute;
+    height: 1000px;
+}
+
+.threeDTourTitle{
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Igra Sans';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 5vw;
+    line-height: 5vw;
+    text-align: center;
+    width: 600px;
+    align-self: center;
+}
+
+iframe {
+    margin: auto;
+    display: block;
+}
+
+@media (max-width: 669px){
+    iframe {
+        width: 400px;
+        height: 300px;
+    }
+}
+
+@media (min-width: 670px) and (max-width: 869px){
+    iframe {
+        width: 600px;
+        height: 450px;
+    }
+}
+
+@media (min-width: 870px) and (max-width: 1269px){
+    iframe {
+        width: 800px;
+        height: 600px;
+    }
+}
+
+@media (min-width: 1270px){
+    iframe {
+        width: 1200px;
+        height: 800px;
+    }
+}
