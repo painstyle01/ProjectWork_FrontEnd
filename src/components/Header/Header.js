@@ -115,8 +115,14 @@ function Header() {
                 previousSection.style.backgroundColor='rgba(0,0,0,0)'
             }
             if(currentSectionId!==''){
-                var currentSection = document.getElementById(currentSectionId);
-                currentSection.style.backgroundColor='rgba(0,0,0,0.5)'
+                if (pathname==='/support') {
+                    var previousSection = document.getElementById(currentSectionId);
+                    previousSection.style.backgroundColor='rgba(0,0,0,0)'
+                }
+                else{
+                    var currentSection = document.getElementById(currentSectionId);
+                    currentSection.style.backgroundColor='rgba(0,0,0,0.5)'
+                }
             }
         })();
         // eslint-disable-next-line react-hooks/exhaustive-deps
