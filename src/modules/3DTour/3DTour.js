@@ -5,7 +5,6 @@ import Typography from '@mui/material/Typography'
 import { Stack } from '@mui/material';
 import { Box } from '@mui/material';
 import Dialog from '@mui/material/Dialog';
-import DialogContent from '@mui/material/DialogContent';
 
 
 
@@ -49,7 +48,7 @@ function ThreeDTour() {
                   PaperProps={{
                     elevation: 0
                   }}
-                ><iframe src="https://www.google.com/maps/embed?pb=!4v1651694835721!6m8!1m7!1sCAoSLEFGMVFpcE9nTTRabzR3MmJyYmVmSGFaZmNLSGhxbmx3SHJ1NjhOSTM0Z2hX!2m2!1d49.8222018032935!2d24.03152789814749!3f78.41!4f-10.170000000000002!5f0.7820865974627469" width="800" height="600" style={{border: 0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                ><iframe title="title" src="https://www.google.com/maps/embed?pb=!4v1651694835721!6m8!1m7!1sCAoSLEFGMVFpcE9nTTRabzR3MmJyYmVmSGFaZmNLSGhxbmx3SHJ1NjhOSTM0Z2hX!2m2!1d49.8222018032935!2d24.03152789814749!3f78.41!4f-10.170000000000002!5f0.7820865974627469" width="800" height="600" style={{border: 0}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </Dialog>
         </div>
     )
