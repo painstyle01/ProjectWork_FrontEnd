@@ -116,7 +116,7 @@ function Header() {
             }
             if(currentSectionId!==''){
                 if (pathname==='/support') {
-                    var previousSection = document.getElementById(currentSectionId);
+                    previousSection = document.getElementById(currentSectionId);
                     previousSection.style.backgroundColor='rgba(0,0,0,0)'
                 }
                 else{
