@@ -28,12 +28,10 @@ function Footer() {
 
     return (
         <div className="footer">
-            <NavLink to={'/contact'} className="menuNavLink">
-                <Stack direction="row" spacing={2}>
-                    <div style={{fontSize: '71px', lineHeight: '50px', fontWeight: 'bold'}}>Спланувати візит</div>
-                    <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
-                </Stack>
-            </NavLink>
+            <Stack direction="row" spacing={2}>
+                <div style={{fontSize: '71px', lineHeight: '50px', fontWeight: 'bold'}}>Спланувати візит</div>
+                <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
+            </Stack>
             <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={4} lg={2} sx={{color: 'black'}}>

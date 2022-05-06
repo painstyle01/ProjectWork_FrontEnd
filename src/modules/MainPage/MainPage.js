@@ -51,11 +51,9 @@ function MainPage() {
                                 Підтримай нас
                             </Button>
                         </NavLink>
-                        <NavLink to={'/contact'}>
-                            <Button variant="text" color="secondary" id='but' className='b2'>
-                                Спланувати візит
-                            </Button>
-                        </NavLink>
+                        <Button variant="text" color="secondary" id='but' className='b2'>
+                            Спланувати візит
+                        </Button>
                     </Stack>
                 </div>
             </div>
