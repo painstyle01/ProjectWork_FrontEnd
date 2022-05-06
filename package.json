@@ -2,8 +2,8 @@
   "name": "museum",
   "version": "0.1.0",
   "private": true,
-  "engines": { 
-   "node": "16.10.0" 
+  "engines": {
+    "node": "16.10.0"
   },
   "dependencies": {
     "@emotion/react": "^11.6.0",
@@ -14,17 +14,17 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "react": "^17.0.2",
+    "react-audio-player": "^0.17.0",
+    "react-date-object": "2.1.5",
     "react-dom": "^17.0.2",
     "react-location": "^3.3.0",
+    "react-player": "2.10.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "^4.0.3",
-    "react-player": "2.10.0",
-    "react-date-object": "2.1.5",
-    "react-audio-player": "^0.17.0",
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
