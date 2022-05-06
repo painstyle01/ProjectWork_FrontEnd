@@ -113,7 +113,7 @@ function Support() {
                                 <div className='another' id='anotherContainer'>
                                     <div className='line'></div>
                                     <div id='money3'>
-                                        <p style={{"margin": "16px 0 0 0"}}>Моя сума пожертви :</p>
+                                        <p style={{"margin": "16px 0 0 0"}}>Моя сума пожертви:</p>
                                         <p className='money2'>
                                             <TextField  id="money2"
                                                         defaultValue={"0"}
@@ -124,7 +124,7 @@ function Support() {
                                     </div>
                                     <div className='line1'></div>
                                 </div>
-                                <div className='boxS2'>Залиши інформаціяю про себе, щоб ми могли подякувати тобі за втою підтримку</div>
+                                <div className='boxS2'>Залиши інформацію про себе, щоб ми могли подякувати тобі за твою підтримку</div>
                                 <TextField id="name" className='textF' label="Ваше ім'я" variant="standard" />
                                 <TextField id="mail" className='textF' label="Ваш E-mail " variant="standard" />
                                 <TextField id="phone" className='textF' label="Ваш номер телфону (необов’язково)" variant="standard" />
