@@ -20,6 +20,9 @@ import MediaAboutUs from '../MediaAboutUs/MediaAboutUs'
 import Contact from '../../components/Contact/Contact'
 import Support from '../../components/Support/Support'
 import ThreeDTour from '../3DTour/3DTour'
+import Product from '../ShopPage/ProductPage/ProductPage'
+import Cart from '../ShopPage/Cart/Cart'
+import Order from '../ShopPage/OrderPage/order'
 
 function App() {
   return (
@@ -52,6 +55,9 @@ function App() {
         <Route key={10} exact path="/contact" element={<Contact/>}/>
         <Route key={11} exact path="/support" element={<Support/>}/>
         <Route key={12} exact path="/3Dtour" element={<ThreeDTour/>}/>
+        <Route key={13} exact path="/products/:id" element={<Product/>}/>
+        <Route key={14} exact path="/cart" element={<Cart/>}/>
+        <Route key={15} exact path="/order" element={<Order/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>
