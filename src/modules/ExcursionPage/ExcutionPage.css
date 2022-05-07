@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.mainContainer{
+    margin-left: 300px;
+    margin-right: 300px;
+}
+*{
+    font-family: 'Montserrat';
+    font-style: normal;
+}
+
+.excurtionTitle{
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 64px;
+    padding-bottom: 10px;
+    border-bottom: 5px solid #000000;
+    margin-bottom: 20px;
+}
+
+.excurtionDescription{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #303030;
+}
+
+.excurtionPhoto{
+    margin-left: 40px;
+    width: 90%;
+}
+
+.servicesTitle{
+    font-weight: 400 !important;
+    font-size: 64px !important;
+    line-height: 64px;
+    border-bottom: 4px solid #1C1C1C;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.servicesObjects{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.servicesTitle{
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 37px;
+}

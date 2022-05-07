@@ -258,7 +258,7 @@ function Header() {
                                     onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Екскурсії" : "Excursions"}</MenuItem>
+                                    <NavLink to={'/excursion'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Екскурсії" : "Excursions"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Освітні програми" : "Educational programs"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Програми" : "Programs"}</MenuItem>
                                 </Menu>
@@ -287,7 +287,8 @@ function Header() {
                                     onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Команда" : "The team"}</MenuItem>
+
+                                    <NavLink to={'/team'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Команда" : "Team"}</MenuItem></NavLink>
                                     <NavLink to={'/contact'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Контакти" : "Contacts"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Для преси" : "For press"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Допомога" : "Help"}</MenuItem>

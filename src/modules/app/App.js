@@ -23,6 +23,8 @@ import ThreeDTour from '../3DTour/3DTour'
 import Product from '../ShopPage/ProductPage/ProductPage'
 import Cart from '../ShopPage/Cart/Cart'
 import Order from '../ShopPage/OrderPage/order'
+import Team from '../TeamPage/TeamPage'
+import Excursion from '../ExcursionPage/ExcursionPage'
 
 function App() {
   return (
@@ -58,6 +60,8 @@ function App() {
         <Route key={13} exact path="/products/:id" element={<Product/>}/>
         <Route key={14} exact path="/cart" element={<Cart/>}/>
         <Route key={15} exact path="/order" element={<Order/>}/>
+        <Route key={16} exact path="/team" element={<Team/>}/>
+        <Route key={17} exact path="/excursion" element={<Excursion/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>
