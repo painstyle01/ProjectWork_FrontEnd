@@ -87,7 +87,7 @@ function Contact() {
                 </div>
                 <div className='mapC'>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2574.0763133836685!2d24.029390614636565!3d49.822230879393565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473ae7f574262733%3A0x747c1f490c13827e!2z0JvRjNCy0L7QstGB0LrQuNC5INC90LDRhtC40L7QvdCw0LvRjNC90YvQuSDQu9C40YLQtdGA0LDRgtGD0YDQvdC-LdC80LXQvNC-0YDQuNCw0LvRjNC90YvQuSDQvNGD0LfQtdC5INCY0LLQsNC90LAg0KTRgNCw0L3QutC-!5e0!3m2!1sru!2sua!4v1651228788518!5m2!1sru!2sua" 
-                    width="951" 
+                    width="851" 
                     height="550" 
                     allowfullscreen="" 
                     loading="lazy" 
