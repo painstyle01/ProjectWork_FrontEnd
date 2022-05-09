@@ -126,9 +126,9 @@ function MainPage() {
                         </Grid>
                         <Grid item sm={12} md={6}>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
-                            <NavLink to={'/support'}>
+                            <NavLink to={'/support'} className="menuNavLink">
                                 <Stack direction="row" spacing={2} sx={{marginBottom: '20px'}}>
-                                    <Typography variant="body2" color="primary" fontWeight={'bold'}marginTop={'20px'} style={{fontSize: '20px', textDecoration: 'underline'}}>Пожертвування</Typography>
+                                    <Typography variant="body2" color="primary" fontWeight={'bold'} marginTop={'20px'} style={{fontSize: '20px', textDecoration: 'underline'}}>Пожертвування</Typography>
                                     <ArrowForwardIcon style={{fontSize: '25px', marginTop: '25px', transform: 'rotate(-45deg)'}}/>
                                 </Stack>
                             </NavLink>
