@@ -72,8 +72,8 @@ function MainPage() {
             <div className="bottom">
                 <div className="bottom_content" style={{paddingBottom: '0'}}>
                     <Stack direction="row" spacing={2}>
-                        <div style={{fontSize: '71px', lineHeight: '50px', fontWeight: 'bold'}}>Останні новини</div>
-                        <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
+                        <div style={{fontSize: '71px', lineHeight: '71px', fontWeight: 'bold'}}>Останні новини</div>
+                        <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
                     </Stack>
                     <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '15px 30px'}} />
                     <Grid container spacing={3}>
@@ -99,8 +99,8 @@ function MainPage() {
                         </Grid>
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
                             <Stack direction="row" spacing={2}>
-                                <div style={{fontSize: '71px', lineHeight: '50px', marginBottom: '50px', fontWeight: 'bold'}}>Історія</div>
-                                <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
+                                <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Історія</div>
+                                <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
                             </Stack>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
                         </Grid>
@@ -109,8 +109,8 @@ function MainPage() {
                     <Grid container spacing={3}>
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
                             <Stack direction="row" spacing={2}>
-                                <div style={{fontSize: '71px', lineHeight: '50px', marginBottom: '50px', fontWeight: 'bold'}}>Колекції</div>
-                                <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
+                                <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Колекції</div>
+                                <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
                             </Stack>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
                         </Grid>
@@ -122,7 +122,7 @@ function MainPage() {
                 <div className="bottom_grey_content">
                     <Grid container spacing={3} sx={{alignSelf: 'center', marginTop: '25px', paddingBlock: '50px'}}>
                         <Grid item sm={12} md={6}>
-                            <div style={{fontSize: '71px', lineHeight: '50px', marginTop: '20px'}}>Підтримай нас</div>
+                            <div style={{fontSize: '71px', lineHeight: '71px', marginTop: '20px', fontWeight: 'bold'}}>Підтримай нас</div>
                         </Grid>
                         <Grid item sm={12} md={6}>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
@@ -143,7 +143,7 @@ function MainPage() {
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
                             <Stack direction="row" spacing={2}>
                                 <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Наші програми</div>
-                                <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
+                                <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
                             </Stack>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
                         </Grid>
