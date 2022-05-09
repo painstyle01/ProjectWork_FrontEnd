@@ -2,9 +2,7 @@ import './Support.css'
 import Button from '@mui/material/Button'
 import { Grid } from '@mui/material';
 import TextField from '@mui/material/TextField';
-import { render } from '@testing-library/react';
 import React from "react";
-import { Payment } from '@mui/icons-material';
 
 function Support() {
     var donationValue = 0;
@@ -51,7 +49,7 @@ function Support() {
         };
 
         fetch('https://frankos-museum-backend.azurewebsites.net/api/donate', requestOptions)
-            .then(response => {if (response.status == 200) {return response.text();} else {throw new Error();}})
+            .then(response => {if (response.status === 200) {return response.text();} else {throw new Error();}})
             .then(data => {
                 document.getElementById("payButton").style.setProperty("background-color", "white", "important");
                 document.getElementById("payButton").innerHTML = data;
