@@ -13,7 +13,7 @@ function Cart(props){
         myCart.map((e) => price += e.price)
         setTotalPrice(price)
         // eslint-disable-next-line react-hooks/exhaustive-deps
-      });
+      }, []);
 
       function Delete(e){
           e.preventDefault()

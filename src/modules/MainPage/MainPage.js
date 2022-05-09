@@ -142,7 +142,7 @@ function MainPage() {
                         </Grid>
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
                             <Stack direction="row" spacing={2}>
-                                <div style={{fontSize: '71px', lineHeight: '50px', marginBottom: '50px', fontWeight: 'bold'}}>Наші програми</div>
+                                <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Наші програми</div>
                                 <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
                             </Stack>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
