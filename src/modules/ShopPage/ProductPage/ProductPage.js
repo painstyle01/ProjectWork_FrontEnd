@@ -3,7 +3,6 @@ import Grid from '@mui/material/Grid'
 import './ProductPage.css'
 import { Button } from '@mui/material';
 import { useParams } from 'react-router-dom';
-import {UseEffect} from 'react'
 import {Link} from 'react-router-dom'
 
 function ProductPage(Product){
@@ -14,7 +13,7 @@ function ProductPage(Product){
 
     let product;
     products.map((e) => {
-        if(e.id==productId) product = e;
+        if(e.id===productId) return(product = e);
         else return false;
     })
 
@@ -33,6 +32,8 @@ function ProductPage(Product){
             localStorage.setItem('Cart', JSON.stringify(currentCart))
         }
     }
+
+    console.log(currentPhoto, PhotoChange)
 
 
 

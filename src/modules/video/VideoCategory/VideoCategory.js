@@ -7,13 +7,16 @@ import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Stack } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-function VideoCategory() {
+function VideoCategory(thisPage) {
 
   let links = ['franko-vdoma', 'miy-izmaragd', 'intelektualna-biografiya', 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
 'frankustyka', 'podiyi-poza-seriyamy']
 
   const [category, getCategory] = useState([]);
+  const page = useParams()
+  console.log(page)
     
   useEffect(() => {
     (async () => {

@@ -2,6 +2,7 @@ import './Support.css'
 import Button from '@mui/material/Button'
 import { Grid } from '@mui/material';
 import TextField from '@mui/material/TextField';
+import React from "react";
 
 function Support() {
     var donationValue = 0;
@@ -40,10 +41,25 @@ function Support() {
         console.log("phone: " + phone);
         console.log("comment: " + comment);
         console.log("amount: " + donationValue);
+
+        const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ "money": donationValue })
+        };
+
+        fetch('https://frankos-museum-backend.azurewebsites.net/api/donate', requestOptions)
+            .then(response => {if (response.status === 200) {return response.text();} else {throw new Error();}})
+            .then(data => {
+                document.getElementById("payButton").style.setProperty("background-color", "white", "important");
+                document.getElementById("payButton").innerHTML = data;
+            })
+            .catch(error => {console.log("Data required")})
+
     };
 
     return (
-        <div className='supportWin'>
+        <div className='supportWin' id='supportWin'>
             <Grid container spacing={0}>
                 <Grid item xs={3}></Grid>
                 <Grid item xs={6} id='menuN'>
@@ -131,6 +147,7 @@ function Support() {
                                 <TextField id="comment" className='textF' label="Коментар (необов’язково)" variant="standard" />
                                 <Button
                                     className='buttonM2'
+                                    id='payButton'
                                     onClick={confirmBtn}
                                 >
                                 Зробити пожертву

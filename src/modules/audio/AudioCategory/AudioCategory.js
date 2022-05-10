@@ -7,13 +7,16 @@ import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Stack } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-function AudioCategory() {
+function AudioCategory(thisPage) {
 
   let links = ['miy-franko', 'filosofski-snidanky', 'semper-tiro', 'intelektualna-biografiya', 'miy-izmaragd', 'dim-poeta',
   'frankustyka', 'podiyi-poza-seriyamy']
 
   const [category, getCategory] = useState([]);
+  const page = useParams()
+  console.log(page)
     
   useEffect(() => {
     (async () => {

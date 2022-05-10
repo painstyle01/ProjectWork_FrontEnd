@@ -1,8 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Input from '@mui/material/Input'
 import './order.css'
-import FormControl from '@mui/material/FormControl'
-import FormLabel from '@mui/material/FormLabel'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import RadioGroup from '@mui/material/RadioGroup'
 import Radio from '@mui/material/Radio'
@@ -18,7 +16,7 @@ function Order(props){
        const shipping = document.querySelector('input[name="radio-buttons-group"]:checked').value;
        const adress = document.getElementById('adress').value
 
-       if(name!=""&&email!=""&&adress!=""&&phone!=""){
+       if(name!==""&&email!==""&&adress!==""&&phone!==""){
            const order = {
            name: name,
            email: email,
@@ -27,6 +25,7 @@ function Order(props){
            shipping: shipping,
            adress: adress
            }
+           console.log(order)
        }
        else{
            alert("Будь ласка, заповніть усі необхідні поля")
