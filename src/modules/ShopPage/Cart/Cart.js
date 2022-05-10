@@ -12,7 +12,6 @@ function Cart(props){
         let price = 0
         myCart.map((e) => price += e.price)
         setTotalPrice(price)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
       }, []);
 
       function Delete(e){

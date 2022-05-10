@@ -24,7 +24,6 @@ function ListenAudio(thisPage) {
   const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Миколою Ільницьким', audio_file: '/media/audio/my_franko.mp3', link_audio: 1});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/listen')[0]);
   const page = useParams()
-  console.log(page)
 
   useEffect(() => {
     (async () => {

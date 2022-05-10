@@ -13,7 +13,7 @@ function ProductPage(Product){
 
     let product;
     products.map((e) => {
-        if(e.id===productId) return(product = e);
+        if(e.id===productId) product = e;
         else return false;
     })
 
@@ -32,8 +32,6 @@ function ProductPage(Product){
             localStorage.setItem('Cart', JSON.stringify(currentCart))
         }
     }
-
-    console.log(currentPhoto, PhotoChange)
 
 
 

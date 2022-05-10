@@ -16,7 +16,6 @@ function VideoCategory(thisPage) {
 
   const [category, getCategory] = useState([]);
   const page = useParams()
-  console.log(page)
     
   useEffect(() => {
     (async () => {
@@ -31,6 +30,7 @@ function VideoCategory(thisPage) {
       } catch (e) {
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
     return (
