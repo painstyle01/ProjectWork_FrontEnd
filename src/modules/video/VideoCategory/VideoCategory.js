@@ -31,7 +31,6 @@ function VideoCategory(thisPage) {
       } catch (e) {
       }
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
     return (
