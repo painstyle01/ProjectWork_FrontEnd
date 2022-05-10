@@ -25,7 +25,6 @@ function Order(props){
            shipping: shipping,
            adress: adress
            }
-           console.log(order)
        }
        else{
            alert("Будь ласка, заповніть усі необхідні поля")

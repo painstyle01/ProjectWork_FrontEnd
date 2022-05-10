@@ -12,7 +12,7 @@ function Cart(props){
         let price = 0
         myCart.map((e) => price += e.price)
         setTotalPrice(price)
-      }, []);
+      });
 
       function Delete(e){
           e.preventDefault()
