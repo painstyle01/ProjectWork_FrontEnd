@@ -51,14 +51,13 @@ function Order(props){
                     defaultValue="NovaPoshta"
                     id="radio"
                 >
-                    <FormControlLabel value="NovaPoshta" control={<Radio  sx={{color: grey[50],'&.Mui-checked': {
-                                                                            color: grey[50],},}}/>} label="Нова Пошта" />
-                    <FormControlLabel value="UkrPoshta" control={<Radio sx={{color: grey[50],'&.Mui-checked': {
-                                                                            color: grey[50],},}}/>} label="Укрпошта" />
-                    <FormControlLabel value="self-pickup" control={<Radio sx={{color: grey[50],'&.Mui-checked': {
-                                                                            color: grey[50],},}}/>} label="Самовивіз" />
+                    <FormControlLabel value="NovaPoshta" control={<Radio/>} label="Нова Пошта" />
+                    <FormControlLabel value="UkrPoshta" control={<Radio/>} label="Укрпошта" />
+                    <FormControlLabel value="self-pickup" control={<Radio/>} label="Самовивіз" />
                 </RadioGroup>
-                <Input id="adress" placeholder="Адреса доставки" color="secondary" className="inputField"/>
+
+
+                <Input id="adress" placeholder="Адреса доставки" className="inputField"/>
                 <div className="sumbitButton" onClick={sendInfo}>Підтвердити Замовлення</div>
             </div>
         </div>
