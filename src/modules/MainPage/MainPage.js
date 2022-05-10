@@ -44,7 +44,7 @@ function MainPage() {
             <div>
                 <div className="top_content">
                     <div className="mainTitle">ДІМ ФРАНКА</div>
-                    <Typography variant="body2" color="secondary" marginBlock={'30px'} sx={{textAlign: 'center'}}>Ласкаво просимо до музею Франка!</Typography>
+                    <Typography variant="body2" color="secondary" marginBlock={'30px 50px'} sx={{textAlign: 'center'}}>Ласкаво просимо до музею Франка!</Typography>
                     <Stack direction="row" spacing={2} sx={{width: '100%', justifyContent: 'center'}}>
                         <NavLink to={'/support'}>
                             <Button variant="text" color="secondary" id='but'>
