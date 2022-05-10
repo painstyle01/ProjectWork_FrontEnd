@@ -66,13 +66,13 @@ const MainTheme = createTheme({
         },
 
       },
-      MuiTypography: {
-        styleOverrides:{
-          root:{
-            color: palette.TextColor,
-          }
-        }
-      }
+      // MuiTypography: {
+      //   styleOverrides:{
+      //     root:{
+      //       color: palette.TextColor,
+      //     }
+      //   }
+      // }
     },
     shape:{
       borderRadius: '0'

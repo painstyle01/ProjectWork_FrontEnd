@@ -1,26 +1,109 @@
-img{
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&family=Montserrat&display=swap');
+body{
+    font-family: Montserrat;
+}
+
+a{
+    text-decoration: none;
+}
+
+#mainImage{
+    max-width: 80%;
+}
+
+.productContainer{
+    margin-top: 100px !important;
+    margin-left: 150px !important;
+    margin-right: 150px !important;
+}
+
+
+.photos{
+    max-width: 100%;
+    float: right;  
+}
+
+.productInfo{
+    padding-left: 0px !important;
+    padding-right: 100px;
+}
+
+.productTitle{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 22px;
+}
+
+.productPrice{
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 32px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #C8C8C8;
+}
+
+.productDescription{
+    
+    font-weight: normal;
+    font-size: 15px;
+}
+
+.descriptionHader{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.makeOrderButton{
+    margin-top: 50px !important;
+    border: 0.5px solid #000000 !important;
+    box-sizing: border-box !important;
+    border-radius: 35px !important;
     width: 100%;
+    text-transform: none !important;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
 }
 
-.txt{
-    color: black !important;
+.otherProducts{
+    margin-top: 100px !important;
+    margin-left: 150px !important;
+    margin-right: 150px !important;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 32px;
 }
 
-.AddButton{
-    width: 40%;
-    height: 10%;
-    font-size: 10px !important;
-    padding: 2px !important;
-    margin-top: 20px !important;
-    margin-bottom: 20px !important;
+.otherProductsTitle{
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 76px;
+    color: #1C1C1C;
 }
 
-.text{
-    color: #000;
-    font-family: Century Gothic,Helvetica,Arial,sans-serif;
-    line-height: 1.6em;
-    -webkit-text-size-adjust: none;
-    box-sizing: border-box;
-    font-size: 14px;
-    margin-bottom: 1.6em;
+.otherProductsCards{
+    margin-top: 5px !important;
+    border-top: 4px solid #1C1C1C;
+    /* border-top-width: 1636.01px; */
+}
+
+
+.productCard img{
+    max-width: 80% !important;
+}
+
+.otherProductTitle{
+    font-style: normal;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    color: #1C1C1C !important;
+}
+
+.otherProductPrice{
+    font-style: normal;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    color: #1C1C1C !important;
 }

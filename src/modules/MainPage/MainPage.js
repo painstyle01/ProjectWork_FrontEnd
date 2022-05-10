@@ -12,6 +12,7 @@ import family from '../../images/image 14.png'
 import room from '../../images/image 9.png'
 import franko from '../../images/image 12.png'
 import { useState, useEffect } from 'react';
+import {NavLink} from "react-router-dom";
 
 
 
@@ -38,24 +39,21 @@ function MainPage() {
     return (
         <div>
             <div className="mainBackground" style={{backgroundImage: "url("+background+")"}}>
-                {/* <video id="background-video" autoPlay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
-                    <source src="https://assets.codepen.io/6093409/river.mp4" type="video/mp4"></source>
-                    Your browser does not support the video tag.
-                </video> */}
                 <div className="mainBackground2"></div>
             </div>            
             <div>
                 <div className="top_content">
                     <div className="mainTitle">ДІМ ФРАНКА</div>
-                    {/* <Typography variant="test" color="secondary">Дім Франка</Typography> */}
                     <Typography variant="body2" color="secondary" marginBlock={'30px'} sx={{textAlign: 'center'}}>Ласкаво просимо до музею Франка!</Typography>
                     <Stack direction="row" spacing={2} sx={{width: '100%', justifyContent: 'center'}}>
-                    <Button variant="text" color="secondary" id='but'>
-                        Підтримай нас
-                    </Button>
-                    <Button variant="text" color="secondary" id='but' className='b2'>
-                        Спланувати візит
-                    </Button>
+                        <NavLink to={'/support'}>
+                            <Button variant="text" color="secondary" id='but'>
+                                Підтримай нас
+                            </Button>
+                        </NavLink>
+                        <Button variant="text" color="secondary" id='but' className='b2'>
+                            Спланувати візит
+                        </Button>
                     </Stack>
                 </div>
             </div>
@@ -74,8 +72,8 @@ function MainPage() {
             <div className="bottom">
                 <div className="bottom_content" style={{paddingBottom: '0'}}>
                     <Stack direction="row" spacing={2}>
-                        <div style={{fontSize: '71px', lineHeight: '50px'}}>Останні новини</div>
-                        <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
+                        <div style={{fontSize: '71px', lineHeight: '71px', fontWeight: 'bold'}}>Останні новини</div>
+                        <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
                     </Stack>
                     <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '15px 30px'}} />
                     <Grid container spacing={3}>
@@ -84,11 +82,11 @@ function MainPage() {
                                 <Grid item xs={12} sm={6} md={4}>
                                     <div>
                                         <img src={newsImage} alt="" width="100%"></img>
-                                        <Stack direction="row" spacing={1}>
+                                        <Stack direction="row" spacing={1} marginTop='10px'>
                                             <Typography variant="body2" color="primary" style={{fontSize: '25px'}}>{item.title}</Typography>
                                             <ArrowForwardIcon style={{fontSize: '25px', marginTop: '10px', transform: 'rotate(-45deg)'}}/>
                                         </Stack>
-                                        <Typography variant="body2" color="primary" fontWeight={'bold'}>{item.date}</Typography>
+                                        <Typography variant="body2" color="#a3a3a3">{item.date}</Typography>
                                     </div>
                                 </Grid>
                             )
@@ -101,8 +99,8 @@ function MainPage() {
                         </Grid>
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
                             <Stack direction="row" spacing={2}>
-                                <div style={{fontSize: '71px', lineHeight: '50px', marginBottom: '50px'}}>Історія</div>
-                                <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
+                                <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Історія</div>
+                                <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
                             </Stack>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
                         </Grid>
@@ -111,8 +109,8 @@ function MainPage() {
                     <Grid container spacing={3}>
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
                             <Stack direction="row" spacing={2}>
-                                <div style={{fontSize: '71px', lineHeight: '50px', marginBottom: '50px'}}>Колекції</div>
-                                <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
+                                <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Колекції</div>
+                                <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
                             </Stack>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
                         </Grid>
@@ -124,14 +122,16 @@ function MainPage() {
                 <div className="bottom_grey_content">
                     <Grid container spacing={3} sx={{alignSelf: 'center', marginTop: '25px', paddingBlock: '50px'}}>
                         <Grid item sm={12} md={6}>
-                            <div style={{fontSize: '71px', lineHeight: '50px', marginTop: '20px'}}>Підтримай нас</div>
+                            <div style={{fontSize: '71px', lineHeight: '71px', marginTop: '20px', fontWeight: 'bold'}}>Підтримай нас</div>
                         </Grid>
                         <Grid item sm={12} md={6}>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
-                            <Stack direction="row" spacing={2} sx={{marginBottom: '20px'}}>
-                                <Typography variant="body2" color="primary" fontWeight={'bold'} marginTop={'20px'} style={{fontSize: '20px', textDecoration: 'underline'}}>Пожертвування</Typography>
-                                <ArrowForwardIcon style={{fontSize: '25px', marginTop: '25px', transform: 'rotate(-45deg)'}}/>
-                            </Stack>
+                            <NavLink to={'/support'} className="menuNavLink">
+                                <Stack direction="row" spacing={2} sx={{marginBottom: '20px'}}>
+                                    <Typography variant="body2" color="primary" fontWeight={'bold'} marginTop={'20px'} style={{fontSize: '20px', textDecoration: 'underline'}}>Пожертвування</Typography>
+                                    <ArrowForwardIcon style={{fontSize: '25px', marginTop: '25px', transform: 'rotate(-45deg)'}}/>
+                                </Stack>
+                            </NavLink>
                         </Grid>
                     </Grid>
                 </div>
@@ -142,8 +142,8 @@ function MainPage() {
                         </Grid>
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
                             <Stack direction="row" spacing={2}>
-                                <div style={{fontSize: '71px', lineHeight: '50px', marginBottom: '50px'}}>Наші програми</div>
-                                <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
+                                <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Наші програми</div>
+                                <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
                             </Stack>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
                         </Grid>

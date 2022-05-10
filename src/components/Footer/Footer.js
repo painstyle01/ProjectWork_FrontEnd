@@ -8,6 +8,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import { useState, useEffect } from 'react';
+import {NavLink} from "react-router-dom";
 
 
 
@@ -28,8 +29,8 @@ function Footer() {
     return (
         <div className="footer">
             <Stack direction="row" spacing={2}>
-                <div style={{fontSize: '71px', lineHeight: '50px'}}>Спланувати візит</div>
-                <ArrowCircleUpIcon sx={{fontSize: '65px', transform: 'rotate(45deg)'}}/>
+                <div style={{fontSize: '71px', lineHeight: '71px', fontWeight: 'bold'}}>Спланувати візит</div>
+                <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
             </Stack>
             <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
             <Grid container spacing={3}>
@@ -67,12 +68,14 @@ function Footer() {
                     </Stack>
                 </Grid>
                 <Grid item xs={12} sm={8} lg={4} sx={{alignSelf: 'center'}}>
-                    <Stack direction="row" spacing={2} sx={{float: 'right'}} id='pdtrm'>
-                    <Typography variant="h4" component="div" color='primary' style={{fontWeight: 'bold'}}>
-                        Підтримай нас
-                    </Typography>
-                    <ArrowCircleUpIcon sx={{fontSize: '45px', transform: 'rotate(45deg)'}}/>
-                    </Stack>
+                    <NavLink to={'/support'} className="menuNavLink">
+                        <Stack direction="row" spacing={2} sx={{float: 'right'}} id='pdtrm'>
+                            <Typography variant="h4" component="div" color='primary' style={{fontWeight: 'bold'}}>
+                                Підтримай нас
+                            </Typography>
+                            <ArrowCircleUpIcon sx={{fontSize: '45px', transform: 'rotate(45deg)'}}/>
+                        </Stack>
+                    </NavLink>
                 </Grid>
             </Grid>
             <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
