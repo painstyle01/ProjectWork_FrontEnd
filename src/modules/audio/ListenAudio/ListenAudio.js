@@ -13,8 +13,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import ReactAudioPlayer from 'react-audio-player';
+import { useParams } from 'react-router-dom';
 
-function ListenAudio() {
+function ListenAudio(thisPage) {
 
   let links = ['miy-franko', 'filosofski-snidanky', 'semper-tiro', 'intelektualna-biografiya', 'miy-izmaragd', 'dim-poeta',
   'frankustyka', 'podiyi-poza-seriyamy']
@@ -22,6 +23,8 @@ function ListenAudio() {
   const [audios, getAudios] = useState([]);
   const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Миколою Ільницьким', audio_file: '/media/audio/my_franko.mp3', link_audio: 1});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/listen')[0]);
+  const page = useParams()
+  console.log(page)
 
   useEffect(() => {
     (async () => {

@@ -13,8 +13,9 @@ import Toolbar from '@mui/material/Toolbar';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
-function WatchVideo() {
+function WatchVideo(thisPage) {
 
   let links = ['franko-vdoma', 'miy-izmaragd', 'intelektualna-biografiya', 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
 'frankustyka', 'podiyi-poza-seriyamy']
@@ -22,6 +23,8 @@ function WatchVideo() {
   const [videos, getVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState({id: 1, title: 'Яке улюблене вино Івана Франка? Франко вдома #1', video_file: null, youtube_link: 'https://www.youtube.com/watch?v=EOf0R9lj3dU&feature=emb_title', link_video: 1});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/watch')[0]);
+  const page = useParams()
+  console.log(page)
 
   useEffect(() => {
     (async () => {
