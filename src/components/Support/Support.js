@@ -143,7 +143,7 @@ function Support() {
                                 <div className='boxS2'>Залиши інформацію про себе, щоб ми могли подякувати тобі за твою підтримку</div>
                                 <TextField id="name" className='textF' label="Ваше ім'я" variant="standard" />
                                 <TextField id="mail" className='textF' label="Ваш E-mail " variant="standard" />
-                                <TextField id="phone" className='textF' label="Ваш номер телфону (необов’язково)" variant="standard" />
+                                <TextField id="phone" className='textF' label="Ваш номер телефону (необов’язково)" variant="standard" />
                                 <TextField id="comment" className='textF' label="Коментар (необов’язково)" variant="standard" />
                                 <Button
                                     className='buttonM2'
