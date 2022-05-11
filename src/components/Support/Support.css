@@ -35,7 +35,7 @@
     height: 42px !important;
     padding: 0 !important;
     width: 120px !important;
-    margin-top: 32px !important;
+    margin: 5px !important;
     background-color: #FFFFFF;
 }
 .buttonM:focus{
@@ -51,7 +51,7 @@
     padding: 0 !important;
     width: 120px !important;
     background-color: #ffffff !important;
-    margin-top: 32px !important;
+    margin: 5px !important;
 }
 .buttonM1:focus{
     background-color: #1C1C1C !important;
@@ -124,4 +124,11 @@
 }
 .another{
     display: none;
+}
+.supportButtons {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    margin-top: 32px;
 }
