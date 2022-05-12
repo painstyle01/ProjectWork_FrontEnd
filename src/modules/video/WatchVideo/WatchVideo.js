@@ -83,16 +83,19 @@ function WatchVideo(thisPage) {
           <div className='chooseVideo'>
             <AppBar elevation={0} sx={{backgroundColor: 'rgba(0, 0, 0, 0)'}}>
               <Toolbar>
-                <NavLink to={pageToReturn} className='closeButton'>
-                <IconButton
-                  edge="start"
-                  color="inherit"
-                  onClick={handleClose}
-                  aria-label="close"
-                >
-                  <CloseIcon style={{float: 'right!important'}}/>
-                </IconButton>
-                </NavLink>
+                <Stack direction='row' justifyContent="space-between" width='100%' marginTop='40px'>
+                  <div></div>
+                  <NavLink to={pageToReturn} className='closeButton'>
+                  <IconButton
+                    edge="start"
+                    color="inherit"
+                    onClick={handleClose}
+                    aria-label="close"
+                  >
+                    <CloseIcon/>
+                  </IconButton>
+                  </NavLink>
+                </Stack>
               </Toolbar>
             </AppBar>
             {videos.reverse().map(function(video) {
