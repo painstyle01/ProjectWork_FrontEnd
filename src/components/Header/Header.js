@@ -86,6 +86,7 @@ function Header() {
 
     useEffect(() => {
         (async () => {
+            window.scrollTo(0, 0);
             if (pathname==='/' || pathname==='/3Dtour') {
                 setBackgroundColor('rgba(0,0,0,0.6)')
                 setImage1(Group2)
