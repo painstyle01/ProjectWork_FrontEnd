@@ -18,8 +18,8 @@ function MediaAboutUs() {
             <Grid container>
                 <Grid item xs={0} sm={2}></Grid>
                     <Grid item xs={12} sm={8}>
-                        <div style={{fontSize: '71px', lineHeight: '50px', margin: 'auto', width: '450px',
-                        paddingBottom: '50px', fontWeight: 'bold'}}>ЗМІ про нас</div>
+                        <div style={{fontSize: '71px', lineHeight: '71px', margin: 'auto', width: '450px',
+                        paddingBottom: '40px', fontWeight: 'bold'}}>ЗМІ про нас</div>
                         <TextField
                         id="outlined-basic"
                         onChange={inputHandler}
