@@ -13,6 +13,10 @@ import room from '../../images/image 9.png'
 import franko from '../../images/image 12.png'
 import { useState, useEffect } from 'react';
 import {NavLink} from "react-router-dom";
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import { CardActionArea } from '@mui/material'
 
 
 
@@ -80,19 +84,23 @@ function MainPage() {
                         {news.map(function(item) {
                             return (
                                 <Grid item xs={12} sm={6} md={4}>
-                                    <div>
-                                        <img src={newsImage} alt="" width="100%"></img>
-                                        <Stack direction="row" spacing={1} marginTop='10px'>
-                                            <Typography variant="body2" color="primary" style={{fontSize: '25px'}}>{item.title}</Typography>
+                                    <Card>
+                                        <CardActionArea>
+                                        <CardMedia component="img" image={newsImage}/>
+                                        <CardContent>
+                                            <Stack direction="row" spacing={1}>
+                                            <Typography variant="body2" color="primary" style={{fontSize: '25px', textDecoration: 'none'}}>{item.title}</Typography>
                                             <ArrowForwardIcon style={{fontSize: '25px', marginTop: '10px', transform: 'rotate(-45deg)'}}/>
-                                        </Stack>
-                                        <Typography variant="body2" color="#a3a3a3">{item.date}</Typography>
-                                    </div>
+                                            </Stack>
+                                            <Typography variant="body2" color="#a3a3a3">{item.date}</Typography>
+                                        </CardContent>
+                                        </CardActionArea>
+                                    </Card>
                                 </Grid>
                             )
                         })}
                     </Grid>
-                    <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '25px 30px'}} />
+                    <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '30px'}} />
                     <Grid container spacing={3}>
                         <Grid item sm={12} md={8}>
                             <img src={family} alt="" width="100%" style={{minWidth: '397px'}}></img>
