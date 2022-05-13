@@ -1,0 +1,51 @@
+@font-face {
+    font-family: "Igrasans";
+    src: local("Igrasans"),
+     url("../fonts/fonts/Igrasans.ttf") format("truetype");
+    font-weight: bold;
+}
+
+.collectionMainContainer{
+    margin-left: 120px;
+    margin-right: 120px;
+    margin-bottom: 80px;
+    color: #1C1C1C;
+}
+
+.collectionTitle{
+    font-family: 'Igrasans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 76px;
+    line-height: 76px;
+}
+
+.collectionsearch{
+    width: 100%;
+    margin-top: 40px;
+}
+
+.collectionCard{
+    margin-top: 30px !important;
+}
+
+.collectionCardImg{
+    width: 90%;
+}
+
+.collectionCardTitle{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 37px;
+}
+
+.collectionCardDate{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+    color: #A3A3A3 !important;
+}

@@ -25,6 +25,7 @@ import Cart from '../ShopPage/Cart/Cart'
 import Order from '../ShopPage/OrderPage/order'
 import Team from '../TeamPage/TeamPage'
 import Excursion from '../ExcursionPage/ExcursionPage'
+import Collection from '../CollectionPage/CollectionPage'
 
 function App() {
   return (
@@ -50,6 +51,7 @@ function App() {
         <Route key={15} exact path="/order" element={<Order/>}/>
         <Route key={16} exact path="/team" element={<Team/>}/>
         <Route key={17} exact path="/excursion" element={<Excursion/>}/>
+        <Route key={18} exact path="/collection" element={<Collection/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>
