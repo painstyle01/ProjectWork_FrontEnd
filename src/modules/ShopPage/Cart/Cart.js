@@ -18,7 +18,7 @@ function Cart(props){
           e.preventDefault()
           const newCart = [];
           for(let i in myCart){
-              if(myCart[i].id === e.target.id){
+              if(myCart[i].id == e.target.id){
                 continue;
               }
               else{
