@@ -227,7 +227,7 @@ function Header() {
                                     onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Хто такий Франко?" : "Who Franko is?"}</MenuItem>
+                                    <NavLink to={'/biography'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Хто такий Франко?" : "Who Franko is?"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Історія Дому" : "The house's history"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франчата" : "Franchildren"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франко наживо" : "Franko in person"}</MenuItem>
