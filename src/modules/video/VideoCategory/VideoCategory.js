@@ -16,7 +16,6 @@ function VideoCategory(thisPage) {
 
   const [category, getCategory] = useState([]);
   const page = useParams()
-  console.log(page)
     
   useEffect(() => {
     (async () => {

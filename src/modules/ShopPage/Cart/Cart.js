@@ -12,14 +12,13 @@ function Cart(props){
         let price = 0
         myCart.map((e) => price += e.price)
         setTotalPrice(price)
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-      }, []);
+      });
 
       function Delete(e){
           e.preventDefault()
           const newCart = [];
           for(let i in myCart){
-              if(myCart[i].id === e.target.id){
+              if(myCart[i].id == e.target.id){
                 continue;
               }
               else{

@@ -11,11 +11,17 @@ function ProductPage(Product){
     const productId = useParams().id;
     let products = JSON.parse(localStorage.getItem('products'));
 
+
     let product;
     products.map((e) => {
-        if(e.id===productId) return(product = e);
-        else return false;
+        if(e.id==productId) {
+            product = e;
+        }
+        else {
+            return false
+        };
     })
+
 
     let PhotoChange = (e) => {
         setPhoto(e.target.id)
@@ -32,8 +38,6 @@ function ProductPage(Product){
             localStorage.setItem('Cart', JSON.stringify(currentCart))
         }
     }
-
-    console.log(currentPhoto, PhotoChange)
 
 
 

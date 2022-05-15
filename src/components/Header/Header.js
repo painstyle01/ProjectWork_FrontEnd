@@ -86,6 +86,7 @@ function Header() {
 
     useEffect(() => {
         (async () => {
+            window.scrollTo(0, 0);
             if (pathname==='/' || pathname==='/3Dtour') {
                 setBackgroundColor('rgba(0,0,0,0.6)')
                 setImage1(Group2)
@@ -226,8 +227,8 @@ function Header() {
                                     onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Хто такий Франко?" : "Who Franko is?"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Історія Дому" : "The house's history"}</MenuItem>
+                                    <NavLink to={'/biography'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Хто такий Франко?" : "Who Franko is?"}</MenuItem></NavLink>
+                                    <NavLink to={'/history'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Історія Дому" : "The house's history"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франчата" : "Franchildren"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франко наживо" : "Franko in person"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франко від А до Я" : "Franko from A to Z"}</MenuItem>

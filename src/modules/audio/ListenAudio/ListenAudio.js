@@ -24,7 +24,6 @@ function ListenAudio(thisPage) {
   const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Миколою Ільницьким', audio_file: '/media/audio/my_franko.mp3', link_audio: 1});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/listen')[0]);
   const page = useParams()
-  console.log(page)
 
   useEffect(() => {
     (async () => {
@@ -90,16 +89,19 @@ function ListenAudio(thisPage) {
           <div className='chooseAudio'>
             <AppBar elevation={0} sx={{backgroundColor: 'rgba(0, 0, 0, 0)'}}>
               <Toolbar>
-                <NavLink to={pageToReturn} className='closeButton'>
-                <IconButton
-                  edge="start"
-                  color="inherit"
-                  onClick={handleClose}
-                  aria-label="close"
-                >
-                  <CloseIcon style={{float: 'right!important'}}/>
-                </IconButton>
-                </NavLink>
+                <Stack direction='row' justifyContent="space-between" width='100%' marginTop='40px'>
+                  <div></div>
+                  <NavLink to={pageToReturn} className='closeButton'>
+                  <IconButton
+                    edge="start"
+                    color="inherit"
+                    onClick={handleClose}
+                    aria-label="close"
+                  >
+                    <CloseIcon/>
+                  </IconButton>
+                  </NavLink>
+                </Stack>
               </Toolbar>
             </AppBar>
             {audios.reverse().map(function(audio) {

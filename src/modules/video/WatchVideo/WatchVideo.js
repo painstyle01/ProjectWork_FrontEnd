@@ -24,7 +24,6 @@ function WatchVideo(thisPage) {
   const [selectedVideo, setSelectedVideo] = useState({id: 1, title: 'Яке улюблене вино Івана Франка? Франко вдома #1', video_file: null, youtube_link: 'https://www.youtube.com/watch?v=EOf0R9lj3dU&feature=emb_title', link_video: 1});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/watch')[0]);
   const page = useParams()
-  console.log(page)
 
   useEffect(() => {
     (async () => {
@@ -84,16 +83,19 @@ function WatchVideo(thisPage) {
           <div className='chooseVideo'>
             <AppBar elevation={0} sx={{backgroundColor: 'rgba(0, 0, 0, 0)'}}>
               <Toolbar>
-                <NavLink to={pageToReturn} className='closeButton'>
-                <IconButton
-                  edge="start"
-                  color="inherit"
-                  onClick={handleClose}
-                  aria-label="close"
-                >
-                  <CloseIcon style={{float: 'right!important'}}/>
-                </IconButton>
-                </NavLink>
+                <Stack direction='row' justifyContent="space-between" width='100%' marginTop='40px'>
+                  <div></div>
+                  <NavLink to={pageToReturn} className='closeButton'>
+                  <IconButton
+                    edge="start"
+                    color="inherit"
+                    onClick={handleClose}
+                    aria-label="close"
+                  >
+                    <CloseIcon/>
+                  </IconButton>
+                  </NavLink>
+                </Stack>
               </Toolbar>
             </AppBar>
             {videos.reverse().map(function(video) {
