@@ -48,17 +48,17 @@ class Shop extends React.Component {
                         })}
                     </Grid>
 
-                    <Grid container spacing={6}>
+                    <Grid container spacing={0}>
                     {this.state.products.map((object) => {
                         return( 
                                 
-                                    <Grid item xs={2} 
+                                    <Grid item xs={6} sm={4} md={3} lg={2}
                                         className="productCard"
                                         onClick = {() => this.GetOneProduct(object)}
                                         key = {object.id}
                                         >
                                         <Link to={"/products/"+object.id}>
-                                        <div className="productimage"><img src={object.url_to_photo} alt="not found"></img></div>
+                                        <img src={object.url_to_photo} alt="not found"></img>
                                         <span className="Title">{object.name}</span>
                                         <p className="Price">{object.price} грн</p>
                                         </Link>

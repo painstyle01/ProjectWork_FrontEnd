@@ -11,7 +11,8 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
-import { Stack } from '@mui/material';
+import cart from '../../images/cart.png'
+import cart2 from '../../images/cart2.png'
 
 
 
@@ -33,6 +34,7 @@ function Header() {
     const [backgroundColor, setBackgroundColor] = useState();
     const [image1, setImage1] = useState();
     const [image2, setImage2] = useState();
+    const [image3, setImage3] = useState();
     const [textColor, setTextColor] = useState();
     const [buttonTextColor, setButtonTextColor] = useState();
     const [currentSectionId, setCurrentSectionId] = useState('');
@@ -91,6 +93,7 @@ function Header() {
                 setBackgroundColor('rgba(0,0,0,0.6)')
                 setImage1(Group2)
                 setImage2(Vector2)
+                setImage3(cart2)
                 setTextColor('secondary')
                 setButtonTextColor('buttonMenu2')
             }
@@ -100,6 +103,7 @@ function Header() {
                     setBackgroundColor('rgba(28,28,28,0.5)')
                     setImage1(Group2)
                     setImage2(Vector2)
+                    setImage3(cart2)
                     setTextColor('secondary')
                     setButtonTextColor('buttonMenu2')
                 }
@@ -107,6 +111,7 @@ function Header() {
                     setBackgroundColor('white')
                     setImage1(Group)
                     setImage2(Vector)
+                    setImage3(cart)
                     setTextColor('primary')
                     setButtonTextColor('buttonMenu')
                 }
@@ -312,14 +317,23 @@ function Header() {
                         </Grid>
                     </Grid>
                 </Grid>
-                <Grid item xs={0} md={1}></Grid>
+                <Grid item xs={0} sm={0.5}></Grid>
                 <Grid item xs={2} alignSelf='center'>
-                    <Stack direction='row' spacing={2}>
-                        <img src={image2} alt={"Vector"}/>
-                        <Typography color={textColor}>
-                            <div className='lng'>UKR/ENG</div>
-                        </Typography>
-                    </Stack>
+                    <Grid container spacing={0}>
+                        <Grid item xs={6} md={3} alignSelf='center' id='menuN'>
+                            <NavLink to={'/cart'} onClick={chooseOption}>
+                                <img src={image3} alt={"cart"}/>
+                            </NavLink>
+                        </Grid>
+                        <Grid item xs={6} md={3} alignSelf='center' id='menuN'>
+                                <img src={image2} alt={"Vector"}/>
+                        </Grid>
+                        <Grid item xs={12} md={3} alignSelf='center' id='menuN'>
+                            <Typography color={textColor}>
+                                <div className='lng'>UKR/ENG</div>
+                            </Typography>
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
         </div>
