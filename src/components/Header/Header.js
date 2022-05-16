@@ -315,6 +315,7 @@ function Header() {
                 <Grid item xs={0} md={1}></Grid>
                 <Grid item xs={2} alignSelf='center'>
                     <Stack direction='row' spacing={2}>
+                        <img src={cart} alt={"cart"}/>
                         <img src={image2} alt={"Vector"}/>
                         <Typography color={textColor}>
                             <div className='lng'>UKR/ENG</div>
