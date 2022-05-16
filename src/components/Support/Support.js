@@ -70,46 +70,58 @@ function Support() {
                     </p>
                     <div className='boxS1'>
                         <h3>Вибери суму, яку готовий пожертвувати</h3>
-                        <div className='supportButtons'>
-                            <Button
-                                className='buttonM'
-                                id='button1'
-                                donationValue={50}
-                                onClick={setDonation}
-                            >
-                            50 грн
-                            </Button>
-                            <Button
-                                className='buttonM'
-                                id='button2'
-                                donationValue={150}
-                                onClick={setDonation}
-                            >
-                            150 грн
-                            </Button>
-                            <Button
-                                className='buttonM'
-                                id='button3'
-                                donationValue={250}
-                                onClick={setDonation}
-                            >
-                            250 грн
-                            </Button>
-                            <Button
-                                className='buttonM'
-                                id='button4'
-                                donationValue={500}
-                                onClick={setDonation}
-                            >
-                            500 грн
-                            </Button>
-                            <Button
-                                className='buttonM1'
-                                onClick={myDonationBtn}
-                            >
-                            Інша сума
-                            </Button>
-                        </div>
+                        <Grid container spacing={0}>
+                            <Grid item xs={1}></Grid>
+                            <Grid item xs={2}>
+                                <Button
+                                    className='buttonM'
+                                    id='button1'
+                                    donationValue={50}
+                                    onClick={setDonation}
+                                >
+                                50 грн
+                                </Button>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <Button
+                                    className='buttonM'
+                                    id='button2'
+                                    donationValue={150}
+                                    onClick={setDonation}
+                                >
+                                150 грн
+                                </Button>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <Button
+                                    className='buttonM'
+                                    id='button3'
+                                    donationValue={250}
+                                    onClick={setDonation}
+                                >
+                                250 грн
+                                </Button>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <Button
+                                    className='buttonM'
+                                    id='button4'
+                                    donationValue={500}
+                                    onClick={setDonation}
+                                >
+                                500 грн
+                                    </Button>
+                            </Grid>
+                            <Grid item xs={2}>
+                                <Button
+                                    className='buttonM1'
+                                    onClick={myDonationBtn}
+                                >
+                                Інша сума
+                                </Button>
+                            </Grid>
+                            <Grid item xs={1}></Grid>
+                        </Grid>
                         <Grid container spacing={0}>
                             <Grid item xs={3}></Grid>
                             <Grid item xs={6}>
