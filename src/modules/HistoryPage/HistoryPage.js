@@ -15,7 +15,7 @@ function HistoryPage(){
 
         const images = Array.prototype.slice.call(mainDiv.getElementsByTagName("img"))
         images.map((e)=>{
-            e.src = 'http://frankos-museum-backend.azurewebsites.net/' + e.getAttribute('src') 
+            e.src = 'http://frankos-museum-backend.azurewebsites.net' + e.getAttribute('src') 
         })
     })
     .catch(function(err) {  
