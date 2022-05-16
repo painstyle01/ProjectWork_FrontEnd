@@ -50,10 +50,7 @@ h2{
 
 .productCard img{
     max-width: 170px;
-}
-
-.productimage{
-    min-height: 250px;
+    margin-bottom: 10px;
 }
 
 .Title{
