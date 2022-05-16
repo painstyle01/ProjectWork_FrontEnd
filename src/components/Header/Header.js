@@ -322,7 +322,7 @@ function Header() {
                     <Grid container spacing={0}>
                         <Grid item xs={6} md={3} alignSelf='center' id='menuN'>
                             <NavLink to={'/cart'} onClick={chooseOption}>
-                                <img src={image3} alt={"cart"}/>
+                                <a className="linkLogo"><img src={image3} alt={"cart"}/></a>
                             </NavLink>
                         </Grid>
                         <Grid item xs={6} md={3} alignSelf='center' id='menuN'>
