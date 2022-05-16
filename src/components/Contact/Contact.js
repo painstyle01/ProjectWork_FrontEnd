@@ -12,8 +12,6 @@ fetch('http://frankos-museum-backend.azurewebsites.net/contacts/')
 function Contact() {
 
     const allcontacts = JSON.parse(localStorage.getItem('contacts'))
-
-    console.log(allcontacts)
         
     return (
         <Grid container spacing={0}>
