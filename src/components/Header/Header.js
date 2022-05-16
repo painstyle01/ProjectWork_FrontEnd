@@ -118,12 +118,12 @@ function Header() {
             }
             if(previousSectionId!==''){
                 var previousSection = document.getElementById(previousSectionId);
-                previousSection.style.backgroundColor='rgba(0,0,0,0)'
+                previousSection.style.backgroundColor=''
             }
             if(currentSectionId!==''){
                 if (pathname==='/support') {
                     previousSection = document.getElementById(currentSectionId);
-                    previousSection.style.backgroundColor='rgba(0,0,0,0)'
+                    previousSection.style.backgroundColor=''
                 }
                 else{
                     var currentSection = document.getElementById(currentSectionId);
