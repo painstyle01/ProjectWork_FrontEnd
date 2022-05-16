@@ -5,20 +5,25 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import {Link} from 'react-router-dom'
 
 function Cart(props){
-    const [myCart, setMyCart] = useState(JSON.parse(localStorage.getItem('Cart')))
+    const [myCart, setMyCart] = useState([])
     let [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(() => {
+        var c = JSON.parse(localStorage.getItem('Cart'))
+        if(c!=null){
+            setMyCart(c)
+        }
         let price = 0
-        myCart.map((e) => price += e.price)
+        c.map((e) => price += e.price)
         setTotalPrice(price)
-      });
+      }, [totalPrice]);
 
       function Delete(e){
           e.preventDefault()
           const newCart = [];
           for(let i in myCart){
               if(myCart[i].id == e.target.id){
+                setTotalPrice(totalPrice-myCart[i].price)
                 continue;
               }
               else{
