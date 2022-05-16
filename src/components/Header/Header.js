@@ -12,6 +12,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Fade from '@mui/material/Fade';
 import { Stack } from '@mui/material';
+import cart from '../../img/cart.png'
 
 
 
