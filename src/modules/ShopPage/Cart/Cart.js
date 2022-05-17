@@ -10,11 +10,11 @@ function Cart(props){
 
     useEffect(() => {
         var c = JSON.parse(localStorage.getItem('Cart'))
+        let price = 0
         if(c!=null){
             setMyCart(c)
+            c.map((e) => price += e.chosenProduct.price * e.count)
         }
-        let price = 0
-        c.map((e) => price += e.chosenProduct.price * e.count)
         setTotalPrice(price)
       }, [totalPrice]);
 
