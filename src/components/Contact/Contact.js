@@ -22,9 +22,9 @@ function Contact() {
                     <div className='lineC'></div>
                 </div>
                 <div className='timeC'>
-                <Grid container spacing={0}>
+                 <Grid container spacing={0}>
                     <Grid item xs={1}>
-                        <img src={timeC} alt={"timeC"}/>
+                        <img id='timeC' src={timeC} alt={"timeC"}/>
                     </Grid>
                     <Grid item xs={11}>
                         <h3 className='titleC'>Час</h3>
@@ -37,7 +37,7 @@ function Contact() {
                 <div className='location'>
                     <Grid container spacing={0}>
                         <Grid item xs={1}>
-                            <img src={locationC} alt={"locationC"}/> 
+                            <img id='locationC' src={locationC} alt={"locationC"}/> 
                         </Grid>
                         <Grid item xs={11}>
                             <h3 className='titleC'>Локація</h3>
@@ -50,7 +50,7 @@ function Contact() {
                 <div className='contactWU'>
                     <Grid container spacing={0}>
                         <Grid item xs={1}>
-                            <img src={contactC} alt={"timeCcontactC"}/>
+                            <img id='contactC' src={contactC} alt={"timeCcontactC"}/>
                         </Grid>
                         <Grid item xs={11}>
                             <h3 className='titleC'>Зв’язок з нами</h3>
@@ -66,7 +66,7 @@ function Contact() {
                 <div className='arrival'>
                     <Grid container spacing={0}>
                         <Grid item xs={1}>
-                            <img src={arrivalC} alt={"arrivalC"}/>
+                            <img id='arrivalC' src={arrivalC} alt={"arrivalC"}/>
                         </Grid>
                         <Grid item xs={11}>
                             <h3 className='titleC'>Доїзд:</h3>
