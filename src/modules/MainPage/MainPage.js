@@ -106,10 +106,12 @@ function MainPage() {
                             <img src={family} alt="" width="100%" style={{minWidth: '397px'}}></img>
                         </Grid>
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
-                            <Stack direction="row" spacing={2}>
-                                <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Історія</div>
-                                <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
-                            </Stack>
+                            <NavLink to={'/history'} className="menuNavLink">
+                                <Stack direction="row" spacing={2}>
+                                    <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Історія</div>
+                                    <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
+                                </Stack>
+                            </NavLink>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
                         </Grid>
                     </Grid>
