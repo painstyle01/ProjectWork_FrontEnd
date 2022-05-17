@@ -31,10 +31,28 @@ function ProductPage(Product){
     function addToCart(e) {
         let currentCart = JSON.parse(localStorage.getItem('Cart'))
         if(currentCart===null){
-            localStorage.setItem('Cart', JSON.stringify([product]))
+            let productToOrder = {
+                chosenProduct: product,
+                count: 1
+            }
+            localStorage.setItem('Cart', JSON.stringify([productToOrder]))
         }
         else{
-            currentCart.push(product)
+            let found = 0;
+            currentCart.map((e)=>{
+                if(e.chosenProduct.id==product.id){
+                    e.count += 1;
+                    found = 1;
+                }
+            })
+            if(found==0){
+              let productToOrder = {
+                chosenProduct: product,
+                count: 1
+              }
+              currentCart.push(productToOrder)  
+            }
+            
             localStorage.setItem('Cart', JSON.stringify(currentCart))
         }
     }

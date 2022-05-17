@@ -4,7 +4,6 @@ import './order.css'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import RadioGroup from '@mui/material/RadioGroup'
 import Radio from '@mui/material/Radio'
-import { grey } from '@mui/material/colors'
 
 function Order(props){
 
@@ -15,21 +14,47 @@ function Order(props){
        const comment = document.getElementById('comment').value
        const shipping = document.querySelector('input[name="radio-buttons-group"]:checked').value;
        const adress = document.getElementById('adress').value
+       const products = JSON.parse(localStorage.getItem('Cart'))
+       let cost = 0;
+       let productsText = "";
+       products.map((e)=>{
+           productsText += " " + e.chosenProduct.name + " у кількості '" + e.count + "', "
+           cost += e.chosenProduct.price * e.count
+       })
+
 
        if(name!==""&&email!==""&&adress!==""&&phone!==""){
-           const order = {
-           name: name,
-           email: email,
-           phone: phone,
-           comment: comment,
-           shipping: shipping,
-           adress: adress
-           }
-       }
-       else{
-           alert("Будь ласка, заповніть усі необхідні поля")
-       }
-    }
+           const order = 
+           `
+           Користувач на ім'я ${name} зробив замовлення на товар: 
+           ${productsText}
+           Інформація щодо замовника:
+           email: ${email}
+           Номер телефону: ${phone}
+           Спосіб доставки: ${shipping}
+           Адреса доставки: ${adress}
+           Комантар до замовлення: ${comment}
+
+           Сума замовлення: ${cost} грн
+           `
+            const requestOptions = {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ "to_email": "emma12022002@gmail.com", "order": order })
+            };
+
+            fetch('https://frankos-museum-backend.azurewebsites.net/api/donate', requestOptions)
+                .then(response => {if (response.status == 200) {
+                    alert("Замовлення успішно відправлено")
+                    return response.text();
+                } else {throw new Error();}})
+            }
+
+
+            else{
+                alert("Будь ласка, заповніть усі необхідні поля")
+            }
+        }
 
     return(
         <div className="mainOrderContainer">

@@ -5,20 +5,24 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import {Link} from 'react-router-dom'
 
 function Cart(props){
-    const [myCart, setMyCart] = useState(JSON.parse(localStorage.getItem('Cart')))
+    const [myCart, setMyCart] = useState([])
     let [totalPrice, setTotalPrice] = useState(0)
 
     useEffect(() => {
+        var c = JSON.parse(localStorage.getItem('Cart'))
+        if(c!=null){
+            setMyCart(c)
+        }
         let price = 0
-        myCart.map((e) => price += e.price)
+        c.map((e) => price += e.chosenProduct.price * e.count)
         setTotalPrice(price)
-      });
+      }, [totalPrice]);
 
       function Delete(e){
-          e.preventDefault()
           const newCart = [];
           for(let i in myCart){
-              if(myCart[i].id == e.target.id){
+              if(myCart[i].chosenProduct.id == e.target.id){
+                setTotalPrice(totalPrice-myCart[i].price)
                 continue;
               }
               else{
@@ -29,6 +33,29 @@ function Cart(props){
           setMyCart(JSON.parse(localStorage.getItem('Cart')))
       }
 
+      function EditCounter(e){
+        e.preventDefault()
+        const newCart = [];
+        for(let i in myCart){
+            if(myCart[i].chosenProduct.id == e.target.id){
+                if(e.target.className=="minusProduct") {
+                    setTotalPrice(totalPrice-myCart[i].chosenProduct.price)
+                    if(myCart[i].count!=1) myCart[i].count -= 1;
+                    
+                }
+                else if(e.target.className=="plusProduct") {
+                    setTotalPrice(totalPrice+myCart[i].chosenProduct.price)
+                    myCart[i].count += 1;
+                }
+
+            }
+            newCart.push(myCart[i]);
+            localStorage.setItem('Cart', JSON.stringify(newCart))
+            setMyCart(JSON.parse(localStorage.getItem('Cart')))
+        }
+      }
+    
+
     return(
         <div className="mainContainer">
             <span className="cartTitle">Корзина</span>
@@ -38,13 +65,17 @@ function Cart(props){
                         return(
                             <Grid container spacing={4} className="CartproductCard">
                                 <Grid item xs={2}>
-                                    <img className="productImage" src={element.url_to_photo} alt="not found"/>
+                                    <img className="productImage" src={element.chosenProduct.url_to_photo} alt="not found"/>
                                 </Grid>
-                                <Grid item xs={5} className="productName">{element.name}</Grid>
-                                <Grid item xs={3}></Grid>
-                                <Grid item xs={2} className="productDeleteContainer">
-                                    <DeleteIcon id={element.id} onClick = {Delete}/>
-                                    <span className="productDelete" id={element.id} onClick = {Delete}>Видалити</span>
+                                <Grid item xs={5} className="productName">{element.chosenProduct.name}</Grid>
+                                <Grid item xs={2} className="productCounter">
+                                    <span id={element.chosenProduct.id} className="minusProduct" onClick={EditCounter}>-</span> 
+                                    <span className="productCount">{element.count}</span> 
+                                    <span id={element.chosenProduct.id} className="plusProduct" onClick={EditCounter}>+</span>    
+                                </Grid>
+                                <Grid item xs={3} className="productDeleteContainer">
+                                    <DeleteIcon id={element.chosenProduct.id} onClick = {Delete}/>
+                                    <span className="productDelete" id={element.chosenProduct.id} onClick = {Delete} >Видалити</span>
                                 </Grid>
                             </Grid>
                         )
@@ -60,8 +91,7 @@ function Cart(props){
                             Оформити замовлення
                     </div>
                 </Link>
-            </div>
-                
+            </div>    
         </div>
     )
 }

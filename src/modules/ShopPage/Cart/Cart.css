@@ -3,6 +3,7 @@
 .mainContainer{
     margin-left: 150px;
     margin-right: 150px;
+    padding-bottom: 180px;
 }
 
 .cartTitle{
@@ -33,6 +34,11 @@
     font-weight: 400;
     font-size: 30px;
     line-height: 50px;
+}
+
+.productDeleteContainer{
+    text-align: right;
+    margin-top: 15px !important;
 }
 
 .productDelete:hover{
@@ -73,4 +79,26 @@
 
 .orderContainer{
     float: right;
+}
+
+.productCounter{
+    text-align: right !important;
+    font-size: 30px;
+}
+
+.productCount{
+    border: 2px solid #C5C5C5;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.minusProduct{
+    font-size: 40px;
+}
+
+
+.plusProduct{
+    font-size: 40px;
 }

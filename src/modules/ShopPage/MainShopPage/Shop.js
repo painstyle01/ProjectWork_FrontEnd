@@ -48,7 +48,7 @@ class Shop extends React.Component {
                         })}
                     </Grid>
 
-                    <Grid container spacing={0}>
+                    <Grid container spacing={0} marginBottom={'30px'}>
                     {this.state.products.map((object) => {
                         return( 
                                 
