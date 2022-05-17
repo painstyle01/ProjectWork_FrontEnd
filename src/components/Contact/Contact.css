@@ -35,6 +35,18 @@
     margin-top: 60px;
 }
 #mapSt{
-    width: 951px ;
+    width: 952px ;
     height: 550px;
+}
+#timeC{
+    margin: 10px 0px 0px 10px;
+}
+#locationC{
+    margin: 3px 0px 0px 1px;
+}
+#contactC{
+    margin: 20px 0px 0px 5px;
+}
+#arrivalC{
+    margin: 25px 0px 0px 7px;
 }
