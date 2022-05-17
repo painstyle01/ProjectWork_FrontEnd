@@ -67,7 +67,7 @@ function Support() {
         };
 
         fetch('https://frankos-museum-backend.azurewebsites.net/api/donate', requestOptions)
-            .then(response => {if (response.status == 200) {return response.text();} else {throw new Error();}})
+            .then(response => {if (response.status === 200) {return response.text();} else {throw new Error();}})
             .then(data => {
                 document.getElementById("payButton").style.setProperty("background-color", "white", "important");
                 document.getElementById("payButton").innerHTML = data;
