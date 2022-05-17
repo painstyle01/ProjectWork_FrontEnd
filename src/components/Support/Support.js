@@ -69,7 +69,8 @@ function Support() {
                         Exercitation veniam consequat sunt nostrud amet.
                     </p>
                     <div className='boxS1'>
-                        <h3>Вибери суму, яку готовий пожертвувати</h3>                        <div className='supportButtons'>
+                        <h3>Вибери суму, яку готовий пожертвувати</h3>
+                        <div className='supportButtons'>
                             <Button
                                 className='buttonM'
                                 id='button1'
