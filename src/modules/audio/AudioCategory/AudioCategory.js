@@ -39,12 +39,12 @@ function AudioCategory(thisPage) {
         <div className="audioTopImage" style={{backgroundImage: `url(${category.inner_picture})`}}>
         </div>
           <div className="audioTopImage2">
-            <Typography variant="h2" color="white" fontSize="80px" alignSelf='flex-end'>{category.title}</Typography>
+            <Typography className="igraSans" variant="h2" color="white" fontSize="80px" alignSelf='flex-end'>{category.title}</Typography>
           </div>
         <div style={{backgroundColor: 'white', padding: '7%'}}>
           <Grid container spacing={2}>
             <Grid item xs={6}>
-              <Typography variant="h4" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '20px'}}>
+              <Typography className="igraSans" variant="h4" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '20px'}}>
                 Опис
               </Typography>
               <Typography variant="body2" component="div" color='primary'>

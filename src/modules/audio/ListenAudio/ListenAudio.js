@@ -16,7 +16,6 @@ import ReactAudioPlayer from 'react-audio-player';
 import { useParams } from 'react-router-dom';
 import img1 from '../../../images/mf.jpg'
 import img2 from '../../../images/mf1.jpg'
-import aud from '../../../images/audio.m4a'
 
 function ListenAudio(thisPage) {
 
@@ -24,7 +23,7 @@ function ListenAudio(thisPage) {
   'frankustyka', 'podiyi-poza-seriyamy']
 
   const [audios, getAudios] = useState([]);
-  const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Віктор Мартинюк', audio_file: aud, slug: 'miy-franko', description: 'Перша бесіда з циклу "Мій Франко". Розповідає літературознавиця, доктор філологічних наук, професорка, завідувачка кафедри філології гуманітарного факультету УКУ лауреатка Міжнародної премії імені Івана Франка Ярослава Мельник.'});
+  const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Віктор Мартинюк', audio_file: 'https://frankos-museum-backend.azurewebsites.net/static/audio.mp3', slug: 'miy-franko', description: 'Перша бесіда з циклу "Мій Франко". Розповідає літературознавиця, доктор філологічних наук, професорка, завідувачка кафедри філології гуманітарного факультету УКУ лауреатка Міжнародної премії імені Івана Франка Ярослава Мельник.'});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/listen')[0]);
   const page = useParams()
 
@@ -43,9 +42,8 @@ function ListenAudio(thisPage) {
         })
         // var response2 = await fetch('http://frankos-museum-backend.azurewebsites.net/audio/1');
         // var allAudios = await (response2.json())
-        var allAudios = [{id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Віктор Мартинюк', audio_file: aud, slug: 'miy-franko', description: 'Перша бесіда з циклу "Мій Франко". Розповідає літературознавиця, доктор філологічних наук, професорка, завідувачка кафедри філології гуманітарного факультету УКУ лауреатка Міжнародної премії імені Івана Франка Ярослава Мельник.'}]
+        var allAudios = [{id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Віктор Мартинюк', audio_file: 'https://frankos-museum-backend.azurewebsites.net/static/audio.mp3', slug: 'miy-franko', description: 'Перша бесіда з циклу "Мій Франко". Розповідає літературознавиця, доктор філологічних наук, професорка, завідувачка кафедри філології гуманітарного факультету УКУ лауреатка Міжнародної премії імені Івана Франка Ярослава Мельник.'}]
         var currentAudios = allAudios.filter(audio => audio.slug === thisPage)
-        console.log(currentAudios)
         getAudios(currentAudios)
       } catch (e) {
       }
@@ -53,7 +51,7 @@ function ListenAudio(thisPage) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(true);
   const handleOpen = () => setOpen(true);
   const handleClose = () => {setOpen(false)};
 
@@ -61,8 +59,8 @@ function ListenAudio(thisPage) {
     <div>
       <div style={{margin: '4% 7% 7% 7%'}}>          
         <Stack spacing={2}>
-        <div style={{fontSize: '60px', lineHeight: '60px', fontWeight: 'bold'}}>{selectedAudio.title}</div>
-        <div style={{fontSize: '40px', lineHeight: '40px'}}>{selectedAudio.subtitle}</div>
+        <div className="igraSans" style={{fontSize: '60px', lineHeight: '60px', fontWeight: 'bold'}}>{selectedAudio.title}</div>
+        <div className="igraSans" style={{fontSize: '40px', lineHeight: '40px'}}>{selectedAudio.subtitle}</div>
           <ReactAudioPlayer
             // src={'http://frankos-museum-backend.azurewebsites.net'+audio.audio_file}
             src={selectedAudio.audio_file}
@@ -70,7 +68,7 @@ function ListenAudio(thisPage) {
             style={{width: '100%', alignSelf: 'center', marginTop: '30px'}}
           />
         </Stack>
-        <Typography variant="h4" component="div" color='primary' style={{fontWeight: 'bold', lineHeight: '80px', marginTop: '50px'}}>
+        <Typography className="igraSans" variant="h4" component="div" color='primary' style={{fontWeight: 'bold', lineHeight: '80px', marginTop: '50px'}}>
           Опис
         </Typography>
         <Typography variant="body2" component="div" color='primary'>

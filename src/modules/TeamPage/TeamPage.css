@@ -9,6 +9,7 @@
 }
 
 .teamTitle{
+    font-family: 'Igrasans';
     font-weight: 600;
     font-size: 80px;
     line-height: 64px;
@@ -32,6 +33,7 @@
 }
 
 .workersTitle{
+    font-family: 'Igrasans';
     font-weight: 600;
     font-size: 50px;
     line-height: 61px;
@@ -47,6 +49,7 @@
 }
 
 .departmentTitle{
+    font-family: 'Igrasans';
     font-weight: 500;
     font-size: 30px;
     line-height: 37px;
