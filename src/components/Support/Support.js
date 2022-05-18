@@ -7,23 +7,46 @@ import React from "react";
 function Support() {
     var donationValue = 0;
 
-    const myDonationBtn = () => {
+    const [pressed, setPressed] = React.useState(false);
+
+    const myDonationBtn = (event) => {
         var anotherContainer = document.getElementById("anotherContainer");
-        if (anotherContainer.style.display === "none") {
-            anotherContainer.style.display = "block";
-        } else {
+        if (anotherContainer.style.display === "block") {
             anotherContainer.style.display = "none";
+        } else {
+            anotherContainer.style.display = "block";
         }
+        changeColor(event.currentTarget)
     };
 
     const setDonation = (event) => {
+        setPressed(false)
+
+        var buttonM1 = document.getElementById("buttonM1")
+        buttonM1.style.setProperty("background-color", "#ffffff", "important");
+        buttonM1.style.setProperty("color", "#1C1C1C", "important");
+
+        var anotherContainer = document.getElementById("anotherContainer");
+        anotherContainer.style.display = "none";
+
         donationValue = event.currentTarget.getAttribute('donationValue');
-        console.log(donationValue)
+
     };
 
     const updateDonationValue = (event) => {
         donationValue = event.currentTarget.value;
-        console.log(donationValue)
+
+    }
+
+    const changeColor = (button) => {
+        if (pressed) {
+            button.style.setProperty("background-color", "#ffffff", "important");
+            button.style.setProperty("color", "#1C1C1C", "important")
+        } else {
+            button.style.setProperty("background-color", "#1C1C1C", "important");
+            button.style.setProperty("color", "#ffffff", "important")
+        }
+        setPressed(!pressed)
     }
 
     const confirmBtn = () => {
@@ -36,11 +59,6 @@ function Support() {
         var commentContainer = document.getElementById("comment");
         var comment = commentContainer.value;
 
-        console.log("name: " + name);
-        console.log("mail: " + mail);
-        console.log("phone: " + phone);
-        console.log("comment: " + comment);
-        console.log("amount: " + donationValue);
 
         const requestOptions = {
             method: 'POST',
@@ -63,13 +81,13 @@ function Support() {
             <Grid container spacing={0}>
                 <Grid item xs={3}></Grid>
                 <Grid item xs={6} id='menuN'>
-                    <h1>Підтримати нас</h1>
+                    <div style={{fontSize: '71px', lineHeight: '71px', marginInline: 'auto', marginTop: '30px', fontWeight: 'bold', textAlign: 'center'}}>Підтримати нас</div>
                     <p className='text1'>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
                         Velit officia consequat duis enim velit mollit. 
                         Exercitation veniam consequat sunt nostrud amet.
                     </p>
                     <div className='boxS1'>
-                        <h3>Вибери суму, яку готовий пожертвувати</h3>
+                        <div style={{fontSize: '25px', lineHeight: '25px', marginInline: 'auto', marginTop: '30px', fontWeight: 'bold', textAlign: 'center'}}>Вибери суму, яку готовий пожертвувати</div>
                         <div className='supportButtons'>
                             <Button
                                 className='buttonM'
@@ -104,12 +122,13 @@ function Support() {
                             500 грн
                             </Button>
                             <Button
+                                id='buttonM1'
                                 className='buttonM1'
                                 onClick={myDonationBtn}
                             >
                             Інша сума
                             </Button>
-                        </div>
+                        </div>                    
                         <Grid container spacing={0}>
                             <Grid item xs={3}></Grid>
                             <Grid item xs={6}>
@@ -146,8 +165,10 @@ function Support() {
                 </Grid>
                 <Grid item xs={3}></Grid>
             </Grid>
+        
         </div>
-    );
+
+);
 }
 
 

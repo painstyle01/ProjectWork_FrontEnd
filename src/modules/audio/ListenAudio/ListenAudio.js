@@ -14,6 +14,9 @@ import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import ReactAudioPlayer from 'react-audio-player';
 import { useParams } from 'react-router-dom';
+import img1 from '../../../images/mf.jpg'
+import img2 from '../../../images/mf1.jpg'
+import aud from '../../../images/audio.m4a'
 
 function ListenAudio(thisPage) {
 
@@ -21,31 +24,28 @@ function ListenAudio(thisPage) {
   'frankustyka', 'podiyi-poza-seriyamy']
 
   const [audios, getAudios] = useState([]);
-  const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Миколою Ільницьким', audio_file: '/media/audio/my_franko.mp3', link_audio: 1});
+  const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Микола Ільницький', audio_file: aud, slug: 'miy-franko', description: 'Перша бесіда з циклу "Мій Франко". Розповідає літературознавиця, доктор філологічних наук, професорка, завідувачка кафедри філології гуманітарного факультету УКУ лауреатка Міжнародної премії імені Івана Франка Ярослава Мельник.'});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/listen')[0]);
   const page = useParams()
 
   useEffect(() => {
     (async () => {
       try {
-        var response1 = await fetch('http://frankos-museum-backend.azurewebsites.net/audio');
-        var categories = await response1.json()
+        // var response1 = await fetch('http://frankos-museum-backend.azurewebsites.net/audio');
+        // var categories = await response1.json()
+        var categories = [{'title': 'Мій Франко', 'picture': img1, 'inner_picture': img2, 'slug': 'miy-franko', 'description': 'Кожен українець рано чи пізно стикається з постаттю Івана Франка. Для декого він залишається назвою вулиці в рідному місті, для інших – напівзабутим іменем зі шкільного підручника, для ще інших – визначним діячем давно минулих часів. Але є ті, для кого така зустріч стає початком довгого діалогу з великою живою людиною – почасти вчителем, почасти другом, – діалогу не завжди легкого, але незмінно цікавого. Саме такі люди є героями циклу зустрічей «Мій Франко» у Домі Франка.'}]
         var url = window.location.pathname
         var thisPage = ''
-        links.map(function(link){
-          if((url.search(link))!==-1){
-            return(
-              thisPage = link
-            )
-          }
-          else{
-            return(0)
+        categories.map(function(cat){
+          if((url.search(cat.slug))!=-1){
+            thisPage = cat.slug
           }
         })
-        var category = categories.filter(c => c.id === links.indexOf(thisPage)+1)[0]
-        var response2 = await fetch('http://frankos-museum-backend.azurewebsites.net/audio/1');
-        var allAudios = await (response2.json())
-        var currentAudios = allAudios.filter(audio => audio.link_audio === category.id)
+        // var response2 = await fetch('http://frankos-museum-backend.azurewebsites.net/audio/1');
+        // var allAudios = await (response2.json())
+        var allAudios = [{id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Микола Ільницький', audio_file: aud, slug: 'miy-franko', description: 'Перша бесіда з циклу "Мій Франко". Розповідає літературознавиця, доктор філологічних наук, професорка, завідувачка кафедри філології гуманітарного факультету УКУ лауреатка Міжнародної премії імені Івана Франка Ярослава Мельник.'}]
+        var currentAudios = allAudios.filter(audio => audio.slug === thisPage)
+        console.log(currentAudios)
         getAudios(currentAudios)
       } catch (e) {
       }
@@ -64,13 +64,17 @@ function ListenAudio(thisPage) {
         <div style={{fontSize: '60px', lineHeight: '60px', fontWeight: 'bold'}}>{selectedAudio.title}</div>
         <div style={{fontSize: '40px', lineHeight: '40px'}}>{selectedAudio.subtitle}</div>
           <ReactAudioPlayer
-            src={'http://frankos-museum-backend.azurewebsites.net'+selectedAudio.audio_file}
+            // src={'http://frankos-museum-backend.azurewebsites.net'+audio.audio_file}
+            src={selectedAudio.audio_file}
             controls
             style={{width: '100%', alignSelf: 'center', marginTop: '30px'}}
           />
         </Stack>
-        <Typography variant="h4" component="div" color='primary' style={{fontWeight: 'bold', lineHeight: '80px'}}>
+        <Typography variant="h4" component="div" color='primary' style={{fontWeight: 'bold', lineHeight: '80px', marginTop: '50px'}}>
           Опис
+        </Typography>
+        <Typography variant="body2" component="div" color='primary'>
+          {selectedAudio.description}
         </Typography>
       </div>
       <div style={{margin:'auto', width: '274px'}}>
@@ -114,7 +118,8 @@ function ListenAudio(thisPage) {
                         <div style={{fontSize: '20px', lineHeight: '20px', fontWeight: 'bold'}}>{audio.title}</div>
                         <p>{audio.subtitle}</p>
                         <ReactAudioPlayer
-                          src={'http://frankos-museum-backend.azurewebsites.net'+audio.audio_file}
+                          // src={'http://frankos-museum-backend.azurewebsites.net'+audio.audio_file}
+                          src={audio.audio_file}
                           controls
                           style={{width: '100%', alignSelf: 'center'}}
                         />
