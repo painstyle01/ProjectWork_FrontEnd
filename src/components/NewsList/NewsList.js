@@ -13,7 +13,7 @@ function NewsList(props) {
             return el;
         }
         else {
-            return el.title.toLowerCase().includes(props.input)
+            return el.source_name.toLowerCase().includes(props.input)
         }
     })
   
