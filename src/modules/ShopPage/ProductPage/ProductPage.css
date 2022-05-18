@@ -29,6 +29,7 @@ a{
 }
 
 .productTitle{
+    font-family: 'Igrasans';
     font-weight: 700;
     font-size: 30px;
     line-height: 22px;
@@ -76,12 +77,12 @@ a{
     line-height: 32px;
 }
 
-.otherProductsTitle{
+/* .otherProductsTitle{
     font-weight: 400;
     font-size: 50px;
     line-height: 76px;
     color: #1C1C1C;
-}
+} */
 
 .otherProductsCards{
     margin-top: 5px !important;
@@ -95,6 +96,7 @@ a{
 }
 
 .otherProductTitle{
+    font-family: 'Igrasans';
     font-style: normal;
     font-weight: 600 !important;
     font-size: 15px !important;

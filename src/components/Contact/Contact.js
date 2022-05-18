@@ -18,7 +18,7 @@ function Contact() {
             <Grid item xs={3}></Grid>
             <Grid item xs={6} id='menuN'>
                 <div className='contM'>
-                    <h1>Контакти</h1>
+                    <h1 className='igraSans'>Контакти</h1>
                     <div className='lineC'></div>
                 </div>
                 <div className='timeC'>

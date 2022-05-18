@@ -1,3 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "Igrasans";
+    src: local("Igrasans"),
+    url("../fonts/fonts/Igrasans.ttf") format("truetype");
+}
+
 .top_content{
     min-height: 25vw;
     color: white;
@@ -26,20 +37,19 @@
     height: 1000px;
 }
 
-/* @import url(https://fonts.googleapis.com/css?family=Igra+Sans); */
-
 .mainTitle{
-    /* src: local(''),
-    url('../fonts/fonts/Igrasans.ttf') format('ttf');    font-family: 'Igra Sans'; */
-    /* src: local('Igra Sans'), local('IgraSans'), url('../fonts/fonts/Igrasans.woff2') format('woff2'), url('../fonts/fonts/Igrasans.woff') format('woff'), url('../fonts/fonts/Igrasans.ttf') format('truetype'); */
     font-weight: 400;
     font-style: normal;
-    font-family: 'Igra Sans';
+    font-family: 'Igrasans'!important;
     font-style: normal;
     font-weight: normal;
-    font-size: 13vw;
-    line-height: 13vw;
+    font-size: 12vw;
+    line-height: 12vw;
     text-align: center;
+}
+
+.igraSans{
+    font-family: 'Igrasans'!important;
 }
 
 .middle{

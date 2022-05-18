@@ -31,11 +31,11 @@
 .threeDTourTitle{
     font-weight: 400;
     font-style: normal;
-    font-family: 'Igra Sans';
+    font-family: 'Igrasans'!important;
     font-style: normal;
     font-weight: normal;
-    font-size: 5vw;
-    line-height: 5vw;
+    font-size: 4.7vw;
+    line-height: 4.7vw;
     text-align: center;
     width: 600px;
     align-self: center;

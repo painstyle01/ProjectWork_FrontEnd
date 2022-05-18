@@ -61,10 +61,10 @@ function WatchVideo(thisPage) {
   return (
     <div>
       <div style={{margin: '4% 7% 7% 7%'}}>
-        <div style={{fontSize: '60px', lineHeight: '60px', fontWeight: 'bold'}}>{selectedVideo.title}</div>
+        <div className="igraSans" style={{fontSize: '60px', lineHeight: '60px', fontWeight: 'bold'}}>{selectedVideo.title}</div>
         <iframe src={selectedVideo.youtube_link} controls style={{marginTop: '30px', width: '85vw', height: '48vw'}}>
         </iframe>
-        <Typography variant="h4" component="div" color='primary' style={{fontWeight: 'bold', lineHeight: '80px'}}>
+        <Typography className="igraSans" variant="h4" component="div" color='primary' style={{fontWeight: 'bold', lineHeight: '80px'}}>
           Опис
         </Typography>
         <Typography variant="body2" component="div" color='primary'>

@@ -17,6 +17,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material'
+import '../fonts/fonts/Igrasans.ttf';
 
 
 
@@ -48,7 +49,7 @@ function MainPage() {
             <div>
                 <div className="top_content">
                     <div className="mainTitle">ДІМ ФРАНКА</div>
-                    <Typography variant="body2" color="secondary" marginBlock={'30px 50px'} sx={{textAlign: 'center'}}>Ласкаво просимо до музею Франка!</Typography>
+                    <Typography variant="body2" color="secondary" marginBlock={'30px 40px'} sx={{textAlign: 'center'}}>Ласкаво просимо до музею Франка!</Typography>
                     <Stack direction="row" spacing={2} sx={{width: '100%', justifyContent: 'center'}}>
                         <NavLink to={'/support'}>
                             <Button variant="text" color="secondary" id='but'>
@@ -76,7 +77,7 @@ function MainPage() {
             <div className="bottom">
                 <div className="bottom_content" style={{paddingBottom: '0'}}>
                     <Stack direction="row" spacing={2}>
-                        <div style={{fontSize: '71px', lineHeight: '71px', fontWeight: 'bold'}}>Останні новини</div>
+                        <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px'}}>Останні новини</div>
                         <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
                     </Stack>
                     <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '15px 30px'}} />
@@ -108,7 +109,7 @@ function MainPage() {
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
                             <NavLink to={'/history'} className="menuNavLink">
                                 <Stack direction="row" spacing={2}>
-                                    <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Історія</div>
+                                    <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px'}}>Історія</div>
                                     <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
                                 </Stack>
                             </NavLink>
@@ -119,7 +120,7 @@ function MainPage() {
                     <Grid container spacing={3}>
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
                             <Stack direction="row" spacing={2}>
-                                <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Колекції</div>
+                                <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px'}}>Колекції</div>
                                 <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
                             </Stack>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
@@ -132,7 +133,7 @@ function MainPage() {
                 <div className="bottom_grey_content">
                     <Grid container spacing={3} sx={{alignSelf: 'center', marginTop: '25px', paddingBlock: '50px'}}>
                         <Grid item sm={12} md={6}>
-                            <div style={{fontSize: '71px', lineHeight: '71px', marginTop: '20px', fontWeight: 'bold'}}>Підтримай нас</div>
+                            <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px', marginTop: '20px'}}>Підтримай нас</div>
                         </Grid>
                         <Grid item sm={12} md={6}>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
@@ -152,7 +153,7 @@ function MainPage() {
                         </Grid>
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
                             <Stack direction="row" spacing={2}>
-                                <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Наші програми</div>
+                                <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px'}}>Наші програми</div>
                                 <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
                             </Stack>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
