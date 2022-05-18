@@ -24,7 +24,7 @@ function ListenAudio(thisPage) {
   'frankustyka', 'podiyi-poza-seriyamy']
 
   const [audios, getAudios] = useState([]);
-  const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Микола Ільницький', audio_file: aud, slug: 'miy-franko', description: 'Перша бесіда з циклу "Мій Франко". Розповідає літературознавиця, доктор філологічних наук, професорка, завідувачка кафедри філології гуманітарного факультету УКУ лауреатка Міжнародної премії імені Івана Франка Ярослава Мельник.'});
+  const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Віктор Мартинюк', audio_file: aud, slug: 'miy-franko', description: 'Перша бесіда з циклу "Мій Франко". Розповідає літературознавиця, доктор філологічних наук, професорка, завідувачка кафедри філології гуманітарного факультету УКУ лауреатка Міжнародної премії імені Івана Франка Ярослава Мельник.'});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/listen')[0]);
   const page = useParams()
 
@@ -43,7 +43,7 @@ function ListenAudio(thisPage) {
         })
         // var response2 = await fetch('http://frankos-museum-backend.azurewebsites.net/audio/1');
         // var allAudios = await (response2.json())
-        var allAudios = [{id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Микола Ільницький', audio_file: aud, slug: 'miy-franko', description: 'Перша бесіда з циклу "Мій Франко". Розповідає літературознавиця, доктор філологічних наук, професорка, завідувачка кафедри філології гуманітарного факультету УКУ лауреатка Міжнародної премії імені Івана Франка Ярослава Мельник.'}]
+        var allAudios = [{id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Віктор Мартинюк', audio_file: aud, slug: 'miy-franko', description: 'Перша бесіда з циклу "Мій Франко". Розповідає літературознавиця, доктор філологічних наук, професорка, завідувачка кафедри філології гуманітарного факультету УКУ лауреатка Міжнародної премії імені Івана Франка Ярослава Мельник.'}]
         var currentAudios = allAudios.filter(audio => audio.slug === thisPage)
         console.log(currentAudios)
         getAudios(currentAudios)
