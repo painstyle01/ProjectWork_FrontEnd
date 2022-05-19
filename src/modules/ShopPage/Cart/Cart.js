@@ -63,7 +63,7 @@ function Cart(props){
                 {
                     myCart.map((element) => {
                         return(
-                            <Grid container spacing={4} className="CartproductCard">
+                            <Grid container spacing={4} className="CartproductCard" alignItems="center">
                                 <Grid item xs={2}>
                                     <img className="productImage" src={element.chosenProduct.url_to_photo} alt="not found"/>
                                 </Grid>

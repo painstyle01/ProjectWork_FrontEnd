@@ -17,13 +17,13 @@
 .productsInCart{
     border-top: 4px solid #1C1C1C;
     margin-top: 10px !important;
-    padding-top: 30px !important;
+    padding-top: 0px !important;
+    margin-bottom: 50px;
 }
 
 .CartproductCard{
     border-bottom: 2px solid #C5C5C5;
-    margin-bottom: 50px;
-    padding-bottom: 10px !important;
+    padding-block: 20px !important;
 }
 
 .productImage{    
@@ -40,7 +40,6 @@
 
 .productDeleteContainer{
     text-align: right;
-    margin-top: 15px !important;
 }
 
 .productDelete:hover{
@@ -52,7 +51,7 @@
     font-weight: 600;
     font-size: 20px;
     line-height: 37px;
-    margin-left: 5px;;
+    margin-left: 5px;
 }
 
 .deleteIcon{
