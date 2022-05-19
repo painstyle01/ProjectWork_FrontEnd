@@ -102,10 +102,10 @@ function ProductPage(Product){
 
             <Grid item xs={12} className="otherProducts">   
                 <span className="otherProductsTitle">Наші рекомендації</span>
-                <Grid className="otherProductsCards" container spacing={6}>
+                <Grid className="otherProductsCards" container spacing={0}>
                     {products.map((object) => {
                             return(
-                                <Grid item xs={2} className="productCard">
+                                <Grid item xs={6} sm={4} md={3} lg={2} className="productCard">
                                     <Link to={"/products/"+object.id}>
                                         <img src={object.url_to_photo} alt="not found"></img>
                                         <span className="otherProductTitle">{object.name}</span>

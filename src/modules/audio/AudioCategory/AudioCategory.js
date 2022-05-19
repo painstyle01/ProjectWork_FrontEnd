@@ -44,7 +44,7 @@ function AudioCategory(thisPage) {
         <div style={{backgroundColor: 'white', padding: '7%'}}>
           <Grid container spacing={2}>
             <Grid item xs={6}>
-              <Typography className="igraSans" variant="h4" component="div" color='primary' style={{fontWeight: 'bold', marginBottom: '20px'}}>
+              <Typography className="igraSans" variant="h4" component="div" color='primary' style={{marginBottom: '20px'}}>
                 Опис
               </Typography>
               <Typography variant="body2" component="div" color='primary'>

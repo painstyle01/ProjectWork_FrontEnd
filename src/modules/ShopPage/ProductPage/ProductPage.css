@@ -30,9 +30,9 @@ a{
 
 .productTitle{
     font-family: 'Igrasans';
-    font-weight: 700;
-    font-size: 30px;
-    line-height: 22px;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 50px;
 }
 
 .productPrice{
@@ -77,15 +77,15 @@ a{
     line-height: 32px;
 }
 
-/* .otherProductsTitle{
+.otherProductsTitle{
     font-weight: 400;
     font-size: 50px;
     line-height: 76px;
     color: #1C1C1C;
-} */
+}
 
 .otherProductsCards{
-    margin-top: 5px !important;
+    padding-top: 20px !important;
     border-top: 4px solid #1C1C1C;
     /* border-top-width: 1636.01px; */
 }
@@ -96,7 +96,6 @@ a{
 }
 
 .otherProductTitle{
-    font-family: 'Igrasans';
     font-style: normal;
     font-weight: 600 !important;
     font-size: 15px !important;

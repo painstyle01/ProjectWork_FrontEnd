@@ -29,7 +29,7 @@ function Footer() {
     return (
         <div className="footer">
             <Stack direction="row" spacing={2}>
-                <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px', fontWeight: 'bold'}}>Спланувати візит</div>
+                <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px'}}>Спланувати візит</div>
                 <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
             </Stack>
             <Divider color='black' style={{borderBottomWidth: 4, marginBlock: '30px'}}/>
@@ -70,7 +70,7 @@ function Footer() {
                 <Grid item xs={12} sm={8} lg={4} sx={{alignSelf: 'center'}}>
                     <NavLink to={'/support'} className="menuNavLink">
                         <Stack direction="row" spacing={2} sx={{float: 'right'}} id='pdtrm'>
-                            <Typography className="igraSans" variant="h4" component="div" color='primary' style={{fontWeight: 'bold'}}>
+                            <Typography className="igraSans" variant="h4" component="div" color='primary'>
                                 Підтримай нас
                             </Typography>
                             <ArrowCircleUpIcon sx={{fontSize: '45px', transform: 'rotate(45deg)'}}/>
