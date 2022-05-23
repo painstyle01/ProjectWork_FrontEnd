@@ -89,7 +89,7 @@ function Header() {
     useEffect(() => {
         (async () => {
             window.scrollTo(0, 0);
-            if (pathname==='/' || pathname==='/3Dtour') {
+            if (pathname==='/' || pathname==='/3Dtour' || window.location.href.indexOf("book") > -1) {
                 setBackgroundColor('rgba(0,0,0,0.6)')
                 setImage1(Group2)
                 setImage2(Vector2)

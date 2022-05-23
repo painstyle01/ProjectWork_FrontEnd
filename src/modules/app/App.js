@@ -27,6 +27,7 @@ import Team from '../TeamPage/TeamPage'
 import Excursion from '../ExcursionPage/ExcursionPage'
 import Biography from '../FrankBiography/Biography'
 import History from '../HistoryPage/HistoryPage'
+import Book from '../LibraryPage/BookPaage/BookPage'
 
 function App() {
   return (
@@ -54,6 +55,7 @@ function App() {
         <Route key={17} exact path="/excursion" element={<Excursion/>}/>
         <Route key={18} exact path="/biography" element={<Biography/>}/>
         <Route key={19} exact path="/history" element={<History/>}/>
+        <Route key={20} exact path="/book/:id" element={<Book/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>
