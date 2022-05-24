@@ -59,7 +59,7 @@ function ListenAudio(thisPage) {
     <div>
       <div style={{margin: '4% 7% 7% 7%'}}>          
         <Stack spacing={2}>
-        <div className="igraSans" style={{fontSize: '60px', lineHeight: '60px', fontWeight: 'bold'}}>{selectedAudio.title}</div>
+        <div className="igraSans" style={{fontSize: '60px', lineHeight: '60px'}}>{selectedAudio.title}</div>
         <div className="igraSans" style={{fontSize: '40px', lineHeight: '40px'}}>{selectedAudio.subtitle}</div>
           <ReactAudioPlayer
             // src={'http://frankos-museum-backend.azurewebsites.net'+audio.audio_file}
@@ -68,7 +68,7 @@ function ListenAudio(thisPage) {
             style={{width: '100%', alignSelf: 'center', marginTop: '30px'}}
           />
         </Stack>
-        <Typography className="igraSans" variant="h4" component="div" color='primary' style={{fontWeight: 'bold', lineHeight: '80px', marginTop: '50px'}}>
+        <Typography className="igraSans" variant="h4" component="div" color='primary' style={{lineHeight: '80px', marginTop: '50px'}}>
           Опис
         </Typography>
         <Typography variant="body2" component="div" color='primary'>

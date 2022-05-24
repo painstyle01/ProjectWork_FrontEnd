@@ -36,7 +36,7 @@ class Shop extends React.Component {
     render(){
         return(
                 <div className="container">
-                    <h2 className="igraSans">Магазин</h2>
+                <div className="igraSans" style={{fontSize: '76px', lineHeight: '76px', margin: 'auto'}}>Крамниця</div>
 
                     <Grid container spacing={1} className="menuLine">
                         {Temporarydata.categories.map((object, index)=>{

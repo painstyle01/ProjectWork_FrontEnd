@@ -63,7 +63,7 @@ function Cart(props){
                 {
                     myCart.map((element) => {
                         return(
-                            <Grid container spacing={4} className="CartproductCard">
+                            <Grid container spacing={4} className="CartproductCard" alignItems="center">
                                 <Grid item xs={2}>
                                     <img className="productImage" src={element.chosenProduct.url_to_photo} alt="not found"/>
                                 </Grid>
@@ -74,7 +74,7 @@ function Cart(props){
                                     <span id={element.chosenProduct.id} className="plusProduct" onClick={EditCounter}>+</span>    
                                 </Grid>
                                 <Grid item xs={3} className="productDeleteContainer">
-                                    <DeleteIcon id={element.chosenProduct.id} onClick = {Delete}/>
+                                    <DeleteIcon className="deleteIcon" id={element.chosenProduct.id} onClick = {Delete}/>
                                     <span className="productDelete" id={element.chosenProduct.id} onClick = {Delete} >Видалити</span>
                                 </Grid>
                             </Grid>
