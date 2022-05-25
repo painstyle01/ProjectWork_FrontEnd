@@ -6,6 +6,13 @@ import smallArrow from '../../../components/img/smallArrow.png'
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
 
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
 const TempData=[
     {
         id: '1',
@@ -52,9 +59,26 @@ const TempData=[
     
 ]
 
+fetch('http://frankos-museum-backend.azurewebsites.net/api/products/')
+.then(response => response.json())
+.then(data => {
+    let temp = [];
+    data.map((e)=>{
+        if(e.type=='book'){
+            temp.push(e)
+        }
+    })
+    localStorage.setItem('libraryBooks', JSON.stringify(temp))
+});
+
 function LibraryPage(){
 
+
     const [searchTerm, setSearchTerm] = useState('');
+    const [books, setBooks] = useState(JSON.parse(localStorage.getItem('libraryBooks')))
+
+
+    console.log(books);
 
     return(
         <div className="archiveMainContainer">
@@ -67,21 +91,33 @@ function LibraryPage(){
             </p>
 
             <Grid container spacing="3">
-                {TempData.filter((val)=>{
+                {books.filter((val)=>{
                     if(searchTerm == ''){
                         return val;
-                    } else if(val.title.toLowerCase().includes(searchTerm.toLocaleLowerCase())){
+                    } else if(val.name.toLowerCase().includes(searchTerm.toLocaleLowerCase())){
                         return val;
                     }
                 }).map((element)=>{
                     return(
                         <Grid item key={element.id} xs={4} className="archiveCard">
                             <Link to={"/book/"+element.id}>
-                            <img src={element.photo} className="archiveCardImg" alt="not found"/>
-                            <div className="archiveCardTitle">{element.title} <img src={smallArrow} alt="not found"/></div>
-                            <div className="archiveCardDate">{element.date}</div>
-                            </Link>
+                            <Card sx={{ maxWidth: 345 }} className="bookCard">
+                                <CardMedia
+                                    component="img"
+                                    height="220"
+                                    image={element.url_to_photo}
+                                    alt={element.name}
+                                />
+                                <CardContent>
+                                <div className="archiveCardTitle">{element.name} <img src={smallArrow} alt="not found"/></div>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {element.description}
+                                    </Typography>
+                                </CardContent>
+                                </Card>
+                                </Link>
                         </Grid>
+                        
                     )
                 })}
             </Grid>
