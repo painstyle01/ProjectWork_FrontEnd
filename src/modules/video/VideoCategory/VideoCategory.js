@@ -57,15 +57,17 @@ function VideoCategory(thisPage) {
             </Grid>
           </Grid>
         </div>
-        <div style={{margin:'auto', width: '274px'}}>
-          <NavLink to={window.location.pathname+'/watch'}>
-            <Button className='openVideoListButton' variant="outlined">
-              <Stack direction="row" spacing={1} padding='10px 50px'>
-                <MenuIcon/>
-                <div style={{fontWeight: 'bold'}}>Список відео</div>
-              </Stack>
-            </Button>
-          </NavLink>
+        <div style={{backgroundColor: 'white'}}>
+          <div style={{margin:'auto', width: '274px', backgroundColor: 'white'}}>
+            <NavLink to={window.location.pathname+'/watch'}>
+              <Button className='openVideoListButton' variant="outlined">
+                <Stack direction="row" spacing={1} padding='10px 50px'>
+                  <MenuIcon/>
+                  <div style={{fontWeight: 'bold'}}>Список відео</div>
+                </Stack>
+              </Button>
+            </NavLink>
+          </div>
         </div>
       </div>
     )    
