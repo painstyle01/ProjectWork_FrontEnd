@@ -89,7 +89,7 @@ function Header() {
     useEffect(() => {
         (async () => {
             window.scrollTo(0, 0);
-            if (pathname==='/' || pathname==='/3Dtour') {
+            if (pathname==='/' || pathname==='/3Dtour' || window.location.href.indexOf("book") > -1) {
                 setBackgroundColor('rgba(0,0,0,0.6)')
                 setImage1(Group2)
                 setImage2(Vector2)
@@ -202,7 +202,7 @@ function Header() {
                                 >
                                     <NavLink to={'/3Dtour'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Віртуальний тур" : "Virtual tour"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Онлайн колекція" : "Online collection"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Каталог бібліотеки" : "Library catalogue"}</MenuItem>
+                                    <NavLink to={'/library'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Каталог бібліотеки" : "Library catalogue"}</MenuItem></NavLink>
                                     <NavLink to={'/video'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Відео" : "Video"}</MenuItem></NavLink>
                                     <NavLink to={'/audio'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Аудіо" : "Audio"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Ігри" : "Games"}</MenuItem>

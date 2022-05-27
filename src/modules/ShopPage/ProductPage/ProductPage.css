@@ -78,15 +78,17 @@ a{
 }
 
 .otherProductsTitle{
+    font-family: 'Igrasans'!important;
     font-weight: 400;
     font-size: 50px;
-    line-height: 76px;
+    line-height: 50px;
     color: #1C1C1C;
 }
 
 .otherProductsCards{
     padding-top: 20px !important;
     border-top: 4px solid #1C1C1C;
+    margin-top: 10px;
     /* border-top-width: 1636.01px; */
 }
 

@@ -81,7 +81,7 @@ function Support() {
             <Grid container spacing={0}>
                 <Grid item xs={3}></Grid>
                 <Grid item xs={6} id='menuN'>
-                    <div className='igraSans' style={{fontSize: '71px', lineHeight: '71px', marginInline: 'auto', marginTop: '30px', fontWeight: 'bold', textAlign: 'center'}}>Підтримати нас</div>
+                    <div className='igraSans' style={{fontSize: '71px', lineHeight: '71px', marginInline: 'auto', marginTop: '30px', textAlign: 'center'}}>Підтримати нас</div>
                     <p className='text1'>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
                         Velit officia consequat duis enim velit mollit. 
                         Exercitation veniam consequat sunt nostrud amet.

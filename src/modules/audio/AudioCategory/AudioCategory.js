@@ -57,15 +57,17 @@ function AudioCategory(thisPage) {
             </Grid>
           </Grid>
         </div>
-        <div style={{margin:'auto', width: '274px'}}>
-          <NavLink to={window.location.pathname+'/listen'}>
-            <Button className='openAudioListButton' variant="outlined">
-              <Stack direction="row" spacing={1} padding='10px 50px'>
-                <MenuIcon/>
-                <div style={{fontWeight: 'bold'}}>Список аудіо</div>
-              </Stack>
-            </Button>
-          </NavLink>
+        <div style={{backgroundColor: 'white'}}>
+          <div style={{margin:'auto', width: '274px'}}>
+            <NavLink to={window.location.pathname+'/listen'}>
+              <Button className='openAudioListButton' variant="outlined">
+                <Stack direction="row" spacing={1} padding='10px 50px'>
+                  <MenuIcon/>
+                  <div style={{fontWeight: 'bold'}}>Список аудіо</div>
+                </Stack>
+              </Button>
+            </NavLink>
+          </div>
         </div>
       </div>
     )
