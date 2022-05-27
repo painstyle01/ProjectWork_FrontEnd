@@ -29,6 +29,7 @@ import Biography from '../FrankBiography/Biography'
 import History from '../HistoryPage/HistoryPage'
 import Library from '../LibraryPage/MainLibraryPage/LibraryPage'
 import BookPage from '../LibraryPage/BookPaage/BookPage'
+import Projects from '../Projects/Projects'
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
         <Route key={19} exact path="/history" element={<History/>}/>
         <Route key={20} exact path="/library" element={<Library/>}/>
         <Route key={21} exact path="/book/:id" element={<BookPage/>}/>
+        <Route key={22} exact path="/projects" element={<Projects/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>
