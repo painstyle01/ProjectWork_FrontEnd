@@ -4,12 +4,23 @@ import './ProductPage.css'
 import { Button } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import {Link} from 'react-router-dom'
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert from '@mui/material/Alert';
+import Stack from '@mui/material/Stack';
+
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
 
 function ProductPage(Product){
 
     const [currentPhoto, setPhoto] = React.useState(1);
     const productId = useParams().id;
     let products = JSON.parse(localStorage.getItem('products'));
+
+    const [open, setOpen] = React.useState(false);
 
 
     let product;
@@ -54,9 +65,18 @@ function ProductPage(Product){
             }
             
             localStorage.setItem('Cart', JSON.stringify(currentCart))
+
+            setOpen(true);
         }
     }
 
+    const handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+          return;
+        }
+    
+        setOpen(false);
+      };
 
 
     return(
@@ -80,8 +100,6 @@ function ProductPage(Product){
                                 <img src={product.url_to_photo} id='mainImage' alt="not found"/>
                             </Grid>
                         </Grid>
-                    
-
                     </Grid>
 
                     <Grid item xs={6} className="productInfo">
@@ -96,6 +114,14 @@ function ProductPage(Product){
                         </Button>
                     </Grid>
                 </Grid>
+
+                <Stack spacing={1} sx={{ width: '100%' }}>
+                        <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
+                            <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+                                Ви добавили продукт у кошик
+                            </Alert>
+                        </Snackbar>
+                </Stack>
             </Grid>
 
 
