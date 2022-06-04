@@ -11,8 +11,6 @@ import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material'
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import img1 from '../../../images/mf.jpg'
-import img2 from '../../../images/mf1.jpg'
 
 function AudioPage() {
 
@@ -21,9 +19,8 @@ function AudioPage() {
   useEffect(() => {
       (async () => {
           try {
-              // var response = await fetch('http://frankos-museum-backend.azurewebsites.net/audio');
-              // getCategories(await response.json());
-              getCategories([{'title': 'Мій Франко', 'picture': img1, 'inner_picture': img2, 'slug': 'miy-franko', 'description': 'Кожен українець рано чи пізно стикається з постаттю Івана Франка. Для декого він залишається назвою вулиці в рідному місті, для інших – напівзабутим іменем зі шкільного підручника, для ще інших – визначним діячем давно минулих часів. Але є ті, для кого така зустріч стає початком довгого діалогу з великою живою людиною – почасти вчителем, почасти другом, – діалогу не завжди легкого, але незмінно цікавого. Саме такі люди є героями циклу зустрічей «Мій Франко» у Домі Франка.'}])
+              var response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/list-audio');
+              getCategories(await response.json());
           } catch (e) {
           }
       })();

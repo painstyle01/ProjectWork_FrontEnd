@@ -14,8 +14,6 @@ import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import ReactAudioPlayer from 'react-audio-player';
 import { useParams } from 'react-router-dom';
-import img1 from '../../../images/mf.jpg'
-import img2 from '../../../images/mf1.jpg'
 
 function ListenAudio(thisPage) {
 
@@ -30,25 +28,22 @@ function ListenAudio(thisPage) {
   useEffect(() => {
     (async () => {
       try {
-        // var response1 = await fetch('http://frankos-museum-backend.azurewebsites.net/audio');
-        // var categories = await response1.json()
-        var categories = [{'title': 'Мій Франко', 'picture': img1, 'inner_picture': img2, 'slug': 'miy-franko', 'description': 'Кожен українець рано чи пізно стикається з постаттю Івана Франка. Для декого він залишається назвою вулиці в рідному місті, для інших – напівзабутим іменем зі шкільного підручника, для ще інших – визначним діячем давно минулих часів. Але є ті, для кого така зустріч стає початком довгого діалогу з великою живою людиною – почасти вчителем, почасти другом, – діалогу не завжди легкого, але незмінно цікавого. Саме такі люди є героями циклу зустрічей «Мій Франко» у Домі Франка.'}]
+        var response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/list-audio');
+        var categories = await response.json()
         var url = window.location.pathname
         var thisPage = ''
-        categories.map(function(cat){
-          if((url.search(cat.slug))!=-1){
-            thisPage = cat.slug
+        links.map(function(link){
+          if((url.search(link))!=-1){
+            thisPage = link
           }
         })
-        // var response2 = await fetch('http://frankos-museum-backend.azurewebsites.net/audio/1');
-        // var allAudios = await (response2.json())
-        var allAudios = [{id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Віктор Мартинюк', audio_file: 'https://frankos-museum-backend.azurewebsites.net/static/audio.mp3', slug: 'miy-franko', description: 'Перша бесіда з циклу "Мій Франко". Розповідає літературознавиця, доктор філологічних наук, професорка, завідувачка кафедри філології гуманітарного факультету УКУ лауреатка Міжнародної премії імені Івана Франка Ярослава Мельник.'}]
-        var currentAudios = allAudios.filter(audio => audio.slug === thisPage)
-        getAudios(currentAudios)
+        var cat = categories.filter(c => c.id == links.indexOf(thisPage)+1)[0]
+        var response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/list-audio/'+cat.id);
+        var audios = await response.json()
+        getAudios(audios)
       } catch (e) {
       }
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [open, setOpen] = useState(true);
@@ -62,8 +57,7 @@ function ListenAudio(thisPage) {
         <div className="igraSans" style={{fontSize: '60px', lineHeight: '60px'}}>{selectedAudio.title}</div>
         <div className="igraSans" style={{fontSize: '40px', lineHeight: '40px'}}>{selectedAudio.subtitle}</div>
           <ReactAudioPlayer
-            // src={'http://frankos-museum-backend.azurewebsites.net'+audio.audio_file}
-            src={selectedAudio.audio_file}
+            src={'http://frankos-museum-backend.azurewebsites.net'+selectedAudio.audio_file}
             controls
             style={{width: '100%', alignSelf: 'center', marginTop: '30px'}}
           />
@@ -116,8 +110,7 @@ function ListenAudio(thisPage) {
                         <div style={{fontSize: '20px', lineHeight: '20px', fontWeight: 'bold'}}>{audio.title}</div>
                         <p>{audio.subtitle}</p>
                         <ReactAudioPlayer
-                          // src={'http://frankos-museum-backend.azurewebsites.net'+audio.audio_file}
-                          src={audio.audio_file}
+                          src={'http://frankos-museum-backend.azurewebsites.net'+audio.audio_file}
                           controls
                           style={{width: '100%', alignSelf: 'center'}}
                         />

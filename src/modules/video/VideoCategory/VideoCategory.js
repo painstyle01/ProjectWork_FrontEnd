@@ -8,10 +8,11 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Stack } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import img1 from '../../../images/fv.jpg'
-import img2 from '../../../images/fv1.jpg'
 
 function VideoCategory(thisPage) {
+
+  let links = ['franko-vdoma', 'miy-izmaragd', 'intelektualna-biografiya', 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
+'frankustyka', 'podiyi-poza-seriyamy']
 
   const [category, getCategory] = useState([]);
   const page = useParams()
@@ -19,24 +20,21 @@ function VideoCategory(thisPage) {
   useEffect(() => {
     (async () => {
       try {
-        // var response = await fetch('http://frankos-museum-backend.azurewebsites.net/video');
-        // var categories = await response.json()
-        var categories = [{'title': 'Франко вдома', 'picture': img1, 'inner_picture': img2, 'slug': 'franko-vdoma', 'description': 'Відео-блог, у якому фахівці розповідають цікаві історії про письменника, його родину та сам Музей.'}]
+        var response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/list-video');
+        var categories = await response.json()
         var fullUrl = window.location.pathname
         var split = fullUrl.split('/')
         var thisPage = split[split.length-1]
-        var category = categories.filter(category => category.slug == thisPage)[0]
+        var category = categories.filter(category => category.id == links.indexOf(thisPage)+1)[0]
         getCategory(category)
       } catch (e) {
       }
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   
     return (
       <div>
-        {/* <div className="videoTopImage" style={{backgroundImage: `url(http://frankos-museum-backend.azurewebsites.net${category.inner_picture})`}}> */}
-        <div className="videoTopImage" style={{backgroundImage: `url(${category.inner_picture})`}}>
+        <div className="videoTopImage" style={{backgroundImage: `url(http://frankos-museum-backend.azurewebsites.net${category.inner_picture})`}}>
         </div>
           <div className="videoTopImage2">
             <Typography className="igraSans" variant="h2" color="white" fontSize="80px" alignSelf='flex-end'>{category.title}</Typography>
@@ -52,8 +50,7 @@ function VideoCategory(thisPage) {
               </Typography>
             </Grid>
             <Grid item xs={6}>
-              {/* <img src={'http://frankos-museum-backend.azurewebsites.net'+category.inner_picture} alt='' width='100%'></img> */}
-              <img src={category.inner_picture} alt='' width='100%'></img>
+              <img src={'http://frankos-museum-backend.azurewebsites.net'+category.inner_picture} alt='' width='100%'></img>
             </Grid>
           </Grid>
         </div>
