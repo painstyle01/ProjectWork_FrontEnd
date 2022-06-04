@@ -30,6 +30,9 @@ import History from '../HistoryPage/HistoryPage'
 import Library from '../LibraryPage/MainLibraryPage/LibraryPage'
 import BookPage from '../LibraryPage/BookPaage/BookPage'
 import Projects from '../Projects/Projects'
+import IntellectualPrograms from '../IntellectualPrograms/IntellectualPrograms'
+import ArtPrograms from '../ArtPrograms/ArtPrograms'
+import EducationalPrograms from '../EducationalPrograms/EducationalPrograms'
 
 function App() {
   return (
@@ -60,6 +63,9 @@ function App() {
         <Route exact path="/library" element={<Library/>}/>
         <Route exact path="/book/:id" element={<BookPage/>}/>
         <Route exact path="/projects" element={<Projects/>}/>
+        <Route exact path="/intellectual-programs" element={<IntellectualPrograms/>}/>
+        <Route exact path="/art-programs" element={<ArtPrograms/>}/>
+        <Route exact path="/educational-programs" element={<EducationalPrograms/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>

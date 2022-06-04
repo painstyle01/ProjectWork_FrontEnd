@@ -265,8 +265,9 @@ function Header() {
                                     TransitionComponent={Fade}
                                 >
                                     <NavLink to={'/excursion'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Екскурсії" : "Excursions"}</MenuItem></NavLink>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Освітні програми" : "Educational programs"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Програми" : "Programs"}</MenuItem>
+                                    <NavLink to={'/educational-programs'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Освітні програми" : "Educational programs"}</MenuItem></NavLink>
+                                    <NavLink to={'/intellectual-programs'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Інтелектуальні програми" : "Intellectual programs"}</MenuItem></NavLink>
+                                    <NavLink to={'/art-programs'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Мистецькі програми" : "Art programs"}</MenuItem></NavLink>
                                 </Menu>
                             </Typography>
                         </Grid>
