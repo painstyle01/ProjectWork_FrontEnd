@@ -34,8 +34,8 @@ function MainPage() {
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch('http://frankos-museum-backend.azurewebsites.net');
-                getBackground('http://frankos-museum-backend.azurewebsites.net'+(await response.json())[0].backgrounds);
+                const response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/background');
+                getBackground('http://frankos-museum-backend.azurewebsites.net'+(await response.json()).backgrounds);
             } catch (e) {
             }
         })();
