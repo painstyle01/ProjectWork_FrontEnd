@@ -27,7 +27,7 @@ function IntellectualPrograms() {
       (async () => {
           try {
                 const response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/program-intelligent');
-                console.log(await response.json())
+                getPrograms(await response.json())
           } catch (e) {
           }
       })();
