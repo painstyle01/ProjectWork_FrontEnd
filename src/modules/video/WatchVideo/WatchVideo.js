@@ -19,7 +19,7 @@ function WatchVideo(thisPage) {
 'frankustyka', 'podiyi-poza-seriyamy']
 
   const [videos, getVideos] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState({id: 1, title: 'Яке улюблене вино Івана Франка? Франко вдома #1', video_file: null, youtube_link: 'https://www.youtube.com/embed/EOf0R9lj3dU', slug: 'franko-vdoma', description: "Богдан Тихолоз про вино з далмацьких лоз."});
+  const [selectedVideo, setSelectedVideo] = useState({id: 1, title: 'Яке улюблене вино Івана Франка? Франко вдома #1', video_file: null, youtube_link: 'https://www.youtube.com/watch?v=EOf0R9lj3dU', slug: 'franko-vdoma', description: "Богдан Тихолоз про вино з далмацьких лоз."});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/watch')[0]);
 
   useEffect(() => {
@@ -37,6 +37,9 @@ function WatchVideo(thisPage) {
         var cat = categories.filter(c => c.id == links.indexOf(thisPage)+1)[0]
         var response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/list-video/'+cat.id);
         var videos = await response.json()
+        videos.map(function(video){
+          video.youtube_link=video.youtube_link.replace('/watch?v=', '/embed/')
+        })
         getVideos(videos)
       } catch (e) {
       }
