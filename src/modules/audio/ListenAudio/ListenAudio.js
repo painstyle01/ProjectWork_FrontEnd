@@ -21,7 +21,7 @@ function ListenAudio(thisPage) {
   'frankustyka', 'podiyi-poza-seriyamy']
 
   const [audios, getAudios] = useState([]);
-  const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Віктор Мартинюк', audio_file: 'https://frankos-museum-backend.azurewebsites.net/static/audio.mp3', slug: 'miy-franko', description: 'Перша бесіда з циклу "Мій Франко". Розповідає літературознавиця, доктор філологічних наук, професорка, завідувачка кафедри філології гуманітарного факультету УКУ лауреатка Міжнародної премії імені Івана Франка Ярослава Мельник.'});
+  const [selectedAudio, setSelectedAudio] = useState({id: 1, title: 'Мій Франко з Миколою Ільницьким', subtitle: 'by Віктор Мартинюк', audio_file: 'https://frankos-museum-backend.azurewebsites.net/static/audio.mp3', slug: 'miy-franko', description: []});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/listen')[0]);
   const page = useParams()
 
@@ -40,7 +40,10 @@ function ListenAudio(thisPage) {
         var cat = categories.filter(c => c.id == links.indexOf(thisPage)+1)[0]
         var response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/list-audio/'+cat.id);
         var audios = await response.json()
-        getAudios(audios)
+        audios.map(function(audio){
+          audio.description=audio.description.split("\r\n")
+        })
+        getAudios(audios.reverse())
       } catch (e) {
       }
     })();
@@ -65,9 +68,13 @@ function ListenAudio(thisPage) {
         <Typography className="igraSans" variant="h4" component="div" color='primary' style={{lineHeight: '80px', marginTop: '50px'}}>
           Опис
         </Typography>
-        <Typography variant="body2" component="div" color='primary'>
-          {selectedAudio.description}
-        </Typography>
+        {selectedAudio.description.map(function(item) {
+          return (
+            <Typography variant="body2" component="div" color='primary' marginBottom='10px'>
+              {item}
+            </Typography>
+          )
+        })}
       </div>
       <div style={{margin:'auto', width: '274px'}}>
         <Button className='openAudioListButton' variant="outlined" onClick={handleOpen}>
@@ -100,7 +107,7 @@ function ListenAudio(thisPage) {
                 </Stack>
               </Toolbar>
             </AppBar>
-            {audios.reverse().map(function(audio) {
+            {audios.map(function(audio) {
               return (
                 <Grid container>
                   <Grid item xs={0} sm={2}></Grid>

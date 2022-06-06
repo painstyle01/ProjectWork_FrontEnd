@@ -12,9 +12,10 @@ import { useParams } from 'react-router-dom';
 function VideoCategory(thisPage) {
 
   let links = ['franko-vdoma', 'miy-izmaragd', 'intelektualna-biografiya', 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
-'frankustyka', 'podiyi-poza-seriyamy']
+  'frankustyka', 'podiyi-poza-seriyamy']
 
   const [category, getCategory] = useState([]);
+  const [description, getDescription] = useState([]);
   const page = useParams()
     
   useEffect(() => {
@@ -26,7 +27,9 @@ function VideoCategory(thisPage) {
         var split = fullUrl.split('/')
         var thisPage = split[split.length-1]
         var category = categories.filter(category => category.id == links.indexOf(thisPage)+1)[0]
+        category.description=category.description.split("\r\n")
         getCategory(category)
+        getDescription(category.description)
       } catch (e) {
       }
     })();
@@ -45,9 +48,13 @@ function VideoCategory(thisPage) {
               <Typography className="igraSans" variant="h4" component="div" color='primary' style={{marginBottom: '20px'}}>
                 Опис
               </Typography>
-              <Typography variant="body2" component="div" color='primary'>
-                {category.description}
-              </Typography>
+              {description.map(function(item) {
+                return (
+                  <Typography variant="body2" component="div" color='primary' marginBottom='10px'>
+                    {item}
+                  </Typography>
+                )
+              })}
             </Grid>
             <Grid item xs={6}>
               <img src={'http://frankos-museum-backend.azurewebsites.net'+category.inner_picture} alt='' width='100%'></img>

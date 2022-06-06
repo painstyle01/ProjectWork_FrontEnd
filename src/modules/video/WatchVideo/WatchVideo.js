@@ -16,10 +16,10 @@ import { NavLink } from 'react-router-dom';
 function WatchVideo(thisPage) {
 
   let links = ['franko-vdoma', 'miy-izmaragd', 'intelektualna-biografiya', 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
-'frankustyka', 'podiyi-poza-seriyamy']
+  'frankustyka', 'podiyi-poza-seriyamy']
 
   const [videos, getVideos] = useState([]);
-  const [selectedVideo, setSelectedVideo] = useState({id: 1, title: 'Яке улюблене вино Івана Франка? Франко вдома #1', video_file: null, youtube_link: 'https://www.youtube.com/watch?v=EOf0R9lj3dU', slug: 'franko-vdoma', description: "Богдан Тихолоз про вино з далмацьких лоз."});
+  const [selectedVideo, setSelectedVideo] = useState({id: 1, title: 'Яке улюблене вино Івана Франка? Франко вдома #1', video_file: null, youtube_link: 'https://www.youtube.com/watch?v=EOf0R9lj3dU', slug: 'franko-vdoma', description: []});
   const [pageToReturn, setPageToReturn] = useState(window.location.pathname.split('/watch')[0]);
 
   useEffect(() => {
@@ -40,8 +40,9 @@ function WatchVideo(thisPage) {
         videos.map(function(video){
           video.youtube_link=video.youtube_link.replace('/watch?v=', '/embed/')
           video.youtube_link=video.youtube_link.replace('youtu.be', 'youtube.com/embed/')
+          video.description=video.description.split("\r\n")
         })
-        getVideos(videos)
+        getVideos(videos.reverse())
       } catch (e) {
       }
     })();
@@ -60,9 +61,13 @@ function WatchVideo(thisPage) {
         <Typography className="igraSans" variant="h4" component="div" color='primary' style={{lineHeight: '80px'}}>
           Опис
         </Typography>
-        <Typography variant="body2" component="div" color='primary'>
-          {selectedVideo.description}
-        </Typography>
+        {selectedVideo.description.map(function(item) {
+          return (
+            <Typography variant="body2" component="div" color='primary' marginBottom='10px'>
+              {item}
+            </Typography>
+          )
+        })}
       </div>
       <div style={{margin:'auto', width: '274px'}}>
         <Button className='openVideoListButton' variant="outlined" onClick={handleOpen}>
@@ -95,7 +100,7 @@ function WatchVideo(thisPage) {
                 </Stack>
               </Toolbar>
             </AppBar>
-            {videos.reverse().map(function(video) {
+            {videos.map(function(video) {
               return (
                 <Grid container>
                   <Grid item xs={0} sm={2}></Grid>
@@ -105,7 +110,15 @@ function WatchVideo(thisPage) {
                           <iframe src={video.youtube_link} controls style={{width: '320px', height: '180px'}}/>
                           <Stack spacing={2} sx={{alignSelf: 'center', color: 'white'}}>
                             <div style={{fontSize: '20px', lineHeight: '20px', fontWeight: 'bold'}}>{video.title}</div>
-                            <Typography variant="body2" height="25px" width="35vw" style={{overflow:'hidden', whiteSpace:'nowrap', textOverflow:'ellipsis'}}>{video.description}</Typography>
+                            <div style={{height: '75px', overflow: 'hidden'}}>
+                              {video.description.map(function(item) {
+                                return (
+                                  <Typography variant="body2" component="div" color='secondary'>
+                                    {item}
+                                  </Typography>
+                                )
+                              })}
+                            </div>
                           </Stack>
                         </Stack>
                       </div>
