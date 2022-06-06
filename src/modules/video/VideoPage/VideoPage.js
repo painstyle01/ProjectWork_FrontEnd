@@ -14,6 +14,9 @@ import { useState, useEffect } from 'react';
 
 function VideoPage() {
 
+  let links = ['franko-vdoma', 'miy-izmaragd', 'intelektualna-biografiya', 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
+'frankustyka', 'podiyi-poza-seriyamy']
+
   const [categories, getCategories] = useState([]);
     
   useEffect(() => {
@@ -34,7 +37,7 @@ function VideoPage() {
           {categories.map(function(category) {
             return (
               <Grid item xs={12} sm={6} md={4}>
-                <NavLink to={"/video/"+category.slug} className="no_underlines">
+                <NavLink to={"/video/"+links[category.id-1]} className="no_underlines">
                   <Card>
                     <CardActionArea>
                       <CardMedia component="img" image={'http://frankos-museum-backend.azurewebsites.net'+category.picture}/>

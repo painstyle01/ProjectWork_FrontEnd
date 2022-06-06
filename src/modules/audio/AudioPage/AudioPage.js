@@ -14,6 +14,9 @@ import { useState, useEffect } from 'react';
 
 function AudioPage() {
 
+  let links = ['miy-franko', 'filosofski-snidanky', 'semper-tiro', 'intelektualna-biografiya', 'miy-izmaragd', 'dim-poeta',
+  'frankustyka', 'podiyi-poza-seriyamy']
+
   const [categories, getCategories] = useState([]);
     
   useEffect(() => {
@@ -34,11 +37,10 @@ function AudioPage() {
           {categories.map(function(category) {
             return (
               <Grid item xs={12} sm={6} md={4}>
-                <NavLink to={"/audio/"+category.slug} className="no_underlines">
+                <NavLink to={"/audio/"+links[category.id-1]} className="no_underlines">
                   <Card>
                     <CardActionArea>
-                      {/* <CardMedia component="img" image={'http://frankos-museum-backend.azurewebsites.net'+category.picture}/> */}
-                      <CardMedia component="img" image={category.picture}/>
+                      <CardMedia component="img" image={'http://frankos-museum-backend.azurewebsites.net'+category.picture}/>
                       <CardContent>
                         <Stack direction="row" spacing={1}>
                           <Typography variant="body2" color="primary" style={{fontSize: '25px', textDecoration: 'none'}}>{category.title}</Typography>
