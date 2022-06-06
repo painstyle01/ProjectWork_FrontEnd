@@ -39,6 +39,7 @@ function WatchVideo(thisPage) {
         var videos = await response.json()
         videos.map(function(video){
           video.youtube_link=video.youtube_link.replace('/watch?v=', '/embed/')
+          video.youtube_link=video.youtube_link.replace('youtu.be', 'youtube.com/embed/')
         })
         getVideos(videos)
       } catch (e) {
