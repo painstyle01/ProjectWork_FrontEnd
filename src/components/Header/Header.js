@@ -171,7 +171,7 @@ function Header() {
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Актуальні новини" : "Current news"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Спланувати візит" : "Plan a visit"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Експозиція" : "Exposition"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Проекти" : "Projects"}</MenuItem>
+                                    <NavLink to={'/projects'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Проекти" : "Projects"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Архів подій" : "Event archive"}</MenuItem>
                                     <NavLink to={'/media-about-us'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "ЗМІ про нас" : "Media about us"}</MenuItem></NavLink>
                                 </Menu>
@@ -265,8 +265,9 @@ function Header() {
                                     TransitionComponent={Fade}
                                 >
                                     <NavLink to={'/excursion'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Екскурсії" : "Excursions"}</MenuItem></NavLink>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Освітні програми" : "Educational programs"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Програми" : "Programs"}</MenuItem>
+                                    <NavLink to={'/educational-programs'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Освітні програми" : "Educational programs"}</MenuItem></NavLink>
+                                    <NavLink to={'/intellectual-programs'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Інтелектуальні програми" : "Intellectual programs"}</MenuItem></NavLink>
+                                    <NavLink to={'/art-programs'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Мистецькі програми" : "Art programs"}</MenuItem></NavLink>
                                 </Menu>
                             </Typography>
                         </Grid>

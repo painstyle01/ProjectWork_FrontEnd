@@ -11,19 +11,19 @@ import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material'
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import img1 from '../../../images/mf.jpg'
-import img2 from '../../../images/mf1.jpg'
 
 function AudioPage() {
+
+  let links = ['miy-franko', 'filosofski-snidanky', 'semper-tiro', 'intelektualna-biografiya', 'miy-izmaragd', 'dim-poeta',
+  'frankustyka', 'podiyi-poza-seriyamy']
 
   const [categories, getCategories] = useState([]);
     
   useEffect(() => {
       (async () => {
           try {
-              // var response = await fetch('http://frankos-museum-backend.azurewebsites.net/audio');
-              // getCategories(await response.json());
-              getCategories([{'title': 'Мій Франко', 'picture': img1, 'inner_picture': img2, 'slug': 'miy-franko', 'description': 'Кожен українець рано чи пізно стикається з постаттю Івана Франка. Для декого він залишається назвою вулиці в рідному місті, для інших – напівзабутим іменем зі шкільного підручника, для ще інших – визначним діячем давно минулих часів. Але є ті, для кого така зустріч стає початком довгого діалогу з великою живою людиною – почасти вчителем, почасти другом, – діалогу не завжди легкого, але незмінно цікавого. Саме такі люди є героями циклу зустрічей «Мій Франко» у Домі Франка.'}])
+              var response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/list-audio');
+              getCategories(await response.json());
           } catch (e) {
           }
       })();
@@ -37,11 +37,10 @@ function AudioPage() {
           {categories.map(function(category) {
             return (
               <Grid item xs={12} sm={6} md={4}>
-                <NavLink to={"/audio/"+category.slug} className="no_underlines">
+                <NavLink to={"/audio/"+links[category.id-1]} className="no_underlines">
                   <Card>
                     <CardActionArea>
-                      {/* <CardMedia component="img" image={'http://frankos-museum-backend.azurewebsites.net'+category.picture}/> */}
-                      <CardMedia component="img" image={category.picture}/>
+                      <CardMedia component="img" image={'http://frankos-museum-backend.azurewebsites.net'+category.picture}/>
                       <CardContent>
                         <Stack direction="row" spacing={1}>
                           <Typography variant="body2" color="primary" style={{fontSize: '25px', textDecoration: 'none'}}>{category.title}</Typography>

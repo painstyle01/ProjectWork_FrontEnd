@@ -34,8 +34,8 @@ function MainPage() {
     useEffect(() => {
         (async () => {
             try {
-                const response = await fetch('http://frankos-museum-backend.azurewebsites.net');
-                getBackground('http://frankos-museum-backend.azurewebsites.net'+(await response.json())[0].backgrounds);
+                const response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/background');
+                getBackground('http://frankos-museum-backend.azurewebsites.net'+(await response.json()).backgrounds);
             } catch (e) {
             }
         })();
@@ -152,11 +152,25 @@ function MainPage() {
                             <img src={franko} alt="" width="100%" style={{minWidth: '397px'}}></img>
                         </Grid>
                         <Grid item sm={12} md={4} sx={{alignSelf: 'center'}}>
-                            <Stack direction="row" spacing={2}>
-                                <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px'}}>Наші програми</div>
-                                <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
-                            </Stack>
+                            <div style={{fontSize: '71px', lineHeight: '71px', marginBottom: '50px', fontWeight: 'bold'}}>Наші програми</div>
                             <Typography variant="body2" color="primary">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</Typography>
+                            <div style={{marginTop: '50px'}}>
+                                <NavLink to={'/intellectual-programs'}>
+                                    <Button className='orderLecture' sx={{width: '300px!important', margin: '0!important'}} variant="text" color="secondary">
+                                        Інтелектуальні програми
+                                    </Button>
+                                </NavLink>
+                                <NavLink to={'/art-programs'}>
+                                    <Button className='orderLecture' sx={{width: '300px!important', margin: '0!important'}} variant="text" color="secondary">
+                                        Мистецькі програми
+                                    </Button>
+                                </NavLink>
+                                <NavLink to={'/educational-programs'}>
+                                    <Button className='orderLecture' sx={{width: '300px!important', margin: '0!important'}} variant="text" color="secondary">
+                                        Освітні програми
+                                    </Button>
+                                </NavLink>
+                            </div>
                         </Grid>
                     </Grid>
                 </div>

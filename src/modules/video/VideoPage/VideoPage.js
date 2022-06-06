@@ -11,19 +11,19 @@ import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material'
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import img1 from '../../../images/fv.jpg'
-import img2 from '../../../images/fv1.jpg'
 
 function VideoPage() {
+
+  let links = ['franko-vdoma', 'miy-izmaragd', 'intelektualna-biografiya', 'filosofski-snidanky', 'semper-tiro', 'miy-franko',
+'frankustyka', 'podiyi-poza-seriyamy']
 
   const [categories, getCategories] = useState([]);
     
   useEffect(() => {
       (async () => {
           try {
-              // var response = await fetch('http://frankos-museum-backend.azurewebsites.net/video');
-              // getCategories(await response.json());
-              getCategories([{'title': 'Франко вдома', 'picture': img1, 'inner_picture': img2, 'slug': 'franko-vdoma', 'description': 'Відео-блог, у якому фахівці розповідають цікаві історії про письменника, його родину та сам Музей.'}])
+              var response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/list-video');
+              getCategories(await response.json());
           } catch (e) {
           }
       })();
@@ -37,11 +37,10 @@ function VideoPage() {
           {categories.map(function(category) {
             return (
               <Grid item xs={12} sm={6} md={4}>
-                <NavLink to={"/video/"+category.slug} className="no_underlines">
+                <NavLink to={"/video/"+links[category.id-1]} className="no_underlines">
                   <Card>
                     <CardActionArea>
-                      {/* <CardMedia component="img" image={'http://frankos-museum-backend.azurewebsites.net'+category.picture}/> */}
-                      <CardMedia component="img" image={category.picture}/>
+                      <CardMedia component="img" image={'http://frankos-museum-backend.azurewebsites.net'+category.picture}/>
                       <CardContent>
                         <Stack direction="row" spacing={1}>
                           <Typography variant="body2" color="primary" style={{fontSize: '25px', textDecoration: 'none'}}>{category.title}</Typography>

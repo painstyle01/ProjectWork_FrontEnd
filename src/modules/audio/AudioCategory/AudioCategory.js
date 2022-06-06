@@ -8,35 +8,36 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { Stack } from '@mui/material';
 import { NavLink } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import img1 from '../../../images/mf.jpg'
-import img2 from '../../../images/mf1.jpg'
 
 function AudioCategory(thisPage) {
 
+  let links = ['miy-franko', 'filosofski-snidanky', 'semper-tiro', 'intelektualna-biografiya', 'miy-izmaragd', 'dim-poeta',
+  'frankustyka', 'podiyi-poza-seriyamy']
+
   const [category, getCategory] = useState([]);
+  const [description, getDescription] = useState([]);
   const page = useParams()
     
   useEffect(() => {
     (async () => {
       try {
-        // var response = await fetch('http://frankos-museum-backend.azurewebsites.net/video');
-        // var categories = await response.json()
-        var categories = [{'title': 'Мій Франко', 'picture': img1, 'inner_picture': img2, 'slug': 'miy-franko', 'description': 'Кожен українець рано чи пізно стикається з постаттю Івана Франка. Для декого він залишається назвою вулиці в рідному місті, для інших – напівзабутим іменем зі шкільного підручника, для ще інших – визначним діячем давно минулих часів. Але є ті, для кого така зустріч стає початком довгого діалогу з великою живою людиною – почасти вчителем, почасти другом, – діалогу не завжди легкого, але незмінно цікавого. Саме такі люди є героями циклу зустрічей «Мій Франко» у Домі Франка.'}]
+        var response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/list-video');
+        var categories = await response.json()
         var fullUrl = window.location.pathname
         var split = fullUrl.split('/')
         var thisPage = split[split.length-1]
-        var category = categories.filter(category => category.slug == thisPage)[0]
+        var category = categories.filter(category => category.id == links.indexOf(thisPage)+1)[0]
+        category.description=category.description.split("\r\n")
         getCategory(category)
+        getDescription(category.description)
       } catch (e) {
       }
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
     return (
       <div>
-        {/* <div className="audioTopImage" style={{backgroundImage: `url(http://frankos-museum-backend.azurewebsites.net${category.inner_picture})`}}> */}
-        <div className="audioTopImage" style={{backgroundImage: `url(${category.inner_picture})`}}>
+        <div className="audioTopImage" style={{backgroundImage: `url(http://frankos-museum-backend.azurewebsites.net${category.inner_picture})`}}>
         </div>
           <div className="audioTopImage2">
             <Typography className="igraSans" variant="h2" color="white" fontSize="80px" alignSelf='flex-end'>{category.title}</Typography>
@@ -47,13 +48,16 @@ function AudioCategory(thisPage) {
               <Typography className="igraSans" variant="h4" component="div" color='primary' style={{marginBottom: '20px'}}>
                 Опис
               </Typography>
-              <Typography variant="body2" component="div" color='primary'>
-                {category.description}
-              </Typography>
+              {description.map(function(item) {
+                return (
+                  <Typography variant="body2" component="div" color='primary' marginBottom='10px'>
+                    {item}
+                  </Typography>
+                )
+              })}
             </Grid>
             <Grid item xs={6}>
-              {/* <img src={'http://frankos-museum-backend.azurewebsites.net'+category.picture} alt='' width='100%'></img> */}
-              <img src={category.inner_picture} alt='' width='100%'></img>
+              <img src={'http://frankos-museum-backend.azurewebsites.net'+category.inner_picture} alt='' width='100%'></img>
             </Grid>
           </Grid>
         </div>
