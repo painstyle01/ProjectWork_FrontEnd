@@ -55,9 +55,11 @@ function MainPage() {
                                 Підтримай нас
                             </Button>
                         </NavLink>
-                        <Button variant="text" color="secondary" id='but' className='b2'>
-                            Спланувати візит
-                        </Button>
+                        <NavLink to={'/road'}>
+                            <Button variant="text" color="secondary" id='but' className='b2'>
+                                Спланувати візит
+                            </Button>
+                        </NavLink>
                     </Stack>
                 </div>
             </div>

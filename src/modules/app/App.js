@@ -36,6 +36,7 @@ import EducationalPrograms from '../EducationalPrograms/EducationalPrograms'
 import TimeLine from '../TimeLine/TimeLine'
 import Collections from '../CollectionPage/CollectionPage'
 import Archive from '../ArchivePage/ArchivePage'
+import Contactroad from '../Contactroad/Contactroad'
 
 function App() {
   return (
@@ -72,6 +73,7 @@ function App() {
         <Route exact path="/timeline" element={<TimeLine/>}/>
         <Route exact path="/collections" element={<Collections/>}/>
         <Route exact path="/archive" element={<Archive/>}/>
+        <Route exact path="/road" element={<Contactroad/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>
