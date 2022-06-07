@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import './roomExposition.css'
+import './libraryEx.css'
 import { useState, useEffect } from 'react';
 
 
@@ -21,13 +21,22 @@ function LibraryEx() {
 
 
     return (
+      <div>
+        <img  src={room.image} className='backgroundMain'></img>
+            
+            <Grid container spacing={0} className='roomText'>
+                <Grid item xs={1}></Grid>
+                    <Grid item xs={5}> 
+                    <h1 className='titleRoomName'>{room.title}</h1>  
+                    <div className='discrabe'>
+                        <h2 >Опис</h2> 
+                        <p>{room.description}</p>
+                    </div>
+                    </Grid>
+                    <Grid item xs={6}></Grid>
+                </Grid>
         
-        <Grid>
-        <img src={room.image}></img>
-        <h2>{room.title}</h2>
-        <h2>{room.description}</h2>
-        </Grid>
-
+</div>
         
 
 
