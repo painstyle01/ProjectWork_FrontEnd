@@ -172,7 +172,7 @@ function Header() {
                                     <NavLink to={'/road'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Спланувати візит" : "Plan a visit"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Експозиція" : "Exposition"}</MenuItem>
                                     <NavLink to={'/projects'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Проекти" : "Projects"}</MenuItem></NavLink>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Архів подій" : "Event archive"}</MenuItem>
+                                    <NavLink to={'/archive'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Архів подій" : "Event archive"}</MenuItem></NavLink>
                                     <NavLink to={'/media-about-us'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "ЗМІ про нас" : "Media about us"}</MenuItem></NavLink>
                                 </Menu>
                             </Typography>
