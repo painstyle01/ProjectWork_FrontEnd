@@ -169,10 +169,10 @@ function Header() {
                                 >
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Про музей" : "About the museum"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Актуальні новини" : "Current news"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Спланувати візит" : "Plan a visit"}</MenuItem>
+                                    <NavLink to={'/road'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Спланувати візит" : "Plan a visit"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Експозиція" : "Exposition"}</MenuItem>
                                     <NavLink to={'/projects'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Проекти" : "Projects"}</MenuItem></NavLink>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Архів подій" : "Event archive"}</MenuItem>
+                                    <NavLink to={'/archive'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Архів подій" : "Event archive"}</MenuItem></NavLink>
                                     <NavLink to={'/media-about-us'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "ЗМІ про нас" : "Media about us"}</MenuItem></NavLink>
                                 </Menu>
                             </Typography>
@@ -201,7 +201,7 @@ function Header() {
                                     TransitionComponent={Fade}
                                 >
                                     <NavLink to={'/3Dtour'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Віртуальний тур" : "Virtual tour"}</MenuItem></NavLink>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Онлайн колекція" : "Online collection"}</MenuItem>
+                                    <NavLink to={'/collections'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Онлайн колекція" : "Online collection"}</MenuItem></NavLink>
                                     <NavLink to={'/library'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Каталог бібліотеки" : "Library catalogue"}</MenuItem></NavLink>
                                     <NavLink to={'/video'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Відео" : "Video"}</MenuItem></NavLink>
                                     <NavLink to={'/audio'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Аудіо" : "Audio"}</MenuItem></NavLink>
@@ -237,7 +237,7 @@ function Header() {
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франчата" : "Franchildren"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франко наживо" : "Franko in person"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франко від А до Я" : "Franko from A to Z"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "TimeLine" : "TimeLine"}</MenuItem>
+                                    <NavLink to={'/timeline'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "TimeLine" : "TimeLine"}</MenuItem></NavLink>
                                 </Menu>
                             </Typography>
                         </Grid>

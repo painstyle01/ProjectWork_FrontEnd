@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.mainContainer{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+*{
+    font-family: 'Montserrat';
+    font-style: normal;
+}
+
+.excurtionTitle{
+    font-family: 'Igrasans'!important;
+    font-weight: 400;
+    font-size: 76px;
+    line-height: 76px;
+    padding-bottom: 10px;
+    border-bottom: 5px solid #000000;
+    margin-bottom: 20px;
+}
+
+.excurtionDescription{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #303030;
+}
+
+.excurtionPhoto{
+    margin-left: 40px;
+    width: 90%;
+}
+
+.servicesTitle{
+    font-family: 'Igrasans'!important;
+    font-weight: 400 !important;
+    font-size: 50px !important;
+    line-height: 50px;
+    border-bottom: 4px solid #1C1C1C;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.servicesObjects{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.contM h1{
+    font-family: 'Igrasans'!important;
+    font-size: 76px;
+    font-weight: 400;
+    line-height: 76px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.lineC{
+    width: 951px;
+    border: 2px solid #000000;
+    margin-bottom: 20px;
+}
+.titleC{
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 37px;
+    color: #000000;
+
+}
+.textInfo{
+    font-family: Montserrat;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #303030;
+    ;
+}
+
+.mapC iframe{
+    margin-top: 60px;
+}
+#mapSt{
+    width: 62vw;
+    height: 36vw;
+}
+/*#timeC{
+  
+}
+#locationC{
+ 
+}
+#contactC{
+  
+}
+#arrivalC{
+    
+}*/
+.excur{
+    margin-top: 30px;
+    font-family: 'Igrasans'!important;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+.rules{
+    font-family: 'Igrasans'!important;
+    font-size: 54px;
+    font-weight: 400;
+    line-height: 64px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}

@@ -17,7 +17,6 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import { CardActionArea } from '@mui/material'
-import '../fonts/fonts/Igrasans.ttf';
 
 
 
@@ -56,9 +55,11 @@ function MainPage() {
                                 Підтримай нас
                             </Button>
                         </NavLink>
-                        <Button variant="text" color="secondary" id='but' className='b2'>
-                            Спланувати візит
-                        </Button>
+                        <NavLink to={'/road'}>
+                            <Button variant="text" color="secondary" id='but' className='b2'>
+                                Спланувати візит
+                            </Button>
+                        </NavLink>
                     </Stack>
                 </div>
             </div>
