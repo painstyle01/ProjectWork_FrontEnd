@@ -1,14 +1,14 @@
 import { Grid } from '@mui/material';
 import './exposition.css'
-import image10 from '../img/image10.png'
-import image9 from '../img/image9.png'
-import library from '../img/library.png'
-import bedroomF from '../img/bedroomF.png'
-import diningRoom from '../img/diningRoom.png'
-import womensRoom from '../img/womensRoom.png'
-import workRoom from '../img/workRoom.png'
-import bedroomOF from '../img/bedroomOF.png'
-import arrow8 from '../img/arrow8.png'
+import image10 from '../../img/image10.png'
+import image9 from '../../img/image9.png'
+import library from '../../img/library.png'
+import bedroomF from '../../img/bedroomF.png'
+import diningRoom from '../../img/diningRoom.png'
+import womensRoom from '../../img/womensRoom.png'
+import workRoom from '../../img/workRoom.png'
+import bedroomOF from '../../img/bedroomOF.png'
+import arrow8 from '../../img/arrow8.png'
 import {Link} from 'react-router-dom'
 import { AirlineSeatLegroomExtraOutlined } from '@mui/icons-material';
 
