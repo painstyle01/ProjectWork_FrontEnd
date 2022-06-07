@@ -1,10 +1,10 @@
 import { React } from 'react'
-import './NewsList.css'
+import './MAUNewsList.css'
 import { Stack } from '@mui/material';
 import { useState, useEffect } from 'react';
 import DateObject from "react-date-object";
 
-function NewsList(props) {
+function MAUNewsList(props) {
 
     const [news, getNews] = useState([]);
 
@@ -41,4 +41,4 @@ function NewsList(props) {
     )
 }
 
-export default NewsList
+export default MAUNewsList

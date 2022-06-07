@@ -3,7 +3,7 @@ import './MediaAboutUs.css';
 import Grid from '@mui/material/Grid'
 import { useState } from 'react';
 import TextField from "@mui/material/TextField";
-import NewsList from "../../components/NewsList/NewsList";
+import MAUNewsList from "../../components/MAUNewsList/MAUNewsList";
 
 function MediaAboutUs() {
     
@@ -28,7 +28,7 @@ function MediaAboutUs() {
                         label="Пошук"
                         style={{marginBottom: '30px'}}
                         />
-                        <NewsList input={inputText} />
+                        <MAUNewsList input={inputText} />
                     </Grid>
                 <Grid item xs={0} sm={2}></Grid>
             </Grid>
