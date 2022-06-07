@@ -7,51 +7,11 @@ import smallArrow from '../../components/img/comonArrow.png'
 import { useState } from 'react'
 
 
-const TempData=[
-    {
-        id: '1',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Франко вдома',
-        info: 'Відео-блог, у якому фахівці розповідають цікаві історії про письменника, його родину та сам Музей.'
-    },
-    {
-        id: '2',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Франко вдома',
-        info: 'Відео-блог, у якому фахівці розповідають цікаві історії про письменника, його родину та сам Музей.'
-    },
-    {
-        id: '3',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Франко вдома',
-        info: 'Відео-блог, у якому фахівці розповідають цікаві історії про письменника, його родину та сам Музей.'
-    },
-    {
-        id: '4',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Іван Франко у світі',
-        info: 'Відео-блог, у якому фахівці розповідають цікаві історії про письменника, його родину та сам Музей.'
-    },
-    {
-        id: '5',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Науковий Форум',
-        info: 'Відео-блог, у якому фахівці розповідають цікаві історії про письменника, його родину та сам Музей.'
-    },
-    {
-        id: '6',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Науковий театр',
-        info: 'Відео-блог, у якому фахівці розповідають цікаві історії про письменника, його родину та сам Музей.'
-    },
-    {
-        id: '7',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Легенда про вічне життя',
-        info: 'Відео-блог, у якому фахівці розповідають цікаві історії про письменника, його родину та сам Музей.'
-    },
-    
-]
+fetch('http://frankos-museum-backend.azurewebsites.net/api/collections/')
+    .then(response => response.json())
+    .then(data =>(localStorage.setItem('collections', JSON.stringify(data))));
+
+    const data = JSON.parse(localStorage.getItem('collections'))
 
 function CollectionPage(){
 
@@ -68,18 +28,19 @@ function CollectionPage(){
             </p>
 
             <Grid container spacing="3">
-                {TempData.filter((val)=>{
+                {data.filter((val)=>{
                     if(searchTerm == ''){
                         return val;
                     } else if(val.title.toLowerCase().includes(searchTerm.toLocaleLowerCase())){
                         return val;
                     }
                 }).map((element)=>{
+                    let shorter = element.description.slice(0, 30) + "..."
                     return(
                         <Grid item key={element.id} xs={3} className="collectionCard">
-                            <img src={element.photo} className="collectionCardImg" alt="not found"/>
+                            <img src={element.image} className="collectionCardImg" alt="not found"/>
                             <div className="collectionCardTitle">{element.title} <img src={smallArrow} alt="not found"/></div>
-                            <div className="collectionCardDate">{element.info}</div>
+                            <div className="collectionCardDate">{shorter}</div>
                         </Grid>
                     )
                 })}
