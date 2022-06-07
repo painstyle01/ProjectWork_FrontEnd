@@ -423,7 +423,9 @@ ul li{
 }
 
 .timeLinePhoto{
-    margin-left: 280px !important;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .timeLineTitle{

@@ -33,6 +33,7 @@ import Projects from '../Projects/Projects'
 import IntellectualPrograms from '../IntellectualPrograms/IntellectualPrograms'
 import ArtPrograms from '../ArtPrograms/ArtPrograms'
 import EducationalPrograms from '../EducationalPrograms/EducationalPrograms'
+import TimeLine from '../TimeLine/TimeLine'
 
 function App() {
   return (
@@ -66,6 +67,7 @@ function App() {
         <Route exact path="/intellectual-programs" element={<IntellectualPrograms/>}/>
         <Route exact path="/art-programs" element={<ArtPrograms/>}/>
         <Route exact path="/educational-programs" element={<EducationalPrograms/>}/>
+        <Route exact path="/timeline" element={<TimeLine/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>

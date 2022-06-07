@@ -1,60 +1,9 @@
 import React from 'react';
 import jquery from 'jquery';
 import './TimeLine.css'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import '../fonts/fonts/Igrasans.ttf';
 
-const TempData = [
-    {
-        date: '16/01/2014',
-        dateText: '16 Jan',
-        photo: 'https://i.ibb.co/crZPwdx/image-16.png',
-        title: 'Срібна ложка Івана Франка',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.'
-    },
-    {
-        date: '28/02/2014',
-        dateText: '28 Feb',
-        photo: 'https://i.ibb.co/crZPwdx/image-16.png',
-        title: 'Іван Франко для дітей',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.'
-    },
-    {
-        date: '20/04/2014',
-        dateText: '20 Mar',
-        photo: 'https://i.ibb.co/crZPwdx/image-16.png',
-        title: 'Срібна ложка Івана Франка',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.'
-    },
-    {
-        date: '20/05/2014',
-        dateText: '20 May',
-        photo: 'https://i.ibb.co/crZPwdx/image-16.png',
-        title: 'Іван Франко для дітей',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.'
-    },
-    {
-        date: '30/08/2014',
-        dateText: '30 Aug',
-        photo: 'https://i.ibb.co/crZPwdx/image-16.png',
-        title: 'Event title here',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.'
-    },
-    {
-        date: '10/12/2014',
-        dateText: '10 Dec',
-        photo: 'https://i.ibb.co/crZPwdx/image-16.png',
-        title: 'Срібна ложка Івана Франка',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.'
-    },
-    {
-        date: '03/03/2015',
-        dateText: '3 Mar',
-        photo: 'https://i.ibb.co/crZPwdx/image-16.png',
-        title: 'Іван Франко для дітей',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum praesentium officia, fugit recusandae ipsa, quia velit nulla adipisci? Consequuntur aspernatur at, eaque hic repellendus sit dicta consequatur quae, ut harum ipsam molestias maxime non nisi reiciendis eligendi! Doloremque quia pariatur harum ea amet quibusdam quisquam, quae, temporibus dolores porro doloribus.'
-    }
-]
 
 fetch('http://frankos-museum-backend.azurewebsites.net/api/timeline/')
         .then(response => response.json())
@@ -62,11 +11,7 @@ fetch('http://frankos-museum-backend.azurewebsites.net/api/timeline/')
 
 
 
-
 function TimeLine(){
-
-    const data = JSON.parse(localStorage.getItem('timeLine'))
-    console.log(data);
 
     jquery(document).ready(function($){
         var timelines = $('.cd-horizontal-timeline'),
@@ -342,6 +287,9 @@ function TimeLine(){
         }
     });
 
+
+
+    let data;
     useEffect(() => {
         var arr = Array.prototype.slice.call( document.getElementsByClassName('timelineElem') )
         arr.map((e)=>{
@@ -349,39 +297,64 @@ function TimeLine(){
                 e.classList.add( 'selected')
             }
         })
+        
     });
+    
+    let months = {
+        "01": "Jan",
+        "02": "Feb",
+        "03": "Mar",
+        "04": "Apr",
+        "05": "May",
+        "06": "Jun",
+        "07": "Jul",
+        "08": "Aug",
+        "09": "Sep",
+        "10": "Oct",
+        "11": "Nov",
+        "12": "Dec"
+    }
+    data = JSON.parse(localStorage.getItem('timeLine'))
+    data.map((e)=>{
+        let tempDate = e.date.slice(8)+"/"+e.date.slice(5, 7)+"/"+e.date.slice(-0, 4)
+        let temp = e.date.slice(8)+" "+months[e.date.slice(5, 7)]
+        e.date = tempDate
+        e.dateText = temp;
+    })
 
+
+    
     return(
-        <section class="cd-horizontal-timeline">
-            <div class="timeline">
-                <div class="events-wrapper">
-                    <div class="events">
+        <section className="cd-horizontal-timeline">
+            <div className="timeline">
+                <div className="events-wrapper">
+                    <div className="events">
                         <ol>
-                            {TempData.map((e)=>{
+                            {data.map((e)=>{
                                 return(
                                     <li><a href="#0" data-date={e.date}>{e.dateText}</a></li>
                                 )
                             })}
                         </ol>
 
-                        <span class="filling-line" aria-hidden="true"></span>
+                        <span className="filling-line" aria-hidden="true"></span>
                     </div> 
                 </div> 
                     
-                <ul class="cd-timeline-navigation">
-                    <li><a href="#0" class="prev inactive">Prev</a></li>
-                    <li><a href="#0" class="next">Next</a></li>
+                <ul className="cd-timeline-navigation">
+                    <li><a href="#0" className="prev inactive">Prev</a></li>
+                    <li><a href="#0" className="next">Next</a></li>
                 </ul> 
             </div>
 
-            <div class="events-content">
+            <div className="events-content">
                 <ol>
-                    {TempData.map((e, index)=>{
+                    {data.map((e, index)=>{
                         return(
                             <li data-date={e.date} id={index} className="timelineElem">
                                 <div className="timeLineTitle">{e.title}</div>
                                 <em className="timeLineDate">{e.dateText}</em>
-                                <img src={e.photo} alt="not found" className="timeLinePhoto"/>
+                                <img src={e.picture} alt="not found" className="timeLinePhoto"/>
                                 <p className="timeLineText">	
                                     {e.text}
                                 </p>
