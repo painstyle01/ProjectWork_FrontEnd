@@ -37,7 +37,7 @@ function CollectionPage(){
                 }).map((element)=>{
                     let shorter = element.description.slice(0, 30) + "..."
                     return(
-                        <Grid item key={element.id} xs={3} className="collectionCard">
+                        <Grid item key={element.id} xs={12} sm={6} md={4} lg={3} className="collectionCard">
                             <img src={element.image} className="collectionCardImg" alt="not found"/>
                             <div className="collectionCardTitle">{element.title} <img src={smallArrow} alt="not found"/></div>
                             <div className="collectionCardDate">{shorter}</div>
