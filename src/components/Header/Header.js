@@ -152,7 +152,7 @@ function Header() {
                                     aria-controls={openE1 ? 'menu1' : undefined}
                                     aria-haspopup="true"
                                     aria-expanded={openE1 ? 'true' : undefined}
-                                    onClick={handleClick}
+                                    onPointerEnter={handleClick}
                                     style={{border: 'none', borderRadius: 0, height: '100%', width: '100%'}}
                                 >
                                 {lang==="uk" ? "Музей" : "Museum"}
@@ -161,19 +161,18 @@ function Header() {
                                     id="menu1"
                                     MenuListProps={{
                                     'aria-labelledby': 'button1',
+                                     onMouseLeave: handleClose
                                     }}
                                     anchorEl={anchorEl}
                                     open={openE1}
-                                    onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Про музей" : "About the museum"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Актуальні новини" : "Current news"}</MenuItem>
                                     <NavLink to={'/road'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Спланувати візит" : "Plan a visit"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Експозиція" : "Exposition"}</MenuItem>
-                                    <NavLink to={'/projects'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Проекти" : "Projects"}</MenuItem></NavLink>
-                                    <NavLink to={'/archive'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Архів подій" : "Event archive"}</MenuItem></NavLink>
-                                    <NavLink to={'/media-about-us'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "ЗМІ про нас" : "Media about us"}</MenuItem></NavLink>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Архів подій" : "Event archive"}</MenuItem>
+                                   
                                 </Menu>
                             </Typography>
                         </Grid>  
@@ -185,7 +184,7 @@ function Header() {
                                     aria-controls={openE2 ? 'menu2' : undefined}
                                     aria-haspopup="true"
                                     aria-expanded={openE2 ? 'true' : undefined}
-                                    onClick={handleClick}
+                                    onPointerEnter={handleClick}
                                     style={{border: 'none', borderRadius: 0, height: '100%', width: '100%'}}
                                 >
                                 {lang==="uk" ? "Онлайн" : "Online"}
@@ -194,15 +193,15 @@ function Header() {
                                     id="menu2"
                                     MenuListProps={{
                                     'aria-labelledby': 'fade-button',
+                                     onMouseLeave: handleClose              
                                     }}
                                     anchorEl={anchorE2}
                                     open={openE2}
-                                    onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
                                     <NavLink to={'/3Dtour'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Віртуальний тур" : "Virtual tour"}</MenuItem></NavLink>
                                     <NavLink to={'/collections'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Онлайн колекція" : "Online collection"}</MenuItem></NavLink>
-                                    <NavLink to={'/library'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Каталог бібліотеки" : "Library catalogue"}</MenuItem></NavLink>
+                                    <NavLink to={'/library'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Видання" : "Library catalogue"}</MenuItem></NavLink>
                                     <NavLink to={'/video'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Відео" : "Video"}</MenuItem></NavLink>
                                     <NavLink to={'/audio'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Аудіо" : "Audio"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Ігри" : "Games"}</MenuItem>
@@ -217,7 +216,7 @@ function Header() {
                                     aria-controls={openE3 ? 'menu3' : undefined}
                                     aria-haspopup="true"
                                     aria-expanded={openE3 ? 'true' : undefined}
-                                    onClick={handleClick}
+                                    onPointerEnter={handleClick}
                                     style={{border: 'none', borderRadius: 0, height: '100%', width: '100%'}}
                                 >
                                 {lang==="uk" ? "Іван Франко" : "Ivan Franko"}
@@ -226,18 +225,18 @@ function Header() {
                                     id="menu3"
                                     MenuListProps={{
                                     'aria-labelledby': 'fade-button',
+                                     onMouseLeave: handleClose              
                                     }}
                                     anchorEl={anchorE3}
                                     open={openE3}
-                                    onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
                                     <NavLink to={'/biography'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Хто такий Франко?" : "Who Franko is?"}</MenuItem></NavLink>
                                     <NavLink to={'/history'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Історія Дому" : "The house's history"}</MenuItem></NavLink>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франчата" : "Franchildren"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франко наживо" : "Franko in person"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франко від А до Я" : "Franko from A to Z"}</MenuItem>
                                     <NavLink to={'/timeline'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "TimeLine" : "TimeLine"}</MenuItem></NavLink>
+                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Франкознавство" : "Franko in person"}</MenuItem>
+                                    
                                 </Menu>
                             </Typography>
                         </Grid>
@@ -249,7 +248,7 @@ function Header() {
                                     aria-controls={openE4 ? 'menu4' : undefined}
                                     aria-haspopup="true"
                                     aria-expanded={openE4 ? 'true' : undefined}
-                                    onClick={handleClick}
+                                    onPointerEnter={handleClick}
                                     style={{border: 'none', borderRadius: 0, height: '100%', width: '100%'}}
                                 >
                                 {lang==="uk" ? "Освіта" : "Edu\u00ADcation"}
@@ -258,16 +257,18 @@ function Header() {
                                     id="menu4"
                                     MenuListProps={{
                                     'aria-labelledby': 'fade-button',
+                                     onMouseLeave: handleClose              
                                     }}
                                     anchorEl={anchorE4}
                                     open={openE4}
-                                    onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
                                     <NavLink to={'/excursion'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Екскурсії" : "Excursions"}</MenuItem></NavLink>
                                     <NavLink to={'/educational-programs'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Освітні програми" : "Educational programs"}</MenuItem></NavLink>
+                                    <NavLink to={'/art-programs'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Мистецькі програми" : "Art programs"}</MenuItem></NavLink>    
                                     <NavLink to={'/intellectual-programs'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Інтелектуальні програми" : "Intellectual programs"}</MenuItem></NavLink>
-                                    <NavLink to={'/art-programs'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Мистецькі програми" : "Art programs"}</MenuItem></NavLink>
+                                    <NavLink to={'/projects'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Проекти" : "Projects"}</MenuItem></NavLink>
+                               
                                 </Menu>
                             </Typography>
                         </Grid>
@@ -279,7 +280,7 @@ function Header() {
                                     aria-controls={openE5 ? 'menu5' : undefined}
                                     aria-haspopup="true"
                                     aria-expanded={openE5 ? 'true' : undefined}
-                                    onClick={handleClick}
+                                    onPointerEnter={handleClick}
                                     style={{border: 'none', borderRadius: 0, height: '100%', width: '100%'}}
                                 >
                                 {lang==="uk" ? "Про нас" : "About us"}
@@ -288,17 +289,16 @@ function Header() {
                                     id="menu5"
                                     MenuListProps={{
                                     'aria-labelledby': 'fade-button',
+                                     onMouseLeave: handleClose              
                                     }}
                                     anchorEl={anchorE5}
                                     open={openE5}
-                                    onClose={handleClose}
                                     TransitionComponent={Fade}
                                 >
 
                                     <NavLink to={'/team'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Команда" : "Team"}</MenuItem></NavLink>
                                     <NavLink to={'/contact'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Контакти" : "Contacts"}</MenuItem></NavLink>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Для преси" : "For press"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Допомога" : "Help"}</MenuItem>
+                                    <NavLink to={'/media-about-us'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "ЗМІ про нас" : "Media about us"}</MenuItem></NavLink>
                                 </Menu>
                             </Typography>
                         </Grid>
