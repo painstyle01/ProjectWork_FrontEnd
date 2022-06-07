@@ -35,6 +35,7 @@ import ArtPrograms from '../ArtPrograms/ArtPrograms'
 import EducationalPrograms from '../EducationalPrograms/EducationalPrograms'
 import TimeLine from '../TimeLine/TimeLine'
 import Collections from '../CollectionPage/CollectionPage'
+import Archive from '../ArchivePage/ArchivePage'
 
 function App() {
   return (
@@ -70,6 +71,7 @@ function App() {
         <Route exact path="/educational-programs" element={<EducationalPrograms/>}/>
         <Route exact path="/timeline" element={<TimeLine/>}/>
         <Route exact path="/collections" element={<Collections/>}/>
+        <Route exact path="/archive" element={<Archive/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>

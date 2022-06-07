@@ -5,54 +5,13 @@ import './ArchivePage.css'
 import '../fonts/fonts/Igrasans.ttf';
 import arrow from '../../components/img/blackArrov.png';
 import smallArrow from '../../components/img/comonArrow.png'
-import { useState } from 'react'
+import { useState } from 'react'    
 
+fetch('http://frankos-museum-backend.azurewebsites.net/api/archive/')
+    .then(response => response.json())
+    .then(data =>(localStorage.setItem('archive', JSON.stringify(data))));
 
-const TempData=[
-    {
-        id: '1',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Легенда про вічне життя',
-        date: '12 Червня 2021'
-    },
-    {
-        id: '2',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Легенда про вічне життя',
-        date: '12 Червня 2021'
-    },
-    {
-        id: '3',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Легенда про вічне життя',
-        date: '12 Червня 2021'
-    },
-    {
-        id: '4',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Іван Франко у світі',
-        date: '12 Червня 2021'
-    },
-    {
-        id: '5',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Науковий Форум',
-        date: '12 Червня 2021'
-    },
-    {
-        id: '6',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Науковий театр',
-        date: '12 Червня 2021'
-    },
-    {
-        id: '7',
-        photo: 'https://i.ibb.co/dtSbTjH/Rectangle-17.png',
-        title: 'Легенда про вічне життя',
-        date: '12 Червня 2021'
-    },
-    
-]
+let data = JSON.parse(localStorage.getItem('archive'))
 
 function ArchivePage(){
 
@@ -70,7 +29,7 @@ function ArchivePage(){
             </p>
 
             <Grid container spacing="3">
-                {TempData.filter((val)=>{
+                {data.filter((val)=>{
                     if(searchTerm == ''){
                         return val;
                     } else if(val.title.toLowerCase().includes(searchTerm.toLocaleLowerCase())){
