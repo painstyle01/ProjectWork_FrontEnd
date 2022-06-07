@@ -1,0 +1,62 @@
+.cardRoom img{
+    width: 450px;
+    height: 320px;
+}
+.cardRoom{
+    margin-left: 80px;
+}
+.memorial{
+    width: 951px;
+    height: 620px;
+}
+#memEks{
+    margin: 20px 0px 20px 0px;
+    font-family: Igra Sans;
+    font-size: 76px;
+    font-weight: 400;
+    line-height: 76px;
+    text-align: center;
+}
+.memtext p{
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 25px 0px 25px 0px;
+    color: #303030;
+    
+}
+.cardRoom p{
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #A3A3A3;
+
+}
+.cardRoom h2{
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 37px;
+    color: #1C1C1C;
+
+}
+#arrow8{
+    width: 15px;
+    height: 15px;
+    margin-left: 15px;
+}
+.roomM h1{
+    font-family: Igra Sans;
+    font-size: 76px;
+    font-weight: 400;
+    line-height: 76px;
+    margin: 0px 0px 20px 80px;
+}
+.lineExp{
+    width: 1401px;
+    height: 0px;
+    border: 1px solid #1C1C1C;
+    margin: 0px 0px 40px 80px;
+}

@@ -21,7 +21,7 @@ function AudioCategory(thisPage) {
   useEffect(() => {
     (async () => {
       try {
-        var response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/list-video');
+        var response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/list-audio');
         var categories = await response.json()
         var fullUrl = window.location.pathname
         var split = fullUrl.split('/')

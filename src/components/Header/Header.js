@@ -170,8 +170,9 @@ function Header() {
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Про музей" : "About the museum"}</MenuItem>
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Актуальні новини" : "Current news"}</MenuItem>
                                     <NavLink to={'/road'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Спланувати візит" : "Plan a visit"}</MenuItem></NavLink>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Експозиція" : "Exposition"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Архів подій" : "Event archive"}</MenuItem>
+                                    <NavLink to={'/expositions'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Експозиція" : "Exposition"}</MenuItem></NavLink>
+                                    <NavLink to={'/archive'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Архів подій" : "Event archive"}</MenuItem></NavLink>
+                                    
                                    
                                 </Menu>
                             </Typography>
@@ -204,7 +205,6 @@ function Header() {
                                     <NavLink to={'/library'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Видання" : "Library catalogue"}</MenuItem></NavLink>
                                     <NavLink to={'/video'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Відео" : "Video"}</MenuItem></NavLink>
                                     <NavLink to={'/audio'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Аудіо" : "Audio"}</MenuItem></NavLink>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Ігри" : "Games"}</MenuItem>
                                 </Menu>
                             </Typography>
                         </Grid>

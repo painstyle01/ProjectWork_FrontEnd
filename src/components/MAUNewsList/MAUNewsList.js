@@ -1,10 +1,10 @@
 import { React } from 'react'
-import './NewsList.css'
+import './MAUNewsList.css'
 import { Stack } from '@mui/material';
 import { useState, useEffect } from 'react';
 import DateObject from "react-date-object";
 
-function NewsList(props) {
+function MAUNewsList(props) {
 
     const [news, getNews] = useState([]);
 
@@ -28,7 +28,7 @@ function NewsList(props) {
     }, []);
 
     return (
-        <Stack spacing={2} style={{border: '2px solid #c5c5c5', padding: '3vw 5vw', alignItems: 'center'}}>
+        <Stack spacing={2} style={{border: '2px solid #c5c5c5', padding: '3vw 5vw'}}>
             {filteredData.map(function(item) {
                 var date = new DateObject(item.date).format("DD.MM.YY");
                 return (
@@ -41,4 +41,4 @@ function NewsList(props) {
     )
 }
 
-export default NewsList
+export default MAUNewsList

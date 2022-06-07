@@ -20,7 +20,7 @@ function Projects() {
     useEffect(() => {
         (async () => {
             try {
-              var response = await fetch('http://frankos-museum-backend.azurewebsites.net/projects');
+              var response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/project');
               getProjects(await response.json())
             } catch (e) {
             }

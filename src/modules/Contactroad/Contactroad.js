@@ -45,7 +45,7 @@ function Contactroad() {
             <Grid item xs={2}></Grid>
             <Grid item xs={6} id='menuN'>
                 <div className='contM'>
-                    <h1 className='igraSans'>Контакти</h1>
+                    <h1 className='igraSans'>Спланувати візит</h1>
                     <div className='lineC'></div>
                 </div>
                 <div className='timeC'>
