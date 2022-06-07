@@ -205,7 +205,6 @@ function Header() {
                                     <NavLink to={'/library'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Видання" : "Library catalogue"}</MenuItem></NavLink>
                                     <NavLink to={'/video'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Відео" : "Video"}</MenuItem></NavLink>
                                     <NavLink to={'/audio'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Аудіо" : "Audio"}</MenuItem></NavLink>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Ігри" : "Games"}</MenuItem>
                                 </Menu>
                             </Typography>
                         </Grid>
