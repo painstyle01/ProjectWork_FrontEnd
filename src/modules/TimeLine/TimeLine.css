@@ -5,7 +5,7 @@ Primary style
 -------------------------------- */
 
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
-*, *::after, *::before {
+.cd-horizontal-timeline, .cd-horizontal-timeline::after, .cd-horizontal-timeline::before {
   box-sizing: border-box;
 }
 
@@ -15,18 +15,7 @@ Primary style
      url("../fonts/fonts/Igrasans.ttf") format("truetype");
 }
 
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.6rem;
-  font-family: "Source Sans Pro", sans-serif;
-  color: #383838;
-  background-color: #f8f8f8;
-}
-
-a {
+.cd-horizontal-timeline a {
   color: #1C1C1C;
   text-decoration: none;
 }
@@ -42,6 +31,11 @@ Main Components
   -webkit-transition: opacity 0.2s;
   -moz-transition: opacity 0.2s;
   transition: opacity 0.2s;
+
+  font-size: 1.6rem;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #383838;
+  background-color: #f8f8f8;
 }
 .cd-horizontal-timeline::before {
   /* never visible - this is used in jQuery to check the current MQ */
