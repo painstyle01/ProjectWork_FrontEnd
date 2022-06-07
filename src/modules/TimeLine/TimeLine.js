@@ -56,8 +56,17 @@ const TempData = [
     }
 ]
 
+fetch('http://frankos-museum-backend.azurewebsites.net/api/timeline/')
+        .then(response => response.json())
+        .then(data =>(localStorage.setItem('timeLine', JSON.stringify(data))));
+
+
+
 
 function TimeLine(){
+
+    const data = JSON.parse(localStorage.getItem('timeLine'))
+    console.log(data);
 
     jquery(document).ready(function($){
         var timelines = $('.cd-horizontal-timeline'),
