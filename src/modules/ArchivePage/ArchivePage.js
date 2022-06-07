@@ -37,7 +37,7 @@ function ArchivePage(){
                     }
                 }).map((element)=>{
                     return(
-                        <Grid item key={element.id} xs={4} className="archiveCard">
+                        <Grid item key={element.id} xs={12} sm={6} md={4} className="archiveCard">
                             <img src={element.photo} className="archiveCardImg" alt="not found"/>
                             <div className="archiveCardTitle">{element.title} <img src={smallArrow} alt="not found"/></div>
                             <div className="archiveCardDate">{element.date}</div>
