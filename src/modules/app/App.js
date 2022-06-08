@@ -37,8 +37,8 @@ import TimeLine from '../TimeLine/TimeLine'
 import Collections from '../CollectionPage/CollectionPage'
 import Archive from '../ArchivePage/ArchivePage'
 import Contactroad from '../Contactroad/Contactroad'
-import RoomExposition from '../../modules/Exposition/RoomExposition/roomExposition';
-import Exposition from '../../modules/Exposition/ExpositionPage/exposition';
+import RoomExposition from '../Exposition/RoomExposition/roomExposition';
+import Exposition from '../Exposition/ExpositionPage/exposition';
 
 function App() {
   return (

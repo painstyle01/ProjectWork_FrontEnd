@@ -2,7 +2,7 @@ import React from 'react'
 import './BookPage.css'
 import '../../fonts/fonts/Igrasans.ttf'
 import Grid from '@mui/material/Grid'
-import arrow from '../../../components/img/smallArrow.png'
+import arrow from '../../../images/smallArrow.png'
 import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import {Link} from 'react-router-dom'

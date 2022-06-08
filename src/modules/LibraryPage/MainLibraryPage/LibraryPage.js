@@ -2,7 +2,7 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import { TextField } from '@mui/material';
 import './LibraryPage.css';
-import smallArrow from '../../../components/img/smallArrow.png'
+import smallArrow from '../../../images/smallArrow.png'
 import { useState } from 'react'
 import {Link} from 'react-router-dom'
 
