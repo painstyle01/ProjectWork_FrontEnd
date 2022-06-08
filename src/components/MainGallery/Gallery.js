@@ -5,8 +5,8 @@ import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import Carousel from 'react-material-ui-carousel'
 import Grid from '@mui/material/Grid'
-import foto1 from '../img/foto1.jpg'
-import logo from '../img/logo.png'
+import foto1 from '../../images/foto1.jpg'
+import logo from '../../images/logo.png'
 
 
 
@@ -62,7 +62,6 @@ function Foto() {
                  direction="column">
                      <h3>ЦИФРОВА КОЛЕКЦІЯ ХУДОЖНЬОГО МУЗЕЮ</h3>
                     <Grid container spacing={0}
-                     container
                      direction="row"
                      justifyContent="space-around"
                      alignItems="center">

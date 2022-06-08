@@ -3,8 +3,8 @@ import Grid from '@mui/material/Grid';
 import { TextField } from '@mui/material';
 import './ArchivePage.css'
 import '../fonts/fonts/Igrasans.ttf';
-import arrow from '../../components/img/blackArrov.png';
-import smallArrow from '../../components/img/comonArrow.png'
+import arrow from '../../images/blackArrov.png';
+import smallArrow from '../../images/comonArrow.png'
 import { useState } from 'react'    
 
 fetch('http://frankos-museum-backend.azurewebsites.net/api/archive/')

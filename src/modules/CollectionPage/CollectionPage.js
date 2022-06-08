@@ -3,7 +3,7 @@ import Grid from '@mui/material/Grid';
 import { TextField } from '@mui/material';
 import './CollectionPage.css'
 import '../fonts/fonts/Igrasans.ttf';
-import smallArrow from '../../components/img/comonArrow.png'
+import smallArrow from '../../images/comonArrow.png'
 import { useState } from 'react'
 
 
