@@ -1,5 +1,5 @@
 import { Grid } from '@mui/material';
-import './libraryEx.css'
+import './roomExposition.css'
 import { useState, useEffect } from 'react';
 
 
@@ -9,7 +9,7 @@ async function readData(getRoom, thisPageID) {
     getRoom(await response.json())
 }
 
-function LibraryEx() { 
+function RoomExposition() { 
 
     var fullUrl = window.location.pathname
     var split = fullUrl.split('/')
@@ -42,4 +42,4 @@ function LibraryEx() {
 
 );
 }
-export default LibraryEx;
+export default RoomExposition;
