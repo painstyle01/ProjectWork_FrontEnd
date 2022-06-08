@@ -30,9 +30,9 @@ function VideoPage() {
   }, []);
 
     return (
-      <div style={{padding: '7%'}}>
-        <div className="igraSans" style={{fontSize: '71px', lineHeight: '50px'}}>Відео</div>
-        <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '30px'}} />
+      <div style={{padding: '3% 7% 7% 7%'}}>
+        <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px'}}>Відео</div>
+        <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '20px 30px'}}/>
         <Grid container spacing={3}>
           {categories.map(function(category) {
             return (

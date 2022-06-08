@@ -1,0 +1,43 @@
+.backgroundMain{
+    z-index: -1;
+    top: 0;
+    width: 100%;
+    position: absolute;
+    height: 888px;
+}
+.roomText{
+    margin-top: 660px;
+}
+.discrabe{
+    margin-top: 130px;
+}
+.discrabe h2{
+    font-family: 'Igra Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 50px;
+
+    color: #1C1C1C;
+}
+.discrabe p{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 30px;
+    color: #1C1C1C;
+}
+
+.titleRoomName{
+    font-family: 'Igra Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 76px;
+    line-height: 72px;
+
+
+
+color: #FFFFFF;
+}

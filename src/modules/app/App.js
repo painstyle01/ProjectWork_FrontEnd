@@ -37,6 +37,8 @@ import TimeLine from '../TimeLine/TimeLine'
 import Collections from '../CollectionPage/CollectionPage'
 import Archive from '../ArchivePage/ArchivePage'
 import Contactroad from '../Contactroad/Contactroad'
+import RoomExposition from '../Exposition/RoomExposition/roomExposition';
+import Exposition from '../Exposition/ExpositionPage/exposition';
 
 function App() {
   return (
@@ -74,6 +76,8 @@ function App() {
         <Route exact path="/collections" element={<Collections/>}/>
         <Route exact path="/archive" element={<Archive/>}/>
         <Route exact path="/road" element={<Contactroad/>}/>
+        <Route exact path="/expositions/:page" element={<RoomExposition/>}/>
+        <Route exact path="/expositions/" element={<Exposition/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>
