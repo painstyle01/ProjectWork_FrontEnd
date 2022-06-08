@@ -168,7 +168,7 @@ function Header() {
                                     TransitionComponent={Fade}
                                 >
                                     <MenuItem onClick={chooseOption}>{lang==="uk" ? "Про музей" : "About the museum"}</MenuItem>
-                                    <MenuItem onClick={chooseOption}>{lang==="uk" ? "Актуальні новини" : "Current news"}</MenuItem>
+                                    <NavLink to={'/actual-news'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Актуальні новини" : "Current news"}</MenuItem></NavLink>
                                     <NavLink to={'/road'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Спланувати візит" : "Plan a visit"}</MenuItem></NavLink>
                                     <NavLink to={'/expositions'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Експозиція" : "Exposition"}</MenuItem></NavLink>
                                     <NavLink to={'/archive'} className="menuNavLink"><MenuItem onClick={chooseOption}>{lang==="uk" ? "Архів подій" : "Event archive"}</MenuItem></NavLink>

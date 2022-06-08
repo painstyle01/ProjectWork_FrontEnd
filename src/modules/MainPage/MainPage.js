@@ -74,17 +74,18 @@ function MainPage() {
             </div>
             <div className="bottom">
                 <div className="bottom_content" style={{paddingBottom: '0'}}>
-                    <Stack direction="row" spacing={2}>
-                        <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px'}}>Актуальні новини</div>
-                        <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
-                    </Stack>
+                    <NavLink to={'/actual-news'} className="menuNavLink">
+                        <Stack direction="row" spacing={2}>
+                            <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px'}}>Актуальні новини</div>
+                            <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
+                        </Stack>
+                    </NavLink>
                     <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '15px 30px'}} />
                     <Grid container spacing={3}>
                         {news.map(function(item) {
                             return (
                                 <Grid item xs={12} sm={6} md={4}>
                                     <Card>
-                                        <CardActionArea>
                                         <CardMedia component="img" image={newsImage}/>
                                         <CardContent>
                                             <Stack direction="row" spacing={1} marginBlock='-5px'>
@@ -95,7 +96,6 @@ function MainPage() {
                                             <Typography variant="body2" color="primary" style={{textDecoration: 'none'}}>{item.text}</Typography>
                                             <Typography variant="body2" color="#a3a3a3">{item.date}</Typography>
                                         </CardContent>
-                                        </CardActionArea>
                                     </Card>
                                 </Grid>
                             )

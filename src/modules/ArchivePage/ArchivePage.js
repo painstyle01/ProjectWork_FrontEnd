@@ -5,7 +5,8 @@ import './ArchivePage.css'
 import '../fonts/fonts/Igrasans.ttf';
 import arrow from '../../images/blackArrov.png';
 import smallArrow from '../../images/comonArrow.png'
-import { useState } from 'react'    
+import { useState } from 'react'
+import {NavLink} from "react-router-dom";
 
 fetch('http://frankos-museum-backend.azurewebsites.net/api/archive/')
     .then(response => response.json())
@@ -20,7 +21,9 @@ function ArchivePage(){
     return(
         <div className="archiveMainContainer">
             <span className="archiveTitle">Архів Подій</span>
+            <NavLink to={'/actual-news'} className="menuNavLink">
             <span className="archiveNews">Актуальні новини <img src={arrow} alt="not found"/></span>
+            </NavLink>
             <p><TextField className="archivesearch" 
                           id="standard-basic" 
                           label="Пошук" 
