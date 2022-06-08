@@ -9,7 +9,7 @@ async function readData(getRoom, thisPageID) {
     getRoom(await response.json())
 }
 
-function LibraryEx() { 
+function roomExposition() { 
 
     var fullUrl = window.location.pathname
     var split = fullUrl.split('/')
@@ -42,4 +42,4 @@ function LibraryEx() {
 
 );
 }
-export default LibraryEx;
+export default roomExposition;
