@@ -21,20 +21,17 @@ import { CardActionArea } from '@mui/material'
 
 
 function MainPage() {
-    
-    let news = [
-        {'title': 'Легенда про вічне життя', 'date': '12 Червня 2021'},
-        {'title': 'Легенда про вічне життя', 'date': '12 Червня 2021'},
-        {'title': 'Легенда про вічне життя', 'date': '12 Червня 2021'}
-    ]
 
     const [background, getBackground] = useState();
+    const [news, getNews] = useState([]);
   
     useEffect(() => {
         (async () => {
             try {
                 const response = await fetch('http://frankos-museum-backend.azurewebsites.net/api/background');
                 getBackground('http://frankos-museum-backend.azurewebsites.net'+(await response.json()).backgrounds);
+                const response2 = await fetch('http://frankos-museum-backend.azurewebsites.net/api/actualnews');
+                getNews(await response2.json());
             } catch (e) {
             }
         })();
@@ -77,26 +74,28 @@ function MainPage() {
             </div>
             <div className="bottom">
                 <div className="bottom_content" style={{paddingBottom: '0'}}>
-                    <Stack direction="row" spacing={2}>
-                        <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px'}}>Останні новини</div>
-                        <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
-                    </Stack>
+                    <NavLink to={'/actual-news'} className="menuNavLink">
+                        <Stack direction="row" spacing={2}>
+                            <div className="igraSans" style={{fontSize: '71px', lineHeight: '71px'}}>Актуальні новини</div>
+                            <ArrowCircleUpIcon sx={{fontSize: '75px', transform: 'rotate(45deg)', paddingTop: '15px'}}/>
+                        </Stack>
+                    </NavLink>
                     <Divider color='black' sx={{borderBottomWidth: 4, marginBlock: '15px 30px'}} />
                     <Grid container spacing={3}>
                         {news.map(function(item) {
                             return (
                                 <Grid item xs={12} sm={6} md={4}>
                                     <Card>
-                                        <CardActionArea>
                                         <CardMedia component="img" image={newsImage}/>
                                         <CardContent>
-                                            <Stack direction="row" spacing={1}>
-                                            <Typography variant="body2" color="primary" style={{fontSize: '25px', textDecoration: 'none'}}>{item.title}</Typography>
-                                            <ArrowForwardIcon style={{fontSize: '25px', marginTop: '10px', transform: 'rotate(-45deg)'}}/>
+                                            <Stack direction="row" spacing={1} marginBlock='-5px'>
+                                                <Typography variant="body2" color="primary" style={{fontSize: '25px', fontWeight: 'bold', textDecoration: 'none'}}>{item.title}</Typography>
+                                                <ArrowForwardIcon style={{fontSize: '25px', marginTop: '10px', transform: 'rotate(-45deg)'}}/>
                                             </Stack>
+                                            <Typography variant="body2" color="primary" style={{textDecoration: 'none', fontWeight: 'bold'}}>{item.author}</Typography>
+                                            <Typography variant="body2" color="primary" style={{textDecoration: 'none'}}>{item.text}</Typography>
                                             <Typography variant="body2" color="#a3a3a3">{item.date}</Typography>
                                         </CardContent>
-                                        </CardActionArea>
                                     </Card>
                                 </Grid>
                             )

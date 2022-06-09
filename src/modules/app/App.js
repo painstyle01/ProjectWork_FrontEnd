@@ -39,6 +39,7 @@ import Archive from '../ArchivePage/ArchivePage'
 import Contactroad from '../Contactroad/Contactroad'
 import RoomExposition from '../Exposition/RoomExposition/roomExposition';
 import Exposition from '../Exposition/ExpositionPage/exposition';
+import ActualNews from '../ActualNews/ActualNews'
 
 function App() {
   return (
@@ -78,6 +79,7 @@ function App() {
         <Route exact path="/road" element={<Contactroad/>}/>
         <Route exact path="/expositions/:page" element={<RoomExposition/>}/>
         <Route exact path="/expositions/" element={<Exposition/>}/>
+        <Route exact path="/actual-news/" element={<ActualNews/>}/>
       </Routes>
       {<Footer/>}
     </BrowserRouter>
